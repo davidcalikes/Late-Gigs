@@ -1,4 +1,4 @@
-from pprint import pprint
+# from pprint import pprint
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -73,8 +73,12 @@ def get_venue_data():
                   "metal", "METAL", "R&b", "r&b", "R&B", "Indie", "indie",
                   "Country", "country", "COUNTRY",
                   "Irish Trad", "irish trad", "IRISH TRAD"]
-    pprint(genre_list)
-    exit()
+    while True:
+        genre = input("Enter genre here: ")
+        if genre in genre_list:
+            venue_data.append(genre.lower())
+            print(venue_data)
+            exit()
 
 
 def main():
