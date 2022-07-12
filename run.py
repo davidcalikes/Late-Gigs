@@ -89,6 +89,20 @@ def get_venue_data():
     print("\nNice! Hopefully your patrons will be enjoying some")
     print(f"live {genre} at {name} soon!")
     print("\n")
+
+    print("Lets keep going!?\n")
+    print("What day this weekend do you need the act?")
+    print("Type: Friday, Saturday or Sunday \n")
+    day_list = ["Friday", "friday", "FRIDAY",
+                "Saturday", "saturday", "SATURDAY",
+                "Sunday", "sunday", "SUNDAY"]
+    while True:
+        day = input("Enter required day: ")
+        if day in day_list:
+            venue_data.append(day.lower())
+            print(venue_data)
+            break
+            
     exit()
 
 
