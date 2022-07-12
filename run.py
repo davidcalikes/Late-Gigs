@@ -158,7 +158,10 @@ def get_venue_data():
             break
 
     venue_data.append(members)
-    print(venue_data)
+
+    print("\nExcellent! Ok, just one last thing!\n")
+    print("How long should the act play for?")
+    print("\nExample: A two and a half hour set would be: 2.5 \n")
 
     exit()
 
