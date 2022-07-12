@@ -120,12 +120,19 @@ def get_venue_data():
     while True:
         data_correct = input('Are you happy with this so far?:(y/n)\n')
         if data_correct == "y":
-            print("\nOK cool! Now let's keep going !\n")
-            exit()
+            print("\nOK cool! Now let's keep going!\n")
+            continue
         else:
             print("That's ok, lets try again\n")
             get_venue_data()
             main()
+
+    print("Tell us how the maximum fee you are willing to pay your act")
+    print("Hint: Artist fees vary depending on many factors such as,")
+    print("length of set, number of band members ect.")
+    print("Aim to set your maximum fee between €200 and €600 to increase")
+    print("your chances of finding a suitable act")
+
     exit()
 
 
