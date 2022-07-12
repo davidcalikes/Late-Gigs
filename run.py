@@ -121,7 +121,7 @@ def get_venue_data():
         data_correct = input('Are you happy with this so far?:(y/n)\n')
         if data_correct == "y":
             print("\nOK cool! Now let's keep going!\n")
-            continue
+            break
         else:
             print("That's ok, lets try again\n")
             get_venue_data()
@@ -132,6 +132,18 @@ def get_venue_data():
     print("length of set, number of band members ect.")
     print("Aim to set your maximum fee between €200 and €600 to increase")
     print("your chances of finding a suitable act")
+    while True:
+        try:
+            fee = int(input("Enter max fee here: €"))
+        except ValueError:
+            print("Nope! We need a number here... try again!")
+            continue
+        else:
+            break
+
+    venue_data.append(fee)
+    print(venue_data)
+    print("\nOutstanding! We're almost there! \n")
 
     exit()
 
