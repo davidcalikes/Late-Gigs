@@ -162,6 +162,16 @@ def get_venue_data():
     print("\nExcellent! Ok, just one last thing!\n")
     print("How long should the act play for?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
+    while True:
+        try:
+            set_length = float(input("Enter length of set required: "))
+        except ValueError:
+            print("Whoopsie! This value needs to be a number. Try again!")
+            continue
+        else:
+            break
+    venue_data.append(set_length)
+    print(venue_data)
 
     exit()
 
