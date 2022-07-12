@@ -49,7 +49,7 @@ def get_venue_data():
     that lists the properties of the venue object.
     Validates data at every input to improve UX and
     reduce risk of TypeErrors while working with
-    a variety of data types.
+    a list containing different data types.
     """
     venue_data = []
 
@@ -100,7 +100,7 @@ def get_venue_data():
                 "Saturday", "saturday", "SATURDAY",
                 "Sunday", "sunday", "SUNDAY"]
     while True:
-        day = input("Enter required day: ")
+        day = input("Enter required day: \n")
         if day in day_list:
             venue_data.append(day.lower())
             break
@@ -110,6 +110,22 @@ def get_venue_data():
             print("\nType one of the following options:\n")
             print("Friday, Saturday or Sunday")
             continue
+
+    print("Excellent! So far so good?")
+    print("Here's what we have so far!\n")
+    print(f"Your venue: {name} is looking for a {genre}")
+    print(f"act for this coming {day}?")
+    print("\n")
+
+    while True:
+        data_correct = input('Are you happy with this so far?:(y/n)\n')
+        if data_correct == "y":
+            print("\nOK cool! Now let's keep going !\n")
+            exit()
+        else:
+            print("That's ok, lets try again\n")
+            get_venue_data()
+            main()
     exit()
 
 
