@@ -27,6 +27,7 @@ def area_check(user):
             venue_location = input('Is your venue in the North East?:(y/n)\n')
             if venue_location == "y":
                 print("\nOK, just making sure! Now let's Find you an act!\n")
+                get_venue_data()
             else:
                 print('Sorry, Late gigs only operates in the NE Area\n')
                 input('Press Enter to exit to menu...\n')
@@ -39,6 +40,22 @@ def area_check(user):
                 print("Sorry, That's not a valid option\n")
                 input('Press Enter to exit to menu...\n')
                 main()
+
+
+def get_venue_data():
+    """
+    Get data from the user that lists the properties of
+    the venue object
+    """
+    venue_data = []
+
+    while True:
+        name = input('Enter your venue name here: ')
+        if len(name) >= 2:
+            venue_data.append(name.lower())
+            break
+    print(venue_data)
+    exit()
 
 
 def main():
