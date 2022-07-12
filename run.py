@@ -47,8 +47,8 @@ def get_venue_data():
     """
     Get data from the user incrementally
     that lists the properties of the venue object.
-    Validates data at every input to improve UX and 
-    reduce risk of TypeErrors while working with 
+    Validates data at every input to improve UX and
+    reduce risk of TypeErrors while working with
     a variety of data types.
     """
     venue_data = []
