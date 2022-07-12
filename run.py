@@ -12,8 +12,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('late_gigs')
 
-gig_list = SHEET.worksheet('venues')
 
-data = gig_list.get_all_values()
+def main():
+    """
+    Display Welcome message and get user type via menu options
+    """
+    print("\nWelcome to Late Gigs!")
+    exit()
 
-print(data)
+
+main()
