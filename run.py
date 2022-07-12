@@ -13,6 +13,34 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('late_gigs')
 
 
+def area_check(user):
+    """
+    Ensure user is aware of Local Gigs catchment area
+    before calling relevant get_(user)_data function
+    """
+    user_type = user
+    while True:
+        print("Just a quick check before we begin!")
+        print("Please confirm you're in the North East Area!\n")
+
+        if user_type == "venue":
+            venue_location = input('Is your venue in the North East?:(y/n)\n')
+            if venue_location == "y":
+                print("\nOK, just making sure! Now let's Find you an act!\n")
+            else:
+                print('Sorry, Late gigs only operates in the NE Area\n')
+                input('Press Enter to exit to menu...\n')
+                main()
+        elif user_type == "artist":
+            artist_location = input('Is your act in the North East?:(y/n)\n')
+            if artist_location == "y":
+                print("OK, just making sure! Now let's Find you a venue!\n")
+            else:
+                print("Sorry, That's not a valid option\n")
+                input('Press Enter to exit to menu...\n')
+                main()
+
+
 def main():
     """
     Display Welcome message and get user type via menu options
