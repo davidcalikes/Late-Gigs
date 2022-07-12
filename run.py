@@ -77,7 +77,13 @@ def get_venue_data():
         genre = input("Enter genre here: ")
         if genre in genre_list:
             venue_data.append(genre.lower())
-            print(venue_data)
+            break
+        else:
+            print("\n")
+            print(f'{genre} is not a valid genre')
+            print("\nType one of the following options:")
+            print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
+            print("Indie, Country or Irish trad \n")
             exit()
 
 
