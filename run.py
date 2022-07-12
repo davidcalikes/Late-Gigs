@@ -111,7 +111,7 @@ def get_venue_data():
             print("Friday, Saturday or Sunday")
             continue
 
-    print("Excellent! So far so good?")
+    print("\nyExcellent! So far so good?")
     print("Here's what we have so far!\n")
     print(f"Your venue: {name} is looking for a {genre}")
     print(f"act for this coming {day}?")
@@ -127,9 +127,9 @@ def get_venue_data():
             get_venue_data()
             main()
 
-    print("Tell us how the maximum fee you are willing to pay your act")
+    print("Tell us how the maximum fee you are willing to pay your act.\n")
     print("Hint: Artist fees vary depending on many factors such as,")
-    print("length of set, number of band members ect.")
+    print("length of set, number of band members ect.\n")
     print("Aim to set your maximum fee between €200 and €600 to increase")
     print("your chances of finding a suitable act")
     while True:
@@ -142,8 +142,23 @@ def get_venue_data():
             break
 
     venue_data.append(fee)
-    print(venue_data)
     print("\nOutstanding! We're almost there! \n")
+
+    print("What is the maximum number of performers")
+    print(f"{name} stage can hold?")
+    print("\n")
+    while True:
+        try:
+            members = int(input(
+                "Type a number between 1 and the maximum required: "))
+        except ValueError:
+            print("Sorry, only a number will do in this case. Try again!")
+            continue
+        else:
+            break
+
+    venue_data.append(members)
+    print(venue_data)
 
     exit()
 
