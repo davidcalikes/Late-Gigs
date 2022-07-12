@@ -18,6 +18,11 @@ def main():
     Display Welcome message and get user type via menu options
     """
     print("\nWelcome to Late Gigs!")
+    print('The Last-Minute Booking Service for Live Music!\n')
+    print('1. Find an Artist')
+    print('2. Find A Venue')
+    print('3. Exit\n')
+    print('Choose the number from the options above and press enter')
     exit()
 
 
