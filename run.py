@@ -44,8 +44,8 @@ def area_check(user):
 
 def get_venue_data():
     """
-    Get data from the user that lists the properties of
-    the venue object
+    Get data from the user incrementally
+    that lists the properties of the venue object
     """
     venue_data = []
 
@@ -54,7 +54,13 @@ def get_venue_data():
         if len(name) >= 2:
             venue_data.append(name.lower())
             break
-    print(venue_data)
+        else:
+            print("\n")
+            print(f'{name} is not a valid name')
+            print("\nVenue names must contain more than")
+            print("two characters!")
+            print("\nPlease Try Again!\n")
+            continue
     exit()
 
 
