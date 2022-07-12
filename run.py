@@ -46,7 +46,10 @@ def area_check(user):
 def get_venue_data():
     """
     Get data from the user incrementally
-    that lists the properties of the venue object
+    that lists the properties of the venue object.
+    Validates data at every input to improve UX and 
+    reduce risk of TypeErrors while working with 
+    a variety of data types.
     """
     venue_data = []
 
@@ -100,9 +103,13 @@ def get_venue_data():
         day = input("Enter required day: ")
         if day in day_list:
             venue_data.append(day.lower())
-            print(venue_data)
             break
-            
+        else:
+            print("\n")
+            print(f'{day} is not a valid gig day... Try again!')
+            print("\nType one of the following options:\n")
+            print("Friday, Saturday or Sunday")
+            continue
     exit()
 
 
