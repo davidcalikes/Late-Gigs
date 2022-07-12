@@ -1,3 +1,4 @@
+from pprint import pprint
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -61,6 +62,18 @@ def get_venue_data():
             print("two characters!")
             print("\nPlease Try Again!\n")
             continue
+
+    print("\n")
+    print(f"Cool! What genre of music do you prefer at {name}?")
+    print("\n")
+    print("Type one of the following options:")
+    print("Rock, Blues, Pop, Jazz, Metal, R&b, Indie, Country, Irish trad \n")
+    genre_list = ["Rock", "rock", "ROCK", "Blues", "blues", "BLUES",
+                  "Pop", "pop", "POP", "Jazz", "jazz", "JAZZ", "Metal",
+                  "metal", "METAL", "R&b", "r&b", "R&B", "Indie", "indie",
+                  "Country", "country", "COUNTRY",
+                  "Irish Trad", "irish trad", "IRISH TRAD"]
+    pprint(genre_list)
     exit()
 
 
