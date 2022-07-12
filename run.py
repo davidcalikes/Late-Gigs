@@ -84,7 +84,12 @@ def get_venue_data():
             print("\nType one of the following options:")
             print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
             print("Indie, Country or Irish trad \n")
-            exit()
+            continue
+
+    print("\nNice! Hopefully your patrons will be enjoying some")
+    print(f"live {genre} at {name} soon!")
+    print("\n")
+    exit()
 
 
 def main():
