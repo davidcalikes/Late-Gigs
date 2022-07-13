@@ -31,8 +31,8 @@ def area_check(user):
     """
     user_type = user
     while True:
-        print("Just a quick check before we begin!")
-        print("Please confirm you're in the North East Area!\n")
+        print("Just a quick check before we begin.")
+        print("Please confirm you're in the North East Area.\n")
 
         if user_type == "venue":
             venue_location = input("Is your venue in the North East?:(y/n)\n")
@@ -429,13 +429,39 @@ def check_database(properties, user):
 
     while True:
         if user == "venue":
-            print(properties, user)
-            exit()
+            check_standby_list(properties, user)
         elif user == "act":
-            print(properties, user)
+            print(user)
             exit()
         else:
             exit()
+
+
+def check_standby_list(properties, user):
+    """
+    Check's the database for any available acts
+    that match user requirements.
+    """
+    acts = SHEET.worksheet("standby").get_all_values()
+
+    print(len(acts))
+    item = acts.pop(1)
+    venue_name = properties[0]
+    print(venue_name)
+    check_list = properties
+    print(check_list)
+    orig_list_len = len(acts)
+    print(orig_list_len)
+
+    act_genre = (item[1])
+    act_day = item[2]
+    act_fee = int(item[3])
+    act_members = int(item[4])
+    act_set_len = float(item[5])
+
+    act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
+    print(act_conv)
+    print(user)
 
 
 def main():
