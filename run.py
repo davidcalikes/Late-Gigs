@@ -126,7 +126,7 @@ def get_venue_data():
             continue
     clear_page()
     print("\nExcellent! So far so good?")
-    print("Here's what we have so far!\n")
+    print("Here's what we have so far...\n")
     print(f"Your venue: '{name}' is looking for a {genre}")
     print(f"act for this coming {day}?")
     print("\n")
@@ -134,9 +134,11 @@ def get_venue_data():
     while True:
         data_correct = input("Are you happy with this so far?:(y/n)\n")
         if data_correct == "y":
+            clear_page()
             print("\nOK cool! Now let's keep going!\n")
             break
         else:
+            clear_page()
             print("That's ok, let's try again\n")
             get_venue_data()
             main()
@@ -150,12 +152,14 @@ def get_venue_data():
         try:
             fee = int(input("Enter max fee here: €\n"))
         except ValueError:
+            clear_page()
             print("Nope! We need a number here... try again!")
             continue
         else:
             break
 
     venue_data.append(fee)
+    clear_page()
     print("\nOutstanding! We're almost there!\n")
 
     print("What is the maximum number of performers")
@@ -166,12 +170,14 @@ def get_venue_data():
             members = int(input(
                 "Type a number between 1 and the maximum required: \n"))
         except ValueError:
+            clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
         else:
             break
 
     venue_data.append(members)
+    clear_page()
 
     print("\nExcellent! Ok, just one last thing!\n")
     print("How long should the act play for?")
@@ -180,11 +186,13 @@ def get_venue_data():
         try:
             set_length = float(input("Enter length of set required: \n"))
         except ValueError:
+            clear_page()
             print("Whoopsie! This value needs to be a number. Try again!")
             continue
         else:
             break
     venue_data.append(set_length)
+    clear_page()
     print(venue_data)
 
     exit()
