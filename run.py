@@ -33,9 +33,9 @@ def area_check(user):
                 print('Sorry, Late gigs only operates in the NE Area\n')
                 input('Press Enter to exit to menu...\n')
                 main()
-        elif user_type == "artist":
-            artist_location = input('Is your act in the North East?:(y/n)\n')
-            if artist_location == "y":
+        elif user_type == "act":
+            act_location = input('Is your act in the North East?:(y/n)\n')
+            if act_location == "y":
                 print("OK, just making sure! Now let's Find you a venue!\n")
             else:
                 print("Sorry, That's not a valid option\n")
@@ -128,7 +128,7 @@ def get_venue_data():
             main()
 
     print("Tell us how the maximum fee you are willing to pay your act.\n")
-    print("Hint: Artist fees vary depending on many factors such as,")
+    print("Hint: Act fees vary depending on many factors such as,")
     print("length of set, number of band members ect.\n")
     print("Aim to set your maximum fee between €200 and €600 to increase")
     print("your chances of finding a suitable act")
@@ -183,7 +183,7 @@ def main():
     while True:
         print("\nWelcome to Late Gigs!")
         print('The Last-Minute Booking Service for Live Music!\n')
-        print('1. Find an Artist')
+        print('1. Find an Act')
         print('2. Find A Venue')
         print('3. Exit\n')
         print('Choose the number from the options above and press enter')
@@ -191,12 +191,12 @@ def main():
         user_option = input('Enter your choice here: ')
 
         if user_option == '1':
-            print('\nFind an Artist... Ok Great! Lets Get started!\n')
+            print('\nFind an Act... Ok Great! Lets Get started!\n')
             user_is = "venue"
             area_check(user_is)
         elif user_option == '2':
             print('\nFind a Venue... Ok Great! Lets Get started!\n')
-            user_is = "artist"
+            user_is = "act"
             area_check(user_is)
         elif user_option == '3':
             print('\nBetter luck next time... Be sure to check back soon!')
