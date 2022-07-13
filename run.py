@@ -69,6 +69,7 @@ def get_venue_data():
             venue_data.append(name.lower())
             break
         else:
+            clear_page()
             print("\n")
             print(f'{name} is not a valid name')
             print("\nVenue names must contain more than")
@@ -92,6 +93,7 @@ def get_venue_data():
             venue_data.append(genre.lower())
             break
         else:
+            clear_page()
             print("\n")
             print(f"{genre} is not a valid genre")
             print("\nType one of the following options:")
@@ -99,6 +101,7 @@ def get_venue_data():
             print("Indie, Country or Irish trad \n")
             continue
 
+    clear_page()
     print("\nNice! Hopefully your patrons will be enjoying some")
     print(f"live {genre} at {name} soon!")
     print("\n")
@@ -115,12 +118,13 @@ def get_venue_data():
             venue_data.append(day.lower())
             break
         else:
+            clear_page()
             print("\n")
             print(f"{day} is not a valid gig day... Try again!")
             print("\nType one of the following options:\n")
             print("Friday, Saturday or Sunday")
             continue
-
+    clear_page()
     print("\nExcellent! So far so good?")
     print("Here's what we have so far!\n")
     print(f"Your venue: '{name}' is looking for a {genre}")
