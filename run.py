@@ -200,7 +200,7 @@ def get_venue_data():
     exit()
 
 
-    def get_act_data():
+def get_act_data():
     """
     Get data from the user incrementally
     that lists the properties of the act object.
@@ -237,7 +237,7 @@ def get_venue_data():
     while True:
         genre = input("Enter genre here: \n")
         if genre in genre_list:
-            venue_data.append(genre.lower())
+            act_data.append(genre.lower())
             break
         else:
             clear_page()
@@ -249,12 +249,12 @@ def get_venue_data():
             continue
 
     clear_page()
-    print("\nNice! Hopefully your patrons will be enjoying some")
-    print(f"live {genre} at {name} soon!")
+    print(f"Nice! Hopefully fans of {name} will be enjoying some")
+    print(f"live {genre} this weekend!")
     print("\n")
 
     print("Let's keep going!\n")
-    print("What day this weekend do you need the act?")
+    print("What day this weekend do you want to perform?")
     print("Type: Friday, Saturday or Sunday \n")
     day_list = ["Friday", "friday", "FRIDAY",
                 "Saturday", "saturday", "SATURDAY",
@@ -262,7 +262,7 @@ def get_venue_data():
     while True:
         day = input("Enter required day: \n")
         if day in day_list:
-            venue_data.append(day.lower())
+            act_data.append(day.lower())
             break
         else:
             clear_page()
@@ -274,12 +274,13 @@ def get_venue_data():
     clear_page()
     print("\nExcellent! So far so good?")
     print("Here's what we have so far...\n")
-    print(f"Your venue: '{name}' is looking for a {genre}")
-    print(f"act for this coming {day}?")
+    print(f"Your act: '{name}' is looking for a {genre}")
+    print(f"venue for this coming {day}?")
     print("\n")
 
     while True:
-        data_correct = input("Are you happy to continue?:(y/n)\n")
+        data_correct = input(
+            "Is this correct? Are you happy to continue?:(y/n)\n")
         if data_correct == "y":
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
@@ -290,11 +291,10 @@ def get_venue_data():
             get_venue_data()
             main()
 
-    print("Tell us the maximum fee you are willing to pay your act.\n")
-    print("Hint: Act fees vary depending on many factors, such as")
-    print("length of set, number of band members ect.\n")
-    print("Aim to set your maximum fee between €200 and €600 to increase")
-    print("your chances of finding a suitable act\n")
+    print("Tell us the minimum fee you will accept per gig.\n")
+    print("Hint: Artist fees generally range between €200 and €600")
+    print("Aim to set your minimum fee within this range to increase")
+    print("your chances of finding a suitable venue\n")
     while True:
         try:
             fee = int(input("Enter max fee in € here: \n"))
@@ -305,13 +305,11 @@ def get_venue_data():
         else:
             break
 
-    venue_data.append(fee)
+    act_data.append(fee)
     clear_page()
     print("\nOutstanding! We're almost there!\n")
 
-    print("What is the maximum number of performers")
-    print(f"the stage at {name} can hold?")
-    print("\n")
+    print("How many members make up your act?\n")
     while True:
         try:
             members = int(input(
@@ -323,11 +321,11 @@ def get_venue_data():
         else:
             break
 
-    venue_data.append(members)
+    act_data.append(members)
     clear_page()
 
     print("\nExcellent! Ok, just one last thing!\n")
-    print("How long should the act play for?")
+    print(f"What is the typical set length? of a {name} gig?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
@@ -338,9 +336,9 @@ def get_venue_data():
             continue
         else:
             break
-    venue_data.append(set_length)
+    act_data.append(set_length)
     clear_page()
-    print(venue_data)
+    print(act_data)
 
     exit()
 
