@@ -129,7 +129,7 @@ def get_venue_data():
             print("Friday, Saturday or Sunday")
             continue
     clear_page()
-    print("\nExcellent! So far so good?")
+    print("\nExcellent!")
     print("Here's what we have so far...\n")
     print(f"Your venue: '{name}' is looking for a {genre}")
     print(f"act for this coming {day}?")
@@ -170,15 +170,20 @@ def get_venue_data():
     print(f"the stage at {name} can hold?")
     print("\n")
     while True:
+        members = input("Type a number between 1 and the maximum required: \n")
         try:
-            members = int(input(
-                "Type a number between 1 and the maximum required: \n"))
+            members = int(members)
         except ValueError:
             clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        else:
+        if 1 < members:
             break
+        else:
+            print("Number must be more than 0. Try again!")
+
+    venue_data.append(members)
+    clear_page()
 
     venue_data.append(members)
     clear_page()
@@ -280,7 +285,7 @@ def get_act_data():
             print("Friday, Saturday or Sunday")
             continue
     clear_page()
-    print("\nExcellent! So far so good?")
+    print("\nExcellent!")
     print("Here's what we have so far...\n")
     print(f"Your act: '{name}' is looking for a {genre}")
     print(f"venue for this coming {day}?")
@@ -319,15 +324,17 @@ def get_act_data():
 
     print("How many members make up your act?\n")
     while True:
+        members = input("Type a number between 1 and the maximum required: \n")
         try:
-            members = int(input(
-                "Type a number between 1 and the maximum required: \n"))
+            members = int(members)
         except ValueError:
             clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        else:
+        if 1 < members:
             break
+        else:
+            print("Number must be more than 0. Try again!")
 
     act_data.append(members)
     clear_page()
