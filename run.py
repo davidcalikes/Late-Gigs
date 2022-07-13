@@ -35,10 +35,11 @@ def area_check(user):
         if user_type == "venue":
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
-                print("\nOK, just making sure! Now let's find you an act!\n")
                 clear_page()
+                print("\nOK, just making sure! Now let's find you an act!\n")
                 get_venue_data()
             else:
+                clear_page()
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
                 main()
