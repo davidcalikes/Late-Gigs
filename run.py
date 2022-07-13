@@ -195,7 +195,13 @@ def get_venue_data():
             break
     venue_data.append(set_length)
     clear_page()
-    print(venue_data)
+    print("\n")
+    print(f"All done! Here's the gig requirements for the {name}:")
+    print("\n")
+    print(f"You require a {genre} act for {day} with {members} member(s)")
+    print(f"that will play for {set_length} hours")
+    print(f"for a fee of no more than €{fee}")
+    print("\n")
 
     exit()
 
