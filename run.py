@@ -25,21 +25,21 @@ def area_check(user):
         print("Please confirm you're in the North East Area!\n")
 
         if user_type == "venue":
-            venue_location = input('Is your venue in the North East?:(y/n)\n')
+            venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
                 print("\nOK, just making sure! Now let's Find you an act!\n")
                 get_venue_data()
             else:
-                print('Sorry, Late gigs only operates in the NE Area\n')
-                input('Press Enter to exit to menu...\n')
+                print("Sorry, Late gigs only operates in the NE Area\n")
+                input("Press Enter to exit to menu...\n")
                 main()
         elif user_type == "act":
-            act_location = input('Is your act in the North East?:(y/n)\n')
+            act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
                 print("OK, just making sure! Now let's Find you a venue!\n")
             else:
                 print("Sorry, That's not a valid option\n")
-                input('Press Enter to exit to menu...\n')
+                input("Press Enter to exit to menu...\n")
                 main()
 
 
@@ -54,7 +54,7 @@ def get_venue_data():
     venue_data = []
 
     while True:
-        name = input('Enter your venue name here: ')
+        name = input("Enter your venue name here: \n")
         if len(name) >= 2:
             venue_data.append(name.lower())
             break
@@ -77,13 +77,13 @@ def get_venue_data():
                   "Country", "country", "COUNTRY",
                   "Irish Trad", "irish trad", "IRISH TRAD"]
     while True:
-        genre = input("Enter genre here: ")
+        genre = input("Enter genre here: \n")
         if genre in genre_list:
             venue_data.append(genre.lower())
             break
         else:
             print("\n")
-            print(f'{genre} is not a valid genre')
+            print(f"{genre} is not a valid genre")
             print("\nType one of the following options:")
             print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
             print("Indie, Country or Irish trad \n")
@@ -106,19 +106,19 @@ def get_venue_data():
             break
         else:
             print("\n")
-            print(f'{day} is not a valid gig day... Try again!')
+            print(f"{day} is not a valid gig day... Try again!")
             print("\nType one of the following options:\n")
             print("Friday, Saturday or Sunday")
             continue
 
-    print("\nyExcellent! So far so good?")
+    print("\nExcellent! So far so good?")
     print("Here's what we have so far!\n")
-    print(f"Your venue: {name} is looking for a {genre}")
+    print(f"Your venue: '{name}' is looking for a {genre}")
     print(f"act for this coming {day}?")
     print("\n")
 
     while True:
-        data_correct = input('Are you happy with this so far?:(y/n)\n')
+        data_correct = input("Are you happy with this so far?:(y/n)\n")
         if data_correct == "y":
             print("\nOK cool! Now let's keep going!\n")
             break
@@ -128,13 +128,13 @@ def get_venue_data():
             main()
 
     print("Tell us how the maximum fee you are willing to pay your act.\n")
-    print("Hint: Act fees vary depending on many factors such as,")
+    print("Hint: Act fees vary depending on many factors, such as")
     print("length of set, number of band members ect.\n")
     print("Aim to set your maximum fee between €200 and €600 to increase")
-    print("your chances of finding a suitable act")
+    print("your chances of finding a suitable act\n")
     while True:
         try:
-            fee = int(input("Enter max fee here: €"))
+            fee = int(input("Enter max fee here: €\n"))
         except ValueError:
             print("Nope! We need a number here... try again!")
             continue
@@ -142,15 +142,15 @@ def get_venue_data():
             break
 
     venue_data.append(fee)
-    print("\nOutstanding! We're almost there! \n")
+    print("\nOutstanding! We're almost there!\n")
 
     print("What is the maximum number of performers")
-    print(f"{name} stage can hold?")
+    print(f"the stage at {name} can hold?")
     print("\n")
     while True:
         try:
             members = int(input(
-                "Type a number between 1 and the maximum required: "))
+                "Type a number between 1 and the maximum required: \n"))
         except ValueError:
             print("Sorry, only a number will do in this case. Try again!")
             continue
@@ -164,7 +164,7 @@ def get_venue_data():
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
-            set_length = float(input("Enter length of set required: "))
+            set_length = float(input("Enter length of set required: \n"))
         except ValueError:
             print("Whoopsie! This value needs to be a number. Try again!")
             continue
@@ -182,28 +182,28 @@ def main():
     """
     while True:
         print("\nWelcome to Late Gigs!")
-        print('The Last-Minute Booking Service for Live Music!\n')
-        print('1. Find an Act')
-        print('2. Find A Venue')
-        print('3. Exit\n')
-        print('Choose the number from the options above and press enter')
+        print("The Last-Minute Booking Service for Live Music!\n")
+        print("1. Find an Act")
+        print("2. Find A Venue")
+        print("3. Exit\n")
+        print("Choose the number from the options above and press enter")
 
-        user_option = input('Enter your choice here: ')
+        user_option = input("Enter your choice here: \n")
 
-        if user_option == '1':
-            print('\nFind an Act... Ok Great! Lets Get started!\n')
+        if user_option == "1":
+            print("\nFind an Act... Ok Great! Lets Get started!\n")
             user_is = "venue"
             area_check(user_is)
-        elif user_option == '2':
-            print('\nFind a Venue... Ok Great! Lets Get started!\n')
+        elif user_option == "2":
+            print("\nFind a Venue... Ok Great! Lets Get started!\n")
             user_is = "act"
             area_check(user_is)
-        elif user_option == '3':
-            print('\nBetter luck next time... Be sure to check back soon!')
+        elif user_option == "3":
+            print("\nBetter luck next time... Be sure to check back soon!")
             exit()
         else:
-            print('\nInvalid option! Please type either 1, 2, or 3\n')
-            input('Press Enter to try again...\n')
+            print("\nInvalid option! Please type either 1, 2, or 3\n")
+            input("Press Enter to try again...\n")
 
 
 main()
