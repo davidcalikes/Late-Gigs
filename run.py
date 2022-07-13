@@ -201,17 +201,21 @@ def main():
         user_option = input("Enter your choice here: \n")
 
         if user_option == "1":
+            clear_page()
             print("\nFind an Act... Ok Great! Let's get started!\n")
             user_is = "venue"
             area_check(user_is)
         elif user_option == "2":
+            clear_page()
             print("\nFind a Venue... Ok Great! Let's get started!\n")
             user_is = "act"
             area_check(user_is)
         elif user_option == "3":
+            clear_page()
             print("\nBetter luck next time... Be sure to check back soon!")
             exit()
         else:
+            clear_page()
             print("\nInvalid option! Please type either 1, 2, or 3\n")
             input("Press Enter to try again...\n")
 
