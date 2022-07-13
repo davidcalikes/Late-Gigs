@@ -344,7 +344,14 @@ def get_act_data():
             break
     act_data.append(set_length)
     clear_page()
-    print(act_data)
+    print("\n")
+    print(f"All done! Here's the gig requirements for {name}:")
+    print("\n")
+    print(f"You are a {genre} act with {members} member(s)")
+    print(f"looking for a gig on {day}")
+    print(f"that will play for {set_length} hours")
+    print(f"for a fee of no less than €{fee}")
+    print("\n")
 
     exit()
 
