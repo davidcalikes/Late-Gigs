@@ -48,7 +48,9 @@ def area_check(user):
         elif user_type == "act":
             act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
+                clear_page()
                 print("OK, just making sure! Now let's find you a venue!\n")
+                get_act_data()
             else:
                 print("Sorry, That's not a valid option\n")
                 input("Press Enter to exit to menu...\n")
@@ -109,7 +111,7 @@ def get_venue_data():
     print("\n")
 
     print("Let's keep going!\n")
-    print("What day this weekend do you need the act?")
+    print("What day this weekend do you need an act?")
     print("Type: Friday, Saturday or Sunday \n")
     day_list = ["Friday", "friday", "FRIDAY",
                 "Saturday", "saturday", "SATURDAY",
