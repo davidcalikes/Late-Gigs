@@ -27,7 +27,7 @@ def area_check(user):
         if user_type == "venue":
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
-                print("\nOK, just making sure! Now let's Find you an act!\n")
+                print("\nOK, just making sure! Now let's find you an act!\n")
                 get_venue_data()
             else:
                 print("Sorry, Late gigs only operates in the NE Area\n")
@@ -36,7 +36,7 @@ def area_check(user):
         elif user_type == "act":
             act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
-                print("OK, just making sure! Now let's Find you a venue!\n")
+                print("OK, just making sure! Now let's find you a venue!\n")
             else:
                 print("Sorry, That's not a valid option\n")
                 input("Press Enter to exit to menu...\n")
@@ -93,7 +93,7 @@ def get_venue_data():
     print(f"live {genre} at {name} soon!")
     print("\n")
 
-    print("Lets keep going!?\n")
+    print("Let's keep going!\n")
     print("What day this weekend do you need the act?")
     print("Type: Friday, Saturday or Sunday \n")
     day_list = ["Friday", "friday", "FRIDAY",
@@ -123,7 +123,7 @@ def get_venue_data():
             print("\nOK cool! Now let's keep going!\n")
             break
         else:
-            print("That's ok, lets try again\n")
+            print("That's ok, let's try again\n")
             get_venue_data()
             main()
 
@@ -191,11 +191,11 @@ def main():
         user_option = input("Enter your choice here: \n")
 
         if user_option == "1":
-            print("\nFind an Act... Ok Great! Lets Get started!\n")
+            print("\nFind an Act... Ok Great! Let's get started!\n")
             user_is = "venue"
             area_check(user_is)
         elif user_option == "2":
-            print("\nFind a Venue... Ok Great! Lets Get started!\n")
+            print("\nFind a Venue... Ok Great! Let's get started!\n")
             user_is = "act"
             area_check(user_is)
         elif user_option == "3":
