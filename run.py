@@ -17,7 +17,9 @@ SHEET = GSPREAD_CLIENT.open('late_gigs')
 
 def clear_page():
     """
-    Clears page of text clutter after user interaction
+    Clear page of text clutter after user interaction to improve UX
+    Code used is from:
+    https://stackoverflow.com/questions/2084508/clear-terminal-in-python
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -132,7 +134,7 @@ def get_venue_data():
     print("\n")
 
     while True:
-        data_correct = input("Are you happy with this so far?:(y/n)\n")
+        data_correct = input("Are you happy to continue?:(y/n)\n")
         if data_correct == "y":
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
@@ -143,14 +145,14 @@ def get_venue_data():
             get_venue_data()
             main()
 
-    print("Tell us how the maximum fee you are willing to pay your act.\n")
+    print("Tell us the maximum fee you are willing to pay your act.\n")
     print("Hint: Act fees vary depending on many factors, such as")
     print("length of set, number of band members ect.\n")
     print("Aim to set your maximum fee between €200 and €600 to increase")
     print("your chances of finding a suitable act\n")
     while True:
         try:
-            fee = int(input("Enter max fee here: €\n"))
+            fee = int(input("Enter max fee in € here: \n"))
         except ValueError:
             clear_page()
             print("Nope! We need a number here... try again!")
