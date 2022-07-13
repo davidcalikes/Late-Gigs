@@ -310,7 +310,7 @@ def get_act_data():
     print("your chances of finding a suitable venue\n")
     while True:
         try:
-            fee = int(input("Enter max fee in € here: \n"))
+            fee = int(input("Enter min fee in € here: \n"))
         except ValueError:
             clear_page()
             print("Nope! We need a number here... try again!")
@@ -340,7 +340,7 @@ def get_act_data():
     clear_page()
 
     print("\nExcellent! Ok, just one last thing!\n")
-    print(f"What is the typical set length? of a {name} gig?")
+    print(f"What is the typical set length of a {name} gig?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
@@ -362,7 +362,29 @@ def get_act_data():
     print(f"for a fee of no less than €{fee}")
     print("\n")
 
-    exit()
+    properties = act_data
+    user = "act"
+
+    check_database(properties, user)
+
+
+def check_database(properties, user):
+    """
+    Check's the database for any object instances
+    that match the users requirements.
+    """
+    print("\nUser is...", user)
+    print("Looking for gigs in relevant database...")
+
+    while True:
+        if user == "venue":
+            print(properties, user)
+            exit()
+        elif user == "act":
+            print(properties, user)
+            exit()
+        else:
+            exit()
 
 
 def main():
