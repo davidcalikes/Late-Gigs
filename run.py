@@ -393,6 +393,28 @@ def get_act_data():
     properties = act_data
     user = "act"
 
+    while True:
+        print("Would you like to search the database for a suitable venue?\n")
+
+        data_ver = input("Confirm search?:(y/n)\n")
+        if data_ver == "y":
+            clear_page()
+            print("\nOK, just making sure! Now let's find you an venue!\n")
+            check_database(properties, user)
+        elif data_ver == "n":
+            print("Are you sure don't want to proceed?")
+            print("All data will be lost!\n")
+            confirm_no = input(
+                "Type 'y' to return to menu or 'n' to search database:\n")
+            if confirm_no == "y":
+                main()
+            else:
+                check_database(properties, user)
+        else:
+            clear_page()
+            print("Sorry invalid input, please type either 'y' or 'n'")
+            continue
+
     check_database(properties, user)
 
 
