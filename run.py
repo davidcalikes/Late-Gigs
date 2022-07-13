@@ -1,4 +1,5 @@
 # from pprint import pprint
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -12,6 +13,13 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('late_gigs')
+
+
+def clear_page():
+    """
+    Clears page of text clutter after user interaction
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def area_check(user):
@@ -28,6 +36,7 @@ def area_check(user):
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
                 print("\nOK, just making sure! Now let's find you an act!\n")
+                clear_page()
                 get_venue_data()
             else:
                 print("Sorry, Late gigs only operates in the NE Area\n")
