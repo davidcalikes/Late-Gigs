@@ -203,12 +203,40 @@ def get_venue_data():
     venue_data.append(set_length)
     clear_page()
     print("\n")
-    print(f"All done! Here's the gig requirements for the {name}:")
+    print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
-    print(f"You require a {genre} act for {day} with {members} member(s)")
+    print(f"You require an act to play {genre} on {day}")
+    print(f" with {members} member(s)")
     print(f"that will play for {set_length} hours")
     print(f"for a fee of no more than €{fee}")
     print("\n")
+
+    properties = venue_data
+    user = "venue"
+
+    while True:
+        print("Would you like to search the database for a suitable act?\n")
+
+        data_ver = input("Confirm search?:(y/n)\n")
+        if data_ver == "y":
+            clear_page()
+            print("\nOK, just making sure! Now let's find you an act!\n")
+            check_database(properties, user)
+        elif data_ver == "n":
+            print("Are you sure don't want to proceed?")
+            print("All data will be lost!\n")
+            confirm_no = input(
+                "Type 'y' to return to menu or 'n' to search database:\n")
+            if confirm_no == "y":
+                main()
+            else:
+                check_database(properties, user)
+        else:
+            clear_page()
+            print("Sorry invalid input, please type either 'y' or 'n'")
+            continue
+
+    check_database(properties, user)
 
     exit()
 
@@ -356,8 +384,8 @@ def get_act_data():
     print("\n")
     print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
-    print(f"You are a {genre} act with {members} member(s)")
-    print(f"looking for a gig on {day}")
+    print(f"You are a {genre} act with no more than")
+    print(f"{members} member(s) looking for a gig on {day}")
     print(f"that will play for {set_length} hours")
     print(f"for a fee of no less than €{fee}")
     print("\n")
@@ -374,7 +402,8 @@ def check_database(properties, user):
     that match the users requirements.
     """
     print("\nUser is...", user)
-    print("Looking for gigs in relevant database...")
+    print("\n")
+    print("Looking for match in relevant database...\n")
 
     while True:
         if user == "venue":
