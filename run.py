@@ -44,6 +44,7 @@ def area_check(user):
                 clear_page()
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
+                clear_page()
                 main()
         elif user_type == "act":
             act_location = input("Is your act in the North East?:(y/n)\n")
@@ -491,7 +492,7 @@ def check_standby_list(properties, user):
             print("Act name:", item[0].title())
         else:
             print("End of List... no matches")
-            exit()
+            update_data_sheet(properties, user)
 
     print("venue details:", venue_conv)
     print("act details", act_conv)
@@ -560,7 +561,7 @@ def check_venue_list(properties, user):
             print("Venue name:", item[0].title())
         else:
             print("End of List... no matches")
-            exit()
+            update_data_sheet(properties, user)
 
 
 def make_gig(item_list_index, act_name, venue_name,
