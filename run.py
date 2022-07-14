@@ -599,14 +599,18 @@ def make_gig(item_list_index, act_name, venue_name,
 
 def update_data_sheet(properties, user):
     """
-    Updates relevant data sheet for venues or artists
+    Updates relevant data sheet for both venues and artists
     """
+    venue_worksheet = SHEET.worksheet("venues")
+    standby_worksheet = SHEET.worksheet("standby")
+
     if user == "venue":
         print("\nUpdating venue database...\n")
-        print(properties, user)
+        venue_worksheet.append_row(properties)
     elif user == "artist":
         print("\nUpdating standby database...\n")
-        print(properties, user)
+        print("\nUpdating standby database...\n")
+        standby_worksheet.append_row(properties)
     else:
         print("Error! I guess we gotta go pick a whole bunch of")
         print("whoopsie daisies!")
