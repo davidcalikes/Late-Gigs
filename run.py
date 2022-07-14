@@ -576,16 +576,18 @@ def make_gig(item_list_index, act_name, venue_name,
         if user_choice == "y" and user == "venue":
             clear_page()
             print("\nBooya! Lets do it... Updating Databases!\n")
-            print(f"removing {act_name.title()} from standby list")
             print("Updating gig listings...")
             SHEET.worksheet("gig_list").append_row(properties)
+            print(f"removing {act_name.title()} from standby list")
+            SHEET.worksheet("standby").delete_rows(item_index + 1)
             print("Success!")
             exit()
         elif user_choice == "y" and user == "act":
             clear_page()
-            print(f"removing {venue_name.title()} from waiting list")
             print("Updating gig listings...")
             SHEET.worksheet("gig_list").append_row(properties)
+            print(f"removing {venue_name.title()} from waiting list")
+            SHEET.worksheet("venue").delete_row(item_index + 1)
             print("Success!")
             exit()
         else:
