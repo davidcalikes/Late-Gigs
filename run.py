@@ -537,7 +537,7 @@ def check_venue_list(properties, user):
 
     while True:
         if venue_conv == act_conv:
-            print("Match Found")
+            print("\nMatch Found\n")
             print("Name:", item[0].title())
             venue_name = item[0]
             item_list_index = orig_list_len - len(venues) + 1
@@ -572,10 +572,16 @@ def make_gig(item_list_index, act_name, venue_name,
         user_choice = input('Do you want to create this gig?:(y/n)\n')
         properties = [act_name, venue_name, user_day, user_genre, user_fee]
         item_index = item_list_index
-        print("Act index =", item_index)
+        print("DB index =", item_index)
         if user_choice == "y" and user == "venue":
             print("\nBooya! Lets do it... Updating Databases!\n")
             print(f"removing {act_name.title()} from standby list")
+            print("Updating gig listings...")
+            SHEET.worksheet("gig_list").append_row(properties)
+            print("Success!")
+            exit()
+        elif user_choice == "y" and user == "act":
+            print(f"removing {venue_name.title()} from waiting list")
             print("Updating gig listings...")
             SHEET.worksheet("gig_list").append_row(properties)
             print("Success!")
