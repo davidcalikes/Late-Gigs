@@ -453,14 +453,25 @@ def check_standby_list(properties, user):
     orig_list_len = len(acts)
     print(orig_list_len)
 
-    act_genre = (item[1])
+    act_genre = item[1]
     act_day = item[2]
     act_fee = int(item[3])
     act_members = int(item[4])
     act_set_len = float(item[5])
 
     act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
-    print(act_conv)
+
+    venue_genre = check_list[1]
+    venue_day = check_list[2]
+    venue_fee = int(check_list[3])
+    venue_members = float(check_list[4])
+    venue_set_len = float(check_list[5])
+
+    venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
+                  venue_set_len]
+
+    print("venue details:", venue_conv)
+    print("act details", act_conv)
     print(user)
     exit()
 
