@@ -177,7 +177,7 @@ def get_venue_data():
             clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        if 1 < members:
+        if 1 <= members:
             break
         else:
             print("Number must be more than 0. Try again!")
@@ -356,7 +356,7 @@ def get_act_data():
             clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        if 1 < members:
+        if 1 <= members:
             break
         else:
             print("Number must be more than 0. Try again!")
@@ -587,7 +587,7 @@ def make_gig(item_list_index, act_name, venue_name,
             print("Updating gig listings...")
             SHEET.worksheet("gig_list").append_row(properties)
             print(f"removing {venue_name.title()} from waiting list")
-            SHEET.worksheet("venue").delete_row(item_index + 1)
+            SHEET.worksheet("venues").delete_rows(item_index + 1)
             print("Success!")
             exit()
         else:
@@ -608,7 +608,7 @@ def update_data_sheet(properties, user):
         print("\nUpdating standby database...\n")
         print(properties, user)
     else:
-        print("Error! I guess I gotta go pick a whole bunch of")
+        print("Error! I guess we gotta go pick a whole bunch of")
         print("whoopsie daisies!")
         main()
 
