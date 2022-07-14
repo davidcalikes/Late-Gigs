@@ -185,9 +185,6 @@ def get_venue_data():
     venue_data.append(members)
     clear_page()
 
-    venue_data.append(members)
-    clear_page()
-
     print("\nExcellent! Ok, just one last thing!\n")
     print("How long should the act play for?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
@@ -392,6 +389,9 @@ def get_act_data():
 
     properties = act_data
     user = "act"
+    print(properties)
+    print(user)
+    exit()
 
     while True:
         print("Would you like to search the database for a suitable venue?\n")
@@ -464,7 +464,7 @@ def check_standby_list(properties, user):
     venue_genre = check_list[1]
     venue_day = check_list[2]
     venue_fee = int(check_list[3])
-    venue_members = float(check_list[4])
+    venue_members = int(check_list[4])
     venue_set_len = float(check_list[5])
 
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
@@ -477,11 +477,24 @@ def check_standby_list(properties, user):
             act_name = item[0]
             item_list_index = orig_list_len - len(acts) + 1
             print("List Index =", item_list_index)
-            act_day = item[5]
-            act_set_len = float(item[4])
-            act_fee = int(item[2])
+            act_day = item[2]
+            act_fee = item[3]
+            act_set_len = float(item[5])
             make_gig(item_list_index, act_name, venue_name,
                      act_day, act_set_len, act_fee, user)
+        elif len(acts) >= 2:
+            item = acts.pop(1)
+            print("next item is", item)
+            act_genre = (item[1])
+            act_day = item[2]
+            act_fee = int(item[3])
+            act_members = int(item[4])
+            act_set_len = float(item[5])
+            act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
+            print("Act name:", item[0].title())
+        else:
+            print("End of List... no matches")
+            exit()
 
     print("venue details:", venue_conv)
     print("act details", act_conv)
@@ -497,6 +510,7 @@ def make_gig(item_list_index, act_name, venue_name,
     print("hello from make gig function")
     print(item_list_index, act_name, venue_name,
           act_day, act_set_len, act_fee, user)
+    exit()
 
 
 def main():
