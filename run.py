@@ -462,6 +462,7 @@ def check_standby_list(properties, user):
     act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
     print(act_conv)
     print(user)
+    exit()
 
 
 def main():
