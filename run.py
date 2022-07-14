@@ -647,20 +647,20 @@ def main():
         elif user_option == "3":
             clear_page()
             print("""\nLate Gigs is a last-minute booking service operating
-            throughout the North East of Ireland")
-            \nRecently, almost every live music venue and act across
-            the region has been impacted by a sudden gig cancellation due
-            to the continued effects of the Covid pandemic.
-            \nThis application has been designed to help pubs, clubs and
-            other venues as well as artists, bands and other acts
-            create gigs as quickly and efficiently as possible by firstly,
-            searching through a database of available acts and venues to
-            find a suitable match.
-            \nIf no match is initially found however, Late Gigs will store
-            the users information on a waiting list that will
-            automatically create a gig for them if a match is found before
-            the weekend begins.
-            """)
+throughout the North East of Ireland
+\nRecently, almost every live music venue and act across
+the region has been impacted by a sudden gig cancellation due
+to the continued effects of the Covid pandemic.
+\nThis application has been designed to help pubs, clubs and
+other venues as well as artists, bands and other acts
+create gigs as quickly and efficiently as possible by firstly,
+searching through a database of available acts and venues to
+find a suitable match.
+\nIf no match is initially found however, Late Gigs will store
+the users information on a waiting list that will
+automatically create a gig for them if a match is found before
+the weekend begins.
+""")
             print("Why not give it a try!")
             input("Press Enter get started...\n")
 
