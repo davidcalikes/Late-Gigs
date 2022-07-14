@@ -389,9 +389,6 @@ def get_act_data():
 
     properties = act_data
     user = "act"
-    print(properties)
-    print(user)
-    exit()
 
     while True:
         print("Would you like to search the database for a suitable venue?\n")
@@ -431,10 +428,10 @@ def check_database(properties, user):
         if user == "venue":
             check_standby_list(properties, user)
         elif user == "act":
-            print(user)
-            exit()
+            check_venue_list(properties, user)
         else:
-            exit()
+            print("Whoops! Something went wrong... returning to main menu")
+            main()
 
 
 def check_standby_list(properties, user):
@@ -504,59 +501,63 @@ def check_standby_list(properties, user):
 
 def check_venue_list(properties, user):
     """
-    Check's the database for any available acts
+    Check's the database for any available venues
     that match user requirements.
     """
-    acts = SHEET.worksheet("venues").get_all_values()
+    venues = SHEET.worksheet("venues").get_all_values()
 
-    print(len(acts))
-    item = acts.pop(1)
-    venue_name = properties[0]
-    print(venue_name)
+    print(len(venues))
+    item = venues.pop(1)
+    act_name = properties[0]
+    print(act_name)
     check_list = properties
     print(check_list)
-    orig_list_len = len(acts)
+    orig_list_len = len(venues)
     print(orig_list_len)
 
-    act_genre = item[1]
-    act_day = item[2]
-    act_fee = int(item[3])
-    act_members = int(item[4])
-    act_set_len = float(item[5])
-
-    act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
-
-    venue_genre = check_list[1]
-    venue_day = check_list[2]
-    venue_fee = int(check_list[3])
-    venue_members = int(check_list[4])
-    venue_set_len = float(check_list[5])
+    venue_genre = item[1]
+    venue_day = item[2]
+    venue_fee = int(item[3])
+    venue_members = int(item[4])
+    venue_set_len = float(item[5])
 
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                   venue_set_len]
+    print(venue_conv)
+
+    act_genre = check_list[1]
+    act_day = check_list[2]
+    act_fee = int(check_list[3])
+    act_members = int(check_list[4])
+    act_set_len = float(check_list[5])
+
+    act_conv = [act_genre, act_day, act_fee, act_members,
+                act_set_len]
+    print(act_conv)
 
     while True:
-        if act_conv == venue_conv:
+        if venue_conv == act_conv:
             print("Match Found")
             print("Name:", item[0].title())
-            act_name = item[0]
-            item_list_index = orig_list_len - len(acts) + 1
+            venue_name = item[0]
+            item_list_index = orig_list_len - len(venues) + 1
             print("List Index =", item_list_index)
-            act_day = item[2]
-            act_fee = item[3]
-            act_set_len = float(item[5])
+            venue_day = item[2]
+            venue_fee = item[3]
+            venue_set_len = float(item[5])
             make_gig(item_list_index, act_name, venue_name,
-                     act_day, act_set_len, act_fee, user)
-        elif len(acts) >= 2:
-            item = acts.pop(1)
+                     venue_day, venue_set_len, venue_fee, user)
+        elif len(venues) >= 2:
+            item = venues.pop(1)
             print("next item is", item)
-            act_genre = (item[1])
-            act_day = item[2]
-            act_fee = int(item[3])
-            act_members = int(item[4])
-            act_set_len = float(item[5])
-            act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
-            print("Act name:", item[0].title())
+            venue_genre = (item[1])
+            venue_day = item[2]
+            venue_fee = int(item[3])
+            venue_members = int(item[4])
+            venue_set_len = float(item[5])
+            venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
+                          venue_set_len]
+            print("Venue name:", item[0].title())
         else:
             print("End of List... no matches")
             exit()
