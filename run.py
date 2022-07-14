@@ -608,6 +608,7 @@ def update_data_sheet(properties, user):
         print("\nUpdating standby database...\n")
         standby_worksheet.append_row(properties)
     else:
+        clear_page()
         print("Error! I guess we gotta go pick a whole bunch of")
         print("whoopsie daisies!")
         main()
@@ -624,11 +625,11 @@ def main():
     Display Welcome message and get user type via menu options
     """
     while True:
-        print("\nWelcome to Late Gigs!")
+        print("\nWelcome to Late Gigs! (North East)")
         print("The Last-Minute Booking Service for Live Music!\n")
-        print("1. Find an Act")
-        print("2. Find A Venue")
-        print("3. Exit\n")
+        print("1. Find an act")
+        print("2. Find a venue")
+        print("3. About Late Gigs\n")
         print("Choose the number from the options above and press enter")
 
         user_option = input("Enter your choice here: \n")
@@ -645,8 +646,24 @@ def main():
             area_check(user_is)
         elif user_option == "3":
             clear_page()
-            print("\nBetter luck next time... Be sure to check back soon!")
-            exit()
+            print("""\nLate Gigs is a last-minute booking service operating
+            throughout the North East of Ireland")
+            \nRecently, almost every live music venue and act across
+            the region has been impacted by a sudden gig cancellation due
+            to the continued effects of the Covid pandemic.
+            \nThis application has been designed to help pubs, clubs and
+            other venues as well as artists, bands and other acts
+            create gigs as quickly and efficiently as possible by firstly,
+            searching through a database of available acts and venues to
+            find a suitable match.
+            \nIf no match is initially found however, Late Gigs will store
+            the users information on a waiting list that will
+            automatically create a gig for them if a match is found before
+            the weekend begins.
+            """)
+            print("Why not give it a try!")
+            input("Press Enter get started...\n")
+
         else:
             clear_page()
             print("\nInvalid option! Please type either 1, 2, or 3\n")
