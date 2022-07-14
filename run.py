@@ -470,10 +470,33 @@ def check_standby_list(properties, user):
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                   venue_set_len]
 
+    while True:
+        if act_conv == venue_conv:
+            print("Match Found")
+            print("Name:", item[0].title())
+            act_name = item[0]
+            item_list_index = orig_list_len - len(acts) + 1
+            print("List Index =", item_list_index)
+            act_day = item[5]
+            act_set_len = float(item[4])
+            act_fee = int(item[2])
+            make_gig(item_list_index, act_name, venue_name,
+                     act_day, act_set_len, act_fee, user)
+
     print("venue details:", venue_conv)
     print("act details", act_conv)
     print(user)
     exit()
+
+
+def make_gig(item_list_index, act_name, venue_name,
+             act_day, act_set_len, act_fee, user):
+    """
+    Adds match to gig database and removes act from standby sheet
+    """
+    print("hello from make gig function")
+    print(item_list_index, act_name, venue_name,
+          act_day, act_set_len, act_fee, user)
 
 
 def main():
