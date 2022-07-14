@@ -469,7 +469,7 @@ def check_standby_list(properties, user):
 
     while True:
         if act_conv == venue_conv:
-            print("Match Found")
+            print("\nMatch Found!\n")
             print("Name:", item[0].title())
             act_name = item[0]
             item_list_index = orig_list_len - len(acts) + 1
@@ -478,7 +478,7 @@ def check_standby_list(properties, user):
             act_fee = item[3]
             act_set_len = float(item[5])
             make_gig(item_list_index, act_name, venue_name,
-                     act_day, act_set_len, act_fee, user)
+                     act_day, act_genre, act_fee, user)
         elif len(acts) >= 2:
             item = acts.pop(1)
             print("next item is", item)
@@ -546,7 +546,7 @@ def check_venue_list(properties, user):
             venue_fee = item[3]
             venue_set_len = float(item[5])
             make_gig(item_list_index, act_name, venue_name,
-                     venue_day, venue_set_len, venue_fee, user)
+                     venue_day, venue_genre, venue_fee, user)
         elif len(venues) >= 2:
             item = venues.pop(1)
             print("next item is", item)
@@ -562,20 +562,45 @@ def check_venue_list(properties, user):
             print("End of List... no matches")
             exit()
 
-    print("venue details:", venue_conv)
-    print("act details", act_conv)
-    print(user)
-    exit()
-
 
 def make_gig(item_list_index, act_name, venue_name,
-             act_day, act_set_len, act_fee, user):
+             user_day, user_genre, user_fee, user):
     """
     Adds match to gig database and removes act from standby sheet
     """
-    print("hello from make gig function")
-    print(item_list_index, act_name, venue_name,
-          act_day, act_set_len, act_fee, user)
+    while True:
+        user_choice = input('Do you want to create this gig?:(y/n)\n')
+        properties = [act_name, venue_name, user_day, user_genre, user_fee]
+        item_index = item_list_index
+        print("Act index =", item_index)
+        if user_choice == "y" and user == "venue":
+            print("\nBooya! Lets do it... Updating Databases!\n")
+            print(f"removing {act_name.title()} from standby list")
+            print("Updating gig listings...")
+            SHEET.worksheet("gig_list").append_row(properties)
+            print("Success!")
+            exit()
+
+
+def update_data_sheet(properties, user):
+    """
+    Updates relevant data sheet for venues or artists
+    """
+    if user == "venue":
+        print("\nUpdating venue database...\n")
+        print(properties, user)
+    elif user == "artist":
+        print("\nUpdating standby database...\n")
+        print(properties, user)
+    else:
+        print("Error! I guess I gotta go pick a whole bunch of")
+        print("whoopsie daisies!")
+        main()
+
+    print(user.title(), "database updated succesfully!")
+    print("Thank you for using Late Gigs!\n")
+    print("A gig will be created Automatically if")
+    print("we find you an act in the coming days!\n")
     exit()
 
 
