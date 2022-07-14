@@ -494,11 +494,6 @@ def check_standby_list(properties, user):
             print("End of List... no matches")
             update_data_sheet(properties, user)
 
-    print("venue details:", venue_conv)
-    print("act details", act_conv)
-    print(user)
-    exit()
-
 
 def check_venue_list(properties, user):
     """
@@ -608,7 +603,7 @@ def update_data_sheet(properties, user):
     if user == "venue":
         print("\nUpdating venue database...\n")
         venue_worksheet.append_row(properties)
-    elif user == "artist":
+    elif user == "act":
         print("\nUpdating standby database...\n")
         print("\nUpdating standby database...\n")
         standby_worksheet.append_row(properties)
