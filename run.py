@@ -170,10 +170,10 @@ def get_venue_data():
     print("\nOutstanding! We're almost there!\n")
 
     print("What is the maximum number of performers")
-    print(f"the stage at {name} can hold?")
+    print(f"the {genre} act should have?")
     print("\n")
     while True:
-        members = input("Type a number between 1 and the maximum required: \n")
+        members = input("Type the number of performers you require: \n")
         try:
             members = int(members)
         except ValueError:
@@ -351,7 +351,7 @@ def get_act_data():
 
     print("How many members make up your act?\n")
     while True:
-        members = input("Type a number between 1 and the maximum required: \n")
+        members = input("Type the number of performers in your act: \n")
         try:
             members = int(members)
         except ValueError:
