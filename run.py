@@ -51,7 +51,8 @@ def area_check(user):
             act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
                 clear_page()
-                print("OK, just making sure! Now let's find you a venue!\n")
+                print("\nOK, just making sure!")
+                print("\nNow let's find you a venue!\n")
                 get_act_data()
             else:
                 print("Sorry, That's not a valid option\n")
