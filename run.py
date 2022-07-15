@@ -52,7 +52,6 @@ def area_check(user):
             if act_location == "y":
                 clear_page()
                 print("OK, just making sure! Now let's find you a venue!\n")
-                print("\nOK, just making sure! Now let's find you an act!\n")
                 get_act_data()
             else:
                 print("Sorry, That's not a valid option\n")
@@ -134,8 +133,8 @@ def get_venue_data():
     clear_page()
     print("\nExcellent!")
     print("Here's what we have so far...\n")
-    print(f"Your venue: '{name}' is looking for a {genre}")
-    print(f"act for this coming {day}?")
+    print(f"Your venue: '{name}' is looking for an act")
+    print(f"to play some {genre} for this coming {day}?")
     print("\n")
 
     while True:
@@ -206,8 +205,7 @@ def get_venue_data():
     print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
     print(f"You require an act to play {genre} on {day}")
-    print(f" with {members} member(s)")
-    print(f"that will play for {set_length} hours")
+    print(f" with {members} member(s) that will play for {set_length} hours")
     print(f"for a fee of no more than €{fee}")
     print("\n")
 
@@ -654,8 +652,8 @@ def main():
             print("""\nLate Gigs is a last-minute booking service operating
 throughout the North East of Ireland
 \nRecently, almost every live music venue and act across
-the region has been impacted by a sudden gig cancellation due
-to the continued effects of the Covid pandemic.
+the region has been affected by a sudden gig cancellation due
+to the ongoing Covid pandemic.
 \nThis application has been designed to help pubs, clubs and
 other venues as well as artists, bands and other acts
 create gigs as quickly and efficiently as possible by firstly,
