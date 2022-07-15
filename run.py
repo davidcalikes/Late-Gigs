@@ -38,7 +38,8 @@ def area_check(user):
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
                 clear_page()
-                print("\nOK, just making sure! Now let's find you an act!\n")
+                print("\nOK, just making sure!\n")
+                print("\nNow let's find you an act!\n")
                 get_venue_data()
             else:
                 clear_page()
@@ -51,6 +52,7 @@ def area_check(user):
             if act_location == "y":
                 clear_page()
                 print("OK, just making sure! Now let's find you a venue!\n")
+                print("\nOK, just making sure! Now let's find you an act!\n")
                 get_act_data()
             else:
                 print("Sorry, That's not a valid option\n")
@@ -605,7 +607,6 @@ def update_data_sheet(properties, user):
         venue_worksheet.append_row(properties)
     elif user == "act":
         print("\nUpdating standby database...\n")
-        print("\nUpdating standby database...\n")
         standby_worksheet.append_row(properties)
     else:
         clear_page()
@@ -618,6 +619,10 @@ def update_data_sheet(properties, user):
     print("A gig will be created Automatically if")
     print("we find you an act in the coming days!\n")
     exit()
+
+
+def send_email():
+    pass
 
 
 def main():
@@ -656,13 +661,13 @@ other venues as well as artists, bands and other acts
 create gigs as quickly and efficiently as possible by firstly,
 searching through a database of available acts and venues to
 find a suitable match.
-\nIf no match is initially found however, Late Gigs will store
+\nIf no match is initially found, Late Gigs will store
 the users information on a waiting list that will
-automatically create a gig for them if a match is found before
-the weekend begins.
+automatically create a gig for them if a match is found.
 """)
             print("Why not give it a try!")
             input("Press Enter get started...\n")
+            clear_page()
 
         else:
             clear_page()
