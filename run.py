@@ -42,12 +42,14 @@ def area_check(user):
                 print("\nOK, just making sure!\n")
                 print("\nNow let's find you an act!\n")
                 get_venue_data()
-            else:
+            elif venue_location == "n":
                 clear_page()
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
                 clear_page()
                 main()
+            else:
+                print("Invalid input! Type either y or n!")
         elif user_type == "act":
             act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
@@ -168,6 +170,13 @@ def get_venue_data():
     while True:
         try:
             fee = int(input("Enter max fee in € here: \n"))
+            if 100 <= fee <= 1000:
+                pass
+            else:
+                print("Fee is too far outside Late Gigs recommended range!")
+                print("You can deviate a little, but not too much.")
+                print("please try again")
+                continue
         except ValueError:
             clear_page()
             print("Nope! We need a number here... try again!")
@@ -183,17 +192,26 @@ def get_venue_data():
     print(f"the {genre} act should have?")
     print("\n")
     while True:
-        members = input("Type the number of performers you require: \n")
         try:
-            members = int(members)
+            members = int(input("""
+            Type the number of performers in your act: \n
+            """))
+            if 1 <= members <= 15:
+                print("in range")
+            elif members == 0:
+                print("Number must be more than 0. Try again!")
+                continue
+            else:
+                print("Sorry. Thats's too many members for a Late Gigs Venue")
+                print("Venues have a maximum stage capacity of 15")
+                print("Please try again... ")
+                print("(maybe give the scissors player a night off ;) )")
+                continue
         except ValueError:
-            clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        if 1 <= members:
-            break
         else:
-            print("Number must be more than 0. Try again!")
+            break
 
     venue_data.append(members)
     clear_page()
@@ -395,6 +413,13 @@ def get_act_data():
     while True:
         try:
             fee = int(input("Enter min fee in € here: \n"))
+            if 100 <= fee <= 1000:
+                pass
+            else:
+                print("Fee is too far outside Late Gigs recommended range!")
+                print("You can deviate a little, but not too much.")
+                print("please try again")
+                continue
         except ValueError:
             clear_page()
             print("Nope! We need a number here... try again!")
@@ -408,17 +433,26 @@ def get_act_data():
 
     print("How many members make up your act?\n")
     while True:
-        members = input("Type the number of performers in your act: \n")
         try:
-            members = int(members)
+            members = int(input("""
+            Type the number of performers in your act: \n
+            """))
+            if 1 <= members <= 15:
+                print("in range")
+            elif members == 0:
+                print("Number must be more than 0. Try again!")
+                continue
+            else:
+                print("Sorry. Thats's too many members for a Late Gigs Venue")
+                print("Venues have a maximum stage capacity of 15")
+                print("Please try again... ")
+                print("(maybe give the scissors player a night off ;) )")
+                continue
         except ValueError:
-            clear_page()
             print("Sorry, only a number will do in this case. Try again!")
             continue
-        if 1 <= members:
-            break
         else:
-            print("Number must be more than 0. Try again!")
+            break
 
     act_data.append(members)
     clear_page()
