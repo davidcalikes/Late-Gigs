@@ -217,7 +217,6 @@ def get_venue_data():
     print("\n")
 
     properties = venue_data
-    # standby_worksheet = SHEET.worksheet("user_details")
     while True:
         print("Would you like to search the database for a suitable act?\n")
 
@@ -407,7 +406,7 @@ def get_act_data():
     act_data.append(members)
     clear_page()
 
-    print("\nExcellent! Ok, just one last thing!\n")
+    print("\nExcellent!\n")
     print(f"What is the typical set length of a {name.title()} gig?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
@@ -421,17 +420,21 @@ def get_act_data():
             break
     act_data.append(set_length)
     clear_page()
+    print("\nSuperb! Ok, Just one last thing.\n")
+    print("\nPlease provide a valid email address \n")
+    user = "act"
+    send_user_pin(name, user)
+    clear_page()
     print("\n")
     print(f"All done! Here's the gig requirements for {name.title()}:")
     print("\n")
-    print(f"You are a {genre.title()} act with no more than")
-    print(f"{members.title()} member(s) looking for a gig on {day.title()}")
+    print(f"You are a(n) {genre.title()} act with no more than")
+    print(f"{members} member(s) looking for a gig on {day.title()}")
     print(f"that will play for {set_length} hours")
     print(f"for a fee of no less than €{fee}")
     print("\n")
 
     properties = act_data
-    user = "act"
 
     while True:
         print("Would you like to search the database for a suitable venue?\n")
