@@ -1,7 +1,6 @@
 import os
 import gspread
 from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
 from mail import email_user
 
 
@@ -621,10 +620,6 @@ def update_data_sheet(properties, user):
     print("we find you an act in the coming days!\n")
     email_user()
     exit()
-
-
-def send_email():
-    pass
 
 
 def main():
