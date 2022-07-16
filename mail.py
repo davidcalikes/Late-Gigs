@@ -13,10 +13,11 @@ credentials = service_account.Credentials.from_service_account_file(
 )
 
 
-def email_user(properties, user):
+def email_user(properties, user, user_email_address):
     """
     Sends email to me because well, sure... I'm just great!
     """
+    destination = user_email_address
 
     email_msg = f"""
                 Welcome to Late Gigs! You're on the list!
@@ -29,7 +30,7 @@ def email_user(properties, user):
                 """
 
     mime_message = MIMEMultipart()
-    mime_message['to'] = 'davidcalikes@gmail.com'
+    mime_message['to'] = f'{destination}'
     mime_message['subject'] = "Late Gigs! You're on the list!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()

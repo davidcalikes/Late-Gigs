@@ -616,9 +616,12 @@ def update_data_sheet(properties, user):
 
     print(user.title(), "database updated succesfully!")
     print("Thank you for using Late Gigs!\n")
-    print("A gig will be created Automatically if")
+    print("A gig will be created automatically if")
     print("we find you an act in the coming days!\n")
-    email_user(properties, user)
+    print("Enter your email address below and we'll")
+    print("be in touch when we create your gig.")
+    user_email_address = input("Type a valid email address here!")
+    email_user(properties, user, user_email_address)
     exit()
 
 
