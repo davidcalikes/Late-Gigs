@@ -1,8 +1,8 @@
 import os
+import random
 import gspread
 from google.oauth2.service_account import Credentials
-from mail import email_user
-
+from mail import email_verify
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -111,7 +111,7 @@ def get_venue_data():
 
     clear_page()
     print("\nNice! Hopefully your patrons will be enjoying some")
-    print(f"live {genre} at {name} soon!")
+    print(f"live {genre.title()} at {name.title()} soon!")
     print("\n")
 
     print("Let's keep going!\n")
@@ -189,7 +189,7 @@ def get_venue_data():
     venue_data.append(members)
     clear_page()
 
-    print("\nExcellent! Ok, just one last thing!\n")
+    print("\nExcellent!\n")
     print("How long should the act play for?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
@@ -203,6 +203,11 @@ def get_venue_data():
             break
     venue_data.append(set_length)
     clear_page()
+    print("\nSuperb! Ok, Just one last thing.\n")
+    print("\nPlease provide a valid email address \n")
+    user = "venue"
+    send_user_pin(name, user)
+    clear_page()
     print("\n")
     print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
@@ -212,8 +217,7 @@ def get_venue_data():
     print("\n")
 
     properties = venue_data
-    user = "venue"
-
+    # standby_worksheet = SHEET.worksheet("user_details")
     while True:
         print("Would you like to search the database for a suitable act?\n")
 
@@ -241,6 +245,42 @@ def get_venue_data():
     exit()
 
 
+def send_user_pin(name, user):
+    """
+    Send email to user with pin for account validation
+    """
+    user_email_address = input("Enter your email address here: \n")
+    user_pin = random.randint(1111, 9999)
+    email_verify(name, user, user_email_address, user_pin)
+    validate_user_pin(name, user_email_address, user_pin)
+
+
+def validate_user_pin(name, user_email_address, user_pin):
+    """
+    Use pin to verify email account
+    """
+    while True:
+        pin = user_pin
+        print(type(pin))
+        pin_attempt = input(f"enter the pin we sent to {user_email_address}")
+        pin_int = int(pin_attempt)
+        if pin_int == pin:
+            print("\n Excellent! Valid Pin! Now let's keep going!\n")
+            details = [name, user_email_address, user_pin]
+            user_details_worksheet = SHEET.worksheet("user_details")
+            user_details_worksheet.append_row(details)
+            break
+        else:
+            clear_page()
+            print("\n")
+            print("Sorry! Incorrect Pin! Have another Go!")
+            print(type(pin_attempt))
+            continue
+        clear_page()
+        get_venue_data()
+        main()
+
+
 def get_act_data():
     """
     Get data from the user incrementally
@@ -266,7 +306,7 @@ def get_act_data():
             continue
 
     print("\n")
-    print(f"Cool! What genre of music does {name} mostly play?")
+    print(f"Cool! What genre of music do(es) {name} mostly play?")
     print("\n")
     print("Type one of the following options:")
     print("Rock, Blues, Pop, Jazz, Metal, R&b, Indie, Country, Irish trad \n")
@@ -290,8 +330,8 @@ def get_act_data():
             continue
 
     clear_page()
-    print(f"Nice! Hopefully fans of {name} will be enjoying some")
-    print(f"live {genre} this weekend!")
+    print(f"Nice! Hopefully fans of {name.title()} will be enjoying some")
+    print(f"live {genre.title()} this weekend!")
     print("\n")
 
     print("Let's keep going!\n")
@@ -315,8 +355,8 @@ def get_act_data():
     clear_page()
     print("\nExcellent!")
     print("Here's what we have so far...\n")
-    print(f"Your act: '{name}' is looking for a {genre}")
-    print(f"venue for this coming {day}?")
+    print(f"Your act: '{name.title()}' is looking for a {genre.title()}")
+    print(f"venue for this coming {day.title()}?")
     print("\n")
 
     while True:
@@ -368,7 +408,7 @@ def get_act_data():
     clear_page()
 
     print("\nExcellent! Ok, just one last thing!\n")
-    print(f"What is the typical set length of a {name} gig?")
+    print(f"What is the typical set length of a {name.title()} gig?")
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
@@ -382,10 +422,10 @@ def get_act_data():
     act_data.append(set_length)
     clear_page()
     print("\n")
-    print(f"All done! Here's the gig requirements for {name}:")
+    print(f"All done! Here's the gig requirements for {name.title()}:")
     print("\n")
-    print(f"You are a {genre} act with no more than")
-    print(f"{members} member(s) looking for a gig on {day}")
+    print(f"You are a {genre.title()} act with no more than")
+    print(f"{members.title()} member(s) looking for a gig on {day.title()}")
     print(f"that will play for {set_length} hours")
     print(f"for a fee of no less than €{fee}")
     print("\n")
@@ -617,11 +657,9 @@ def update_data_sheet(properties, user):
     print(user.title(), "database updated succesfully!")
     print("Thank you for using Late Gigs!\n")
     print("A gig will be created automatically if")
-    print("we find you an act in the coming days!\n")
-    print("Enter your email address below and we'll")
-    print("be in touch when we create your gig.")
-    user_email_address = input("Type a valid email address here!\n")
-    email_user(properties, user, user_email_address)
+    print("we find you a suitable act in the coming days!\n")
+    print("We will notify you by email if a Late Gig")
+    print("is created!")
     exit()
 
 
