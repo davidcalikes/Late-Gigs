@@ -620,7 +620,7 @@ def update_data_sheet(properties, user):
     print("we find you an act in the coming days!\n")
     print("Enter your email address below and we'll")
     print("be in touch when we create your gig.")
-    user_email_address = input("Type a valid email address here!")
+    user_email_address = input("Type a valid email address here!\n")
     email_user(properties, user, user_email_address)
     exit()
 
