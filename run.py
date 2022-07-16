@@ -145,11 +145,20 @@ def get_venue_data():
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
             break
-        else:
+        elif data_correct == "n":
             clear_page()
-            print("That's ok, let's try again\n")
-            get_venue_data()
-            main()
+            print("That's ok, type y to restart or n to exit\n")
+            user_choice = input("Type y or n here: \n")
+            if user_choice == "y":
+                get_venue_data()
+            elif user_choice == "n":
+                main()
+            else:
+                print("Invalid option! y or n please!")
+                continue
+        else:
+            print("Not a valid choice please type y/n")
+            continue
 
     print("Tell us the maximum fee you are willing to pay your act.\n")
     print("Hint: Act fees vary depending on many factors, such as")
@@ -212,7 +221,7 @@ def get_venue_data():
     print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
     print(f"You require an act to play {genre} on {day}")
-    print(f" with {members} member(s) that will play for {set_length} hours")
+    print(f"with {members} member(s) that will play for {set_length} hours")
     print(f"for a fee of no more than €{fee}")
     print("\n")
 
@@ -359,17 +368,25 @@ def get_act_data():
     print("\n")
 
     while True:
-        data_correct = input(
-            "Is this correct? Are you happy to continue?:(y/n)\n")
+        data_correct = input("Are you happy to continue?:(y/n)\n")
         if data_correct == "y":
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
             break
-        else:
+        elif data_correct == "n":
             clear_page()
-            print("That's ok, let's try again\n")
-            get_venue_data()
-            main()
+            print("That's ok, type y to restart or n to exit\n")
+            user_choice = input("Type y or n here: \n")
+            if user_choice == "y":
+                get_venue_data()
+            elif user_choice == "n":
+                main()
+            else:
+                print("Invalid option! y or n please!")
+                continue
+        else:
+            print("Not a valid choice please type y/n")
+            continue
 
     print("Tell us the minimum fee you will accept per gig.\n")
     print("Hint: Artist fees generally range between €200 and €600")
@@ -421,7 +438,8 @@ def get_act_data():
     act_data.append(set_length)
     clear_page()
     print("\nSuperb! Ok, Just one last thing.\n")
-    print("\nPlease provide a valid email address \n")
+    print("We need an email address from you")
+    print("\nin order to continue\n")
     user = "act"
     send_user_pin(name, user)
     clear_page()
