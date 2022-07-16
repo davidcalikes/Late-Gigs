@@ -19,13 +19,14 @@ def email_user():
     """
 
     email_msg = """
-               Welcome to Late Gigs! You're on the list!
+               \nWelcome to Late Gigs! You're on the list!
+               \n Hello Michelle from inside Davids latest app.
                \n This email is automated...
-               ...clever you!!
+               ...clever David!!
                """
 
     mime_message = MIMEMultipart()
-    mime_message['to'] = 'davidcalikes@gmail.com'
+    mime_message['to'] = 'michellecalikes@gmail.com'
     mime_message['subject'] = "Late Gigs! You're on the list!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
