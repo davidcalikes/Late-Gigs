@@ -618,7 +618,7 @@ def update_data_sheet(properties, user):
     print("Thank you for using Late Gigs!\n")
     print("A gig will be created Automatically if")
     print("we find you an act in the coming days!\n")
-    email_user()
+    email_user(properties, user)
     exit()
 
 
