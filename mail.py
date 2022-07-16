@@ -11,19 +11,26 @@ credentials = service_account.Credentials.from_service_account_file(
     subject="lategigs@davidcalikes.com"
 )
 
-emailMsg = """
-           Welcome to Late Gigs! You're on the list!
-           We'll be in touch as soon as we find you a
-           match!
-           """
 
-mimeMessage = MIMEMultipart()
-mimeMessage['to'] = 'davidcalikes@gmail.com'
-mimeMessage['subject'] = "Late Gigs! You're on the list!"
-mimeMessage.attach(MIMEText(emailMsg, 'plain'))
-raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
+def email_user():
+    """
+    Sends email to me because well, sure... I'm just great!
+    """
 
-service_gmail = build("gmail", "v1", credentials=credentials)
-# pylint: disable=E1101
-message = service_gmail.users().messages().send(userId='me', body={'raw': raw_string}).execute()
-print(message)
+    email_msg = """
+               Welcome to Late Gigs! You're on the list!
+               \n This email is automated...
+               ...clever you!!
+               """
+
+    mime_message = MIMEMultipart()
+    mime_message['to'] = 'davidcalikes@gmail.com'
+    mime_message['subject'] = "Late Gigs! You're on the list!"
+    mime_message.attach(MIMEText(email_msg, 'plain'))
+    raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
+
+    service_gmail = build("gmail", "v1", credentials=credentials)
+    # pylint: disable=E1101
+    message = service_gmail.users().messages().send(userId='me', body={'raw': raw_string}).execute()
+    print(message)
+    exit()
