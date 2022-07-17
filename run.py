@@ -251,7 +251,7 @@ def get_venue_data():
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
-            print("\nOK, just making sure! Now let's find you an act!\n")
+            print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
         elif data_ver == "n":
             print("Are you sure don't want to proceed?")
@@ -317,6 +317,7 @@ def get_act_data():
             continue
 
     clear_page()
+    print("\n")
     print(f"Nice! Hopefully fans of {name.title()} will be enjoying some")
     print(f"live {genre.title()} this weekend!")
     print("\n")
@@ -368,8 +369,8 @@ def get_act_data():
             continue
 
     print("Tell us the minimum fee you will accept per gig.\n")
-    print("Hint: Artist fees generally range between €200 and €600")
-    print("Aim to set your minimum fee within this range to increase")
+    print("Hint: Act fees generally range between €200 and €600")
+    print("\nAim to set your minimum fee within this range to increase")
     print("your chances of finding a suitable venue.\n")
     while True:
         try:
@@ -454,7 +455,7 @@ def get_act_data():
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
-            print("\nOK, just making sure! Now let's find you an act!\n")
+            print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
         elif data_ver == "n":
             print("Are you sure don't want to proceed?")

@@ -26,10 +26,10 @@ Congratulations!!
 We found you a gig... clever Late Gigs!
 
 The Details:
-{properties[1]} wil play a {properties[4]} set
- at {properties[2]} venue
-this coming {properties[3]}
-for a fee of €{properties[5]}
+{properties[0]} wil play a {properties[3]} set
+ at {properties[1]} venue
+this coming {properties[2]}
+for a fee of €{properties[4]}
 Gig user is: {user}
 We stronly reccomend you now contact each other via email: {list_user_email}
 
@@ -72,7 +72,7 @@ The Details:
  at {properties[2]} venue
 this coming {properties[3]}
 for a fee of €{properties[5]}
-Gig user is: {user}
+Booking initiated by {user}
 You can now contact each other via email: {user_email_address}
 
 Thank you for using Late Gigs!
