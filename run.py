@@ -485,7 +485,7 @@ def get_act_data():
 
 def regex_check(properties, name, user):
     """
-    Validates email address input using regular expressions method.
+    Validate email address input using regular expressions method.
     """
     while True:
         print("\nWe just need your email address to begin the search! \n")
@@ -559,14 +559,12 @@ def check_standby_list(properties, user, user_email_address):
     """
     acts = SHEET.worksheet("standby").get_all_values()
 
-    print(len(acts))
     item = acts.pop(1)
     venue_name = properties[0]
-    print(venue_name)
+    print("looking for act for", venue_name)
     check_list = properties
-    print(check_list)
     orig_list_len = len(acts)
-    print(orig_list_len)
+    print(orig_list_len - 1, "acts on standby list")
 
     act_genre = item[1]
     act_day = item[2]
@@ -593,7 +591,6 @@ def check_standby_list(properties, user, user_email_address):
             print("Act Name:", item[0].title())
             act_name = item[0]
             item_list_index = orig_list_len - len(acts) + 1
-            print("List Index =", item_list_index)
             act_day = item[2]
             act_fee = item[3]
             act_set_len = float(item[5])
@@ -602,8 +599,9 @@ def check_standby_list(properties, user, user_email_address):
                      act_day, act_genre, act_fee, user, user_email_address,
                      match_email)
         elif len(acts) >= 2:
+            print("Not a match!")
             item = acts.pop(1)
-            print("next item is", item)
+            print("next item is...")
             act_genre = (item[1])
             act_day = item[2]
             act_fee = int(item[3])
@@ -623,14 +621,12 @@ def check_venue_list(properties, user, user_email_address):
     """
     venues = SHEET.worksheet("venues").get_all_values()
 
-    print(len(venues))
     item = venues.pop(1)
     act_name = properties[0]
-    print(act_name)
+    print("Looking for venue for", act_name)
     check_list = properties
-    print(check_list)
     orig_list_len = len(venues)
-    print(orig_list_len)
+    print(orig_list_len - 1, "venues on the waiting list!")
 
     venue_genre = item[1]
     venue_day = item[2]
@@ -640,7 +636,6 @@ def check_venue_list(properties, user, user_email_address):
 
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                   venue_set_len]
-    print(venue_conv)
 
     act_genre = check_list[1]
     act_day = check_list[2]
@@ -667,8 +662,9 @@ def check_venue_list(properties, user, user_email_address):
                      venue_day, venue_genre, venue_fee, user,
                      user_email_address, match_email)
         elif len(venues) >= 2:
+            print("Not a match!")
             item = venues.pop(1)
-            print("next item is", item)
+            print("next up is...")
             venue_genre = (item[1])
             venue_day = item[2]
             venue_fee = int(item[3])
@@ -723,7 +719,7 @@ def make_gig(item_list_index, act_name, venue_name,
 def get_match_email(properties, user, user_email_address, match_email):
     """
     Check's the database for the correct email address
-    to notify user on waiting list
+    to notify user on relevent waiting list
     """
     print(match_email)
     user_data_sheet = SHEET.worksheet("user_details").get_all_values()
