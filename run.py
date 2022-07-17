@@ -343,7 +343,7 @@ def get_act_data():
     clear_page()
     print("\nExcellent!")
     print("Here's what we have so far...\n")
-    print(f"Your act: '{name.title()}' is looking for a {genre.title()}")
+    print(f"Your act: '{name.title()}' is looking for a(n) {genre.title()}")
     print(f"venue for this coming {day.title()}?")
     print("\n")
 
@@ -504,8 +504,8 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
     """
     while True:
         pin = user_pin
-        print(type(pin))
-        pin_attempt = input(f"enter the pin we sent to {user_email_address}")
+        print("\n")
+        pin_attempt = input(f"enter the pin we sent to {user_email_address}:")
         pin_int = int(pin_attempt)
         if pin_int == pin:
             print("\nExcellent! Valid Pin! Now let's keep going!\n")

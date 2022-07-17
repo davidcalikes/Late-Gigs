@@ -114,20 +114,23 @@ def email_verify(name, user, user_email_address, user_pin):
     destination = user_email_address
 
     email_msg = f"""
-                Welcome to Late Gigs!
+Thank you for registering with Late Gigs.
 
-                Hello  from inside LateGigs app.
-                Here are your details:
-                {user.title()}: {name}
-                We really hope we can find create a gig for your {user}
-                Your unique pin number is {user_pin}
-                This email is automated...
-                ...clever David!!
-                """
+Here are your details:
+{user.title()}: {name}
+
+We really hope we can find create a gig for you!
+
+Your unique pin number is {user_pin}
+Return to Late Gigs app to complete your search
+
+This email is automated...
+
+"""
 
     mime_message = MIMEMultipart()
     mime_message['to'] = f'{destination}'
-    mime_message['subject'] = "Late Gigs! You're on the list!"
+    mime_message['subject'] = "Welcome to Late Gigs!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
 
