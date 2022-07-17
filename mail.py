@@ -25,13 +25,15 @@ Welcome to Late Gigs!
 Congratulations!!
 We found you a gig... clever Late Gigs!
 
-The Details:
-{properties[0]} wil play a {properties[3]} set
- at {properties[1]} venue
-this coming {properties[2]}
+Gig Details:
+{properties[0].title()} will play a(n) {properties[3].title()} set
+ at {properties[1].title()} venue
+this coming {properties[2].title()}
 for a fee of €{properties[4]}
 Gig user is: {user}
-We strongly reccomend you now contact each other via email: {list_user_email}
+
+We strongly recommend you now contact your match via email:
+{list_user_email}
 
 Late Gigs accepts no responsibility for gigs that are created automatically
 but not honoured.
@@ -67,17 +69,21 @@ Welcome to Late Gigs!
 Congratulations!!
 We found you a gig... clever Late Gigs!
 
-The Details:
-{properties[0]} wil play a {properties[3]} set
- at {properties[1]} venue
-this coming {properties[2]}
+Gig Details:
+{properties[0].title()} will play a(n) {properties[3].title()} set
+ at {properties[1].title()} venue
+this coming {properties[2].title()}
 for a fee of €{properties[4]}
-Booking initiated by {user}
-You can now contact each other via email: {user_email_address}
+Gig user is: {user}
+
+We strongly recommend you now contact your match via email:
+{user_email_address}
+
+Late Gigs accepts no responsibility for gigs that are created automatically
+but not honoured.
 
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
-
 """
 
     mime_message = MIMEMultipart()
@@ -119,7 +125,7 @@ Thank you for registering with Late Gigs.
 Here are your details:
 {user.title()}: {name}
 
-We really hope we can find create a gig for you!
+We really hope we can create a gig for you!
 
 Your unique pin number is {user_pin}
 Return to Late Gigs app to complete your search
