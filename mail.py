@@ -21,8 +21,8 @@ def notify_user_gig(properties, user, user_email_address, list_user_email):
     destination = user_email_address
 
     email_msg = f"""
-Welcome to Late Gigs!
 Congratulations!!
+
 We found you a gig... clever Late Gigs!
 
 Gig Details:
@@ -30,13 +30,14 @@ Gig Details:
  at {properties[1].title()} venue
 this coming {properties[2].title()}
 for a fee of €{properties[4]}
-Gig user is: {user}
+
+Gig initiated by the: {user}
 
 We strongly recommend you now contact your match via email:
 {list_user_email}
 
-Late Gigs accepts no responsibility for gigs that are created automatically
-but not honoured.
+Late Gigs accepts no responsibility for gigs 
+that are created automatically but not honoured.
 
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
@@ -65,8 +66,8 @@ def notify_list_user_gig(properties, user, user_email_address,
     destination = list_user_email
 
     email_msg = f"""
-Welcome to Late Gigs!
 Congratulations!!
+
 We found you a gig... clever Late Gigs!
 
 Gig Details:
@@ -74,7 +75,8 @@ Gig Details:
  at {properties[1].title()} venue
 this coming {properties[2].title()}
 for a fee of €{properties[4]}
-Gig user is: {user}
+
+Gig initiated by the: {user}
 
 We strongly recommend you now contact your match via email:
 {user_email_address}

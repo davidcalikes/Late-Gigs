@@ -504,8 +504,8 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
     """
     while True:
         pin = user_pin
-        print("\n")
-        pin_attempt = input(f"enter the pin we sent to {user_email_address}:")
+        print(f"enter the pin we sent to {user_email_address}")
+        pin_attempt = input("enter the pin here:")
         pin_int = int(pin_attempt)
         if pin_int == pin:
             print("\nExcellent! Valid Pin! Now let's keep going!\n")
@@ -671,34 +671,6 @@ def check_venue_list(properties, user, user_email_address):
             update_data_sheet(properties, user)
 
 
-def get_match_email(properties, user, user_email_address, match_email):
-    """
-    Check's the database for the correct email address
-    to notify user on waiting list
-    """
-    user_data_sheet = SHEET.worksheet("user_details").get_all_values()
-
-    user_item = user_data_sheet.pop(1)
-    user_name = user_item[0]
-    print(user_name)
-
-    while True:
-        if user_name == match_email:
-            print("\nMatch Found\n")
-            print("Name:", user_item[0].title())
-            list_user_email = user_item[1]
-            notify_user_gig(properties, user, user_email_address,
-                            list_user_email)
-        elif len(user_data_sheet) >= 2:
-            user_item = user_data_sheet.pop(1)
-            user_name = user_item[0]
-            print("next item is", user_item)
-            print("Venue name:", user_item[0].title())
-        else:
-            print("Error... match email not found!")
-            exit()
-
-
 def make_gig(item_list_index, act_name, venue_name,
              user_day, user_genre, user_fee, user, user_email_address,
              match_email):
@@ -719,6 +691,7 @@ def make_gig(item_list_index, act_name, venue_name,
             SHEET.worksheet("standby").delete_rows(item_index + 1)
             print("Success!")
             get_match_email(properties, user, user_email_address, match_email)
+            print(match_email)
             exit()
         elif user_choice == "y" and user == "act":
             clear_page()
@@ -726,13 +699,42 @@ def make_gig(item_list_index, act_name, venue_name,
             SHEET.worksheet("gig_list").append_row(properties)
             print(f"removing {venue_name.title()} from waiting list")
             SHEET.worksheet("venues").delete_rows(item_index + 1)
-            notify_user_gig(properties, user, user_email_address, match_email)
             print("Success!")
+            get_match_email(properties, user, user_email_address, match_email)
             exit()
         else:
             clear_page()
             print('Sorry, Try Again another time')
             input('Press Enter to exit to menu...\n')
+            exit()
+
+
+def get_match_email(properties, user, user_email_address, match_email):
+    """
+    Check's the database for the correct email address
+    to notify user on waiting list
+    """
+    print(match_email)
+    user_data_sheet = SHEET.worksheet("user_details").get_all_values()
+
+    user_item = user_data_sheet.pop(1)
+    user_name = user_item[0]
+    print(user_name)
+
+    while True:
+        if user_name == match_email:
+            print("\nMatch Found\n")
+            print("Name:", user_item[0].title())
+            list_user_email = user_item[1]
+            notify_user_gig(properties, user, user_email_address,
+                            list_user_email)
+        elif len(user_data_sheet) >= 2:
+            user_item = user_data_sheet.pop(1)
+            user_name = user_item[0]
+            print("next item is", user_item)
+            print("User name:", user_item[0].title())
+        else:
+            print("Error... match email not found!")
             exit()
 
 
