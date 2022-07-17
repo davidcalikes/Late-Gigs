@@ -561,10 +561,11 @@ def check_standby_list(properties, user, user_email_address):
 
     item = acts.pop(1)
     venue_name = properties[0]
-    print("looking for act for", venue_name)
+    print("Looking for act for", venue_name.title())
     check_list = properties
     orig_list_len = len(acts)
     print(orig_list_len - 1, "acts on standby list")
+    print("Checking first item...")
 
     act_genre = item[1]
     act_day = item[2]
@@ -611,7 +612,7 @@ def check_standby_list(properties, user, user_email_address):
             print("Act name:", item[0].title())
         else:
             print("End of List... no matches")
-            update_data_sheet(properties, user)
+            double_booking_check(properties, user)
 
 
 def check_venue_list(properties, user, user_email_address):
@@ -627,6 +628,7 @@ def check_venue_list(properties, user, user_email_address):
     check_list = properties
     orig_list_len = len(venues)
     print(orig_list_len - 1, "venues on the waiting list!")
+    print("Checking first item...")
 
     venue_genre = item[1]
     venue_day = item[2]
@@ -645,7 +647,6 @@ def check_venue_list(properties, user, user_email_address):
 
     act_conv = [act_genre, act_day, act_fee, act_members,
                 act_set_len]
-    print(act_conv)
 
     while True:
         if venue_conv == act_conv:
@@ -675,7 +676,7 @@ def check_venue_list(properties, user, user_email_address):
             print("Venue name:", item[0].title())
         else:
             print("End of List... no matches")
-            update_data_sheet(properties, user)
+            double_booking_check(properties, user)
 
 
 def make_gig(item_list_index, act_name, venue_name,
@@ -721,27 +722,56 @@ def get_match_email(properties, user, user_email_address, match_email):
     Check's the database for the correct email address
     to notify user on relevent waiting list
     """
-    print(match_email)
+    print("retrieving contact info for", match_email.title())
     user_data_sheet = SHEET.worksheet("user_details").get_all_values()
 
     user_item = user_data_sheet.pop(1)
     user_name = user_item[0]
-    print(user_name)
 
     while True:
         if user_name == match_email:
-            print("\nMatch Found\n")
-            print("Name:", user_item[0].title())
+            print("\nDetails Found\n")
+            print("for", user_item[0].title())
             list_user_email = user_item[1]
             notify_user_gig(properties, user, user_email_address,
                             list_user_email)
         elif len(user_data_sheet) >= 2:
+            print("Still looking!")
             user_item = user_data_sheet.pop(1)
             user_name = user_item[0]
-            print("next item is", user_item)
+            print("Checking next item...")
             print("User name:", user_item[0].title())
         else:
             print("Error... match email not found!")
+            exit()
+
+
+def double_booking_check(properties, user):
+    """
+    Ensures user doesn't already have a gig booked for day required
+    """
+    gig_list = SHEET.worksheet("gig_list").get_all_values()
+
+    user_item = gig_list.pop(1)
+    user_name = user_item[0]
+    day = properties[2]
+    print("\nChecking gig list to prevent double bookings...")
+
+    while True:
+        if user_name == properties[0] or properties[1] and day == user_item[2]:
+            print("\nGig Found\n")
+            print(f"Gig already exists for {user_name.title()} on {day}")
+            print("Sorry, no double bookings allowed")
+            print("Returning to main menu")
+            main()
+        elif len(gig_list) >= 2:
+            print("Still looking!")
+            user_item = gig_list.pop(1)
+            user_name = user_item[0]
+            print("Checking next item...")
+            print("User name:", user_item[0].title())
+        else:
+            update_data_sheet(properties, user)
             exit()
 
 
@@ -767,7 +797,7 @@ def update_data_sheet(properties, user):
     print(user.title(), "database updated succesfully!")
     print("Thank you for using Late Gigs!\n")
     print("A gig will be created automatically if")
-    print("we find you a suitable act in the coming days!\n")
+    print("we find you a suitable match in the coming days!\n")
     print("We will notify you by email if a Late Gig")
     print("is created!")
     exit()

@@ -51,3 +51,32 @@ def test_set_length():
             continue
         else:
             break
+
+
+# def double_booking_check(properties, user):
+#     """
+#     Ensures user doesn't already have a gig booked for day required
+#     """
+#     gig_list = SHEET.worksheet("gig_list").get_all_values()
+
+#     user_item = gig_list.pop(1)
+#     user_name = user_item[0]
+#     day = properties[2]
+#     print("Checking gig list to prevent double bookings...")
+
+#     while True:
+#         if user_name == properties[0] and day == user_item[2]:
+#             print("\nGig Found\n")
+#             print(f"Gig already exists for {user_name} on {day}")
+#             print("Sorry, no double bookings allowed")
+#             print("Returning to main menu")
+#             main()
+#         elif len(gig_list) >= 2:
+#             print("Still looking!")
+#             user_item = gig_list.pop(1)
+#             user_name = user_item[0]
+#             print("Checking next item...")
+#             print("User name:", user_item[0].title())
+#         else:
+#             update_data_sheet(properties, user)
+#             exit()

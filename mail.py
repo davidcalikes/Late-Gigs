@@ -96,9 +96,8 @@ For support and more information contact us via lategigs@davidcalikes.com
 
     service_gmail = build("gmail", "v1", credentials=credentials)
     # pylint: disable=E1101
-    message = service_gmail.users().messages().send(userId='me', body={'raw':
-                                                    raw_string}).execute()
-    print(message)
+    service_gmail.users().messages().send(userId='me', body={'raw':
+                                          raw_string}).execute()
     print("Success! Gig confirmed!")
     print(f"""
 The Details:
@@ -144,6 +143,5 @@ This email is automated...
 
     service_gmail = build("gmail", "v1", credentials=credentials)
     # pylint: disable=E1101
-    message = service_gmail.users().messages().send(userId='me', body={'raw':
-                                                    raw_string}).execute()
-    print(message)
+    service_gmail.users().messages().send(userId='me', body={'raw':
+                                          raw_string}).execute()
