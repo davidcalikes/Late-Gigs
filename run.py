@@ -1,4 +1,5 @@
 import os
+import re
 import random
 import gspread
 from google.oauth2.service_account import Credentials
@@ -236,11 +237,6 @@ def get_venue_data():
             break
     venue_data.append(set_length)
     clear_page()
-    print("\nSuperb! Ok, Just one last thing.\n")
-    print("\nPlease provide a valid email address \n")
-    user = "venue"
-    send_user_pin(name, user)
-    clear_page()
     print("\n")
     print(f"All done! Here's the gig requirements for {name}:")
     print("\n")
@@ -248,16 +244,15 @@ def get_venue_data():
     print(f"with {members} member(s) that will play for {set_length} hours")
     print(f"for a fee of no more than €{fee}")
     print("\n")
-
+    user = "venue"
     properties = venue_data
     while True:
         print("Would you like to search the database for a suitable act?\n")
-
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
             print("\nOK, just making sure! Now let's find you an act!\n")
-            check_database(properties, user)
+            regex_check(properties, name, user)
         elif data_ver == "n":
             print("Are you sure don't want to proceed?")
             print("All data will be lost!\n")
@@ -266,51 +261,11 @@ def get_venue_data():
             if confirm_no == "y":
                 main()
             else:
-                check_database(properties, user)
+                regex_check(properties, name, user)
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
             continue
-
-    check_database(properties, user)
-
-    exit()
-
-
-def send_user_pin(name, user):
-    """
-    Send email to user with pin for account validation
-    """
-    user_email_address = input("Enter your email address here: \n")
-    user_pin = random.randint(1111, 9999)
-    email_verify(name, user, user_email_address, user_pin)
-    validate_user_pin(name, user_email_address, user_pin)
-
-
-def validate_user_pin(name, user_email_address, user_pin):
-    """
-    Use pin to verify email account
-    """
-    while True:
-        pin = user_pin
-        print(type(pin))
-        pin_attempt = input(f"enter the pin we sent to {user_email_address}")
-        pin_int = int(pin_attempt)
-        if pin_int == pin:
-            print("\n Excellent! Valid Pin! Now let's keep going!\n")
-            details = [name, user_email_address, user_pin]
-            user_details_worksheet = SHEET.worksheet("user_details")
-            user_details_worksheet.append_row(details)
-            break
-        else:
-            clear_page()
-            print("\n")
-            print("Sorry! Incorrect Pin! Have another Go!")
-            print(type(pin_attempt))
-            continue
-        clear_page()
-        get_venue_data()
-        main()
 
 
 def get_act_data():
@@ -483,12 +438,6 @@ def get_act_data():
             break
     act_data.append(set_length)
     clear_page()
-    print("\nSuperb! Ok, Just one last thing.\n")
-    print("We need an email address from you")
-    print("\nin order to continue\n")
-    user = "act"
-    send_user_pin(name, user)
-    clear_page()
     print("\n")
     print(f"All done! Here's the gig requirements for {name.title()}:")
     print("\n")
@@ -497,17 +446,16 @@ def get_act_data():
     print(f"that will play for {set_length} hours")
     print(f"for a fee of no less than €{fee}")
     print("\n")
-
+    user = "act"
     properties = act_data
 
     while True:
-        print("Would you like to search the database for a suitable venue?\n")
-
+        print("Would you like to search the database for a suitable act?\n")
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
-            print("\nOK, just making sure! Now let's find you an venue!\n")
-            check_database(properties, user)
+            print("\nOK, just making sure! Now let's find you an act!\n")
+            regex_check(properties, name, user)
         elif data_ver == "n":
             print("Are you sure don't want to proceed?")
             print("All data will be lost!\n")
@@ -516,13 +464,61 @@ def get_act_data():
             if confirm_no == "y":
                 main()
             else:
-                check_database(properties, user)
+                regex_check(properties, name, user)
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
             continue
 
-    check_database(properties, user)
+
+def regex_check(properties, name, user):
+    """
+    Validates email address input using regular expressions method.
+    """
+    while True:
+        print("\nWe just need an email address to begin the search! \n")
+        email = input("Type a valid email address here: \n")
+        check_email_structure = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
+        if re.match(check_email_structure, email):
+            print("email is valid")
+            send_user_pin(properties, name, user, email)
+        else:
+            print("Doesn't appear to be a valid email address. Try again!")
+            continue
+
+
+def send_user_pin(properties, name, user, email):
+    """
+    Send email to user with pin for account validation
+    """
+    user_email_address = email
+    user_pin = random.randint(1111, 9999)
+    email_verify(name, user, user_email_address, user_pin)
+    validate_user_pin(properties, name, user, user_email_address, user_pin)
+
+
+def validate_user_pin(properties, name, user, user_email_address, user_pin,):
+    """
+    Use pin to verify email account
+    """
+    while True:
+        pin = user_pin
+        print(type(pin))
+        pin_attempt = input(f"enter the pin we sent to {user_email_address}")
+        pin_int = int(pin_attempt)
+        if pin_int == pin:
+            print("\nExcellent! Valid Pin! Now let's keep going!\n")
+            details = [name, user_email_address, user_pin]
+            user_details_worksheet = SHEET.worksheet("user_details")
+            user_details_worksheet.append_row(details)
+            check_database(properties, user)
+            break
+        else:
+            clear_page()
+            print("\n")
+            print("Sorry! Incorrect Pin! Have another Go!")
+            print(type(pin_attempt))
+            continue
 
 
 def check_database(properties, user):
