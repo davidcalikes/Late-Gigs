@@ -36,7 +36,7 @@ Gig initiated by the: {user}
 We strongly recommend you now contact your match via email:
 {list_user_email}
 
-Late Gigs accepts no responsibility for gigs 
+Late Gigs accepts no responsibility for gigs
 that are created automatically but not honoured.
 
 Thank you for using Late Gigs!

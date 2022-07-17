@@ -246,22 +246,28 @@ def get_venue_data():
     print("\n")
     user = "venue"
     properties = venue_data
+
     while True:
-        print("Would you like to search the database for a suitable act?\n")
+        print("Would you like to search the database for a suitable venue?\n")
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
             print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
         elif data_ver == "n":
-            print("Are you sure don't want to proceed?")
+            clear_page()
+            print("\nAre you sure don't want to proceed?")
             print("All data will be lost!\n")
             confirm_no = input(
-                "Type 'y' to return to menu or 'n' to search database:\n")
+                "Type 'y' to return to menu or 's' to search database:\n")
             if confirm_no == "y":
+                clear_page()
                 main()
-            else:
+            elif confirm_no == "s":
+                print("That's Ok! Here we go")
                 regex_check(properties, name, user)
+            else:
+                print("Sorry invalid input, type 'y' or 'n'")
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
@@ -358,7 +364,7 @@ def get_act_data():
             print("That's ok, type y to restart or n to exit\n")
             user_choice = input("Type y or n here: \n")
             if user_choice == "y":
-                get_venue_data()
+                get_act_data()
             elif user_choice == "n":
                 main()
             else:
@@ -451,21 +457,26 @@ def get_act_data():
     properties = act_data
 
     while True:
-        print("Would you like to search the database for a suitable act?\n")
+        print("Would you like to search the database for a suitable venue?\n")
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
             print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
         elif data_ver == "n":
-            print("Are you sure don't want to proceed?")
+            clear_page()
+            print("\nAre you sure don't want to proceed?")
             print("All data will be lost!\n")
             confirm_no = input(
-                "Type 'y' to return to menu or 'n' to search database:\n")
+                "Type 'y' to return to menu or 's' to search database:\n")
             if confirm_no == "y":
+                clear_page()
                 main()
-            else:
+            elif confirm_no == "s":
+                print("That's Ok! Here we go")
                 regex_check(properties, name, user)
+            else:
+                print("Sorry invalid input, type 'y' or 'n'")
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
