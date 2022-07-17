@@ -166,7 +166,7 @@ def get_venue_data():
     print("Hint: Act fees vary depending on many factors, such as")
     print("length of set, number of band members ect.\n")
     print("Aim to set your maximum fee between €200 and €600 to increase")
-    print("your chances of finding a suitable act\n")
+    print("your chances of finding a suitable act.\n")
     while True:
         try:
             fee = int(input("Enter max fee in € here: \n"))
@@ -193,9 +193,7 @@ def get_venue_data():
     print("\n")
     while True:
         try:
-            members = int(input("""
-            Type the number of performers in your act: \n
-            """))
+            members = int(input("Type number of members here: \n"))
             if 1 <= members <= 15:
                 print("in range")
             elif members == 0:
@@ -221,9 +219,17 @@ def get_venue_data():
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
-            set_length = float(input("Enter length of set required: \n"))
+            length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+            set_length = float(input("Enter length of set: \n"))
+            if 1 <= set_length <= 5 and set_length in length_list:
+                print("Valid set length")
+            else:
+                print("Invalid set length! Sets can be between 1 and 5 hours")
+                print("and can be written in half hour increments...")
+                print("Example: 1 hour = 1")
+                print("Example: 3 and a half hours = 3.5")
+                continue
         except ValueError:
-            clear_page()
             print("Whoopsie! This value needs to be a number. Try again!")
             continue
         else:
@@ -409,7 +415,7 @@ def get_act_data():
     print("Tell us the minimum fee you will accept per gig.\n")
     print("Hint: Artist fees generally range between €200 and €600")
     print("Aim to set your minimum fee within this range to increase")
-    print("your chances of finding a suitable venue\n")
+    print("your chances of finding a suitable venue.\n")
     while True:
         try:
             fee = int(input("Enter min fee in € here: \n"))
@@ -434,9 +440,7 @@ def get_act_data():
     print("How many members make up your act?\n")
     while True:
         try:
-            members = int(input("""
-            Type the number of performers in your act: \n
-            """))
+            members = int(input("Type number of members here: \n"))
             if 1 <= members <= 15:
                 print("in range")
             elif members == 0:
@@ -462,9 +466,17 @@ def get_act_data():
     print("\nExample: A two and a half hour set would be: 2.5 \n")
     while True:
         try:
-            set_length = float(input("Enter length of set required: \n"))
+            length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+            set_length = float(input("Enter length of set: \n"))
+            if 1 <= set_length <= 5 and set_length in length_list:
+                print("Valid set length")
+            else:
+                print("Invalid set length! Sets can be between 1 and 5 hours")
+                print("and can be written in half hour increments...")
+                print("Example: 1 hour = 1")
+                print("Example: 3 and a half hours = 3.5")
+                continue
         except ValueError:
-            clear_page()
             print("Whoopsie! This value needs to be a number. Try again!")
             continue
         else:

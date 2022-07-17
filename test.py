@@ -33,4 +33,24 @@ def test_members_code():
             break
 
 
-test_members_code()
+def test_set_length():
+    while True:
+        try:
+            length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+            set_length = float(input("Enter length of set: \n"))
+            if 1 <= set_length <= 5 and set_length in length_list:
+                print("Valid set length")
+            else:
+                print("Invalid set length! Sets can be between 1 and 5 hours")
+                print("and can be written in half hour increments...")
+                print("Example: 1 hour = 1")
+                print("Example: 3 and a half hours = 3.5")
+                continue
+        except ValueError:
+            print("Whoopsie! This value needs to be a number. Try again!")
+            continue
+        else:
+            break
+
+
+test_set_length()
