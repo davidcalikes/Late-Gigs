@@ -53,4 +53,28 @@ def test_set_length():
             break
 
 
-test_set_length()
+# def get_match_email(match_email):
+#     """
+#     Check's the database for any available venues
+#     that match user requirements.
+#     """
+#     user_data_sheet = SHEET.worksheet("user_details").get_all_values()
+
+#     print(len(user_data_sheet))
+#     user_item = user_data_sheet.pop(1)
+#     user_name = user_item[0]
+#     print(user_name)
+
+#     while True:
+#         if match_email == user_name:
+#             print("\nEmail Found\n")
+#             print("Name:", user_item[0].title())
+#             item_list_index = len(user_data_sheet) + 1
+#             print(item_list_index)
+#         elif len(user_data_sheet) >= 2:
+#             user_item = user_data_sheet.pop(1)
+#             print("next item is", user_item)
+#             print("Venue name:", user_item[0].title())
+#         else:
+#             print("Error... match email not found!")
+#             exit()

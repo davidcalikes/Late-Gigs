@@ -3,7 +3,7 @@ import re
 import random
 import gspread
 from google.oauth2.service_account import Credentials
-from mail import email_verify
+from mail import email_verify, notify_user_gig
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -476,7 +476,7 @@ def regex_check(properties, name, user):
     Validates email address input using regular expressions method.
     """
     while True:
-        print("\nWe just need an email address to begin the search! \n")
+        print("\nWe just need your email address to begin the search! \n")
         email = input("Type a valid email address here: \n")
         check_email_structure = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
         if re.match(check_email_structure, email):
@@ -508,10 +508,10 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
         pin_int = int(pin_attempt)
         if pin_int == pin:
             print("\nExcellent! Valid Pin! Now let's keep going!\n")
-            details = [name, user_email_address, user_pin]
+            details = [name.lower(), user_email_address, user_pin]
             user_details_worksheet = SHEET.worksheet("user_details")
             user_details_worksheet.append_row(details)
-            check_database(properties, user)
+            check_database(properties, user, user_email_address)
             break
         else:
             clear_page()
@@ -521,7 +521,7 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
             continue
 
 
-def check_database(properties, user):
+def check_database(properties, user, user_email_address):
     """
     Check's the database for any object instances
     that match the users requirements.
@@ -532,15 +532,15 @@ def check_database(properties, user):
 
     while True:
         if user == "venue":
-            check_standby_list(properties, user)
+            check_standby_list(properties, user, user_email_address)
         elif user == "act":
-            check_venue_list(properties, user)
+            check_venue_list(properties, user, user_email_address)
         else:
             print("Whoops! Something went wrong... returning to main menu")
             main()
 
 
-def check_standby_list(properties, user):
+def check_standby_list(properties, user, user_email_address):
     """
     Check's the database for any available acts
     that match user requirements.
@@ -576,15 +576,19 @@ def check_standby_list(properties, user):
     while True:
         if act_conv == venue_conv:
             print("\nMatch Found!\n")
-            print("Name:", item[0].title())
+            print("An act has been found for your venue that")
+            print("meets all your requirements")
+            print("Act Name:", item[0].title())
             act_name = item[0]
             item_list_index = orig_list_len - len(acts) + 1
             print("List Index =", item_list_index)
             act_day = item[2]
             act_fee = item[3]
             act_set_len = float(item[5])
+            match_email = act_name
             make_gig(item_list_index, act_name, venue_name,
-                     act_day, act_genre, act_fee, user)
+                     act_day, act_genre, act_fee, user, user_email_address,
+                     match_email)
         elif len(acts) >= 2:
             item = acts.pop(1)
             print("next item is", item)
@@ -600,7 +604,7 @@ def check_standby_list(properties, user):
             update_data_sheet(properties, user)
 
 
-def check_venue_list(properties, user):
+def check_venue_list(properties, user, user_email_address):
     """
     Check's the database for any available venues
     that match user requirements.
@@ -646,8 +650,10 @@ def check_venue_list(properties, user):
             venue_day = item[2]
             venue_fee = item[3]
             venue_set_len = float(item[5])
+            match_email = venue_name
             make_gig(item_list_index, act_name, venue_name,
-                     venue_day, venue_genre, venue_fee, user)
+                     venue_day, venue_genre, venue_fee, user,
+                     user_email_address, match_email)
         elif len(venues) >= 2:
             item = venues.pop(1)
             print("next item is", item)
@@ -664,10 +670,39 @@ def check_venue_list(properties, user):
             update_data_sheet(properties, user)
 
 
-def make_gig(item_list_index, act_name, venue_name,
-             user_day, user_genre, user_fee, user):
+def get_match_email(properties, user, user_email_address, match_email):
     """
-    Adds match to gig database and removes act from standby sheet
+    Check's the database for the correct email address
+    to notify user on waiting list
+    """
+    user_data_sheet = SHEET.worksheet("user_details").get_all_values()
+
+    user_item = user_data_sheet.pop(1)
+    user_name = user_item[0]
+    print(user_name)
+
+    while True:
+        if user_name == match_email:
+            print("\nMatch Found\n")
+            print("Name:", user_item[0].title())
+            list_user_email = user_item[1]
+            notify_user_gig(properties, user, user_email_address,
+                            list_user_email)
+        elif len(user_data_sheet) >= 2:
+            user_item = user_data_sheet.pop(1)
+            user_name = user_item[0]
+            print("next item is", user_item)
+            print("Venue name:", user_item[0].title())
+        else:
+            print("Error... match email not found!")
+            exit()
+
+
+def make_gig(item_list_index, act_name, venue_name,
+             user_day, user_genre, user_fee, user, user_email_address,
+             match_email):
+    """
+    Adds match to gig database and removes match from venues/standby sheet
     """
     while True:
         user_choice = input('Do you want to create this gig?:(y/n)\n')
@@ -682,6 +717,7 @@ def make_gig(item_list_index, act_name, venue_name,
             print(f"removing {act_name.title()} from standby list")
             SHEET.worksheet("standby").delete_rows(item_index + 1)
             print("Success!")
+            get_match_email(properties, user, user_email_address, match_email)
             exit()
         elif user_choice == "y" and user == "act":
             clear_page()
@@ -689,6 +725,7 @@ def make_gig(item_list_index, act_name, venue_name,
             SHEET.worksheet("gig_list").append_row(properties)
             print(f"removing {venue_name.title()} from waiting list")
             SHEET.worksheet("venues").delete_rows(item_index + 1)
+            notify_user_gig(properties, user, user_email_address, match_email)
             print("Success!")
             exit()
         else:
