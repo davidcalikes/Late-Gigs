@@ -131,8 +131,6 @@ We really hope we can create a gig for you!
 Your unique pin number is {user_pin}
 Return to Late Gigs app to complete your search
 
-This email is automated...
-
 """
 
     mime_message = MIMEMultipart()

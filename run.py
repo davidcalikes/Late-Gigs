@@ -490,7 +490,7 @@ def regex_check(properties, name, user):
     while True:
         print("\nWe just need your email address to begin the search! \n")
         email = input("Type a valid email address here: \n")
-        check_email_structure = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
+        check_email_structure = r"^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
         if re.match(check_email_structure, email):
             print("email is valid")
             send_user_pin(properties, name, user, email)
