@@ -27,7 +27,7 @@ We found you a gig... clever Late Gigs!
 
 Gig Details:
 {properties[0].title()} will play a(n) {properties[3].title()} set
- at {properties[1].title()} venue
+at {properties[1].title()} venue
 this coming {properties[2].title()}
 for a fee of €{properties[4]}
 
@@ -72,7 +72,7 @@ We found you a gig... clever Late Gigs!
 
 Gig Details:
 {properties[0].title()} will play a(n) {properties[3].title()} set
- at {properties[1].title()} venue
+at {properties[1].title()} venue
 this coming {properties[2].title()}
 for a fee of €{properties[4]}
 
@@ -102,7 +102,7 @@ For support and more information contact us via lategigs@davidcalikes.com
     print(f"""
 The Details:
 {properties[0].title()} wil play a {properties[3]} set
-at {properties[1]} venue
+at {properties[1].title()} venue
 this coming {properties[2]}
 for a fee of €{properties[4]}
 Gig created by: {user}
@@ -111,7 +111,6 @@ Gig created by: {user}
     print("Check your email for booking confirmation!")
     print("Please check spam folder if you do not recieve an email")
     print("within the next few minutes")
-    exit()
 
 
 def email_verify(name, user, user_email_address, user_pin):

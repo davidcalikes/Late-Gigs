@@ -217,7 +217,10 @@ def get_venue_data():
 
     print("\nExcellent!\n")
     print("How long should the act play for?")
-    print("\nExample: A two and a half hour set would be: 2.5 \n")
+    print("Sets can be between 1 and 5 hours")
+    print("and can be written in half hour increments...")
+    print("Example: 1 hour = 1")
+    print("Example: 3 and a half hours = 3.5")
     while True:
         try:
             length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
@@ -425,7 +428,10 @@ def get_act_data():
 
     print("\nExcellent!\n")
     print(f"What is the typical set length of a {name.title()} gig?")
-    print("\nExample: A two and a half hour set would be: 2.5 \n")
+    print("Sets can be between 1 and 5 hours")
+    print("and can be written in half hour increments...")
+    print("Example: 1 hour = 1")
+    print("Example: 3 and a half hours = 3.5")
     while True:
         try:
             length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
@@ -713,7 +719,7 @@ def make_gig(item_list_index, act_name, venue_name,
             clear_page()
             print('Sorry, Try Again another time')
             input('Press Enter to exit to menu...\n')
-            exit()
+            main()
 
 
 def get_match_email(properties, user, user_email_address, match_email):
@@ -734,6 +740,7 @@ def get_match_email(properties, user, user_email_address, match_email):
             list_user_email = user_item[1]
             notify_user_gig(properties, user, user_email_address,
                             list_user_email)
+            main()
         elif len(user_data_sheet) >= 2:
             print("Still looking!")
             user_item = user_data_sheet.pop(1)
@@ -741,8 +748,12 @@ def get_match_email(properties, user, user_email_address, match_email):
             print("Checking next item...")
             print("User name:", user_item[0].title())
         else:
-            print("Error... match email not found!")
-            exit()
+            clear_page()
+            print("Error... match details not found!")
+            print("Please contact Late Gigs via email")
+            print("about this error:")
+            print("Email: lategigs@davidcalikes.com")
+            main()
 
 
 def venue_double_booking_check(properties, user):
@@ -906,8 +917,9 @@ def get_venue_details():
             print("Checking next item...")
             print("User name:", user_item[0].title())
         else:
+            clear_page()
             print("No such gig found! Exiting to main menu")
-            exit()
+            main()
 
 
 def get_act_details():
