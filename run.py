@@ -224,7 +224,7 @@ def get_venue_data():
     while True:
         try:
             length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
-            set_length = float(input("Enter length of set: \n"))
+            set_length = float(input("Enter length of set: "))
             if 1 <= set_length <= 5 and set_length in length_list:
                 print("Valid set length")
             else:
@@ -435,7 +435,7 @@ def get_act_data():
     while True:
         try:
             length_list = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
-            set_length = float(input("Enter length of set: \n"))
+            set_length = float(input("Enter length of set: "))
             if 1 <= set_length <= 5 and set_length in length_list:
                 print("Valid set length")
             else:
@@ -882,7 +882,7 @@ def get_venue_details():
             print("\nPlease try again!\n")
             continue
     print("Which day were you originally looking for?")
-    day = input("Type day here:")
+    day = input("Type day here: ")
     if day in day_list:
         print("data valid")
     else:
@@ -946,7 +946,7 @@ def get_act_details():
             continue
 
     print("Which day were you originally looking for?")
-    day = input("Type day here:")
+    day = input("Type day here: ")
     if day in day_list:
         print("data valid")
     else:
@@ -1057,8 +1057,8 @@ def main():
         print("The Last-Minute Booking Service for Live Music!\n")
         print("1. Find an act.")
         print("2. Find a venue.")
-        print("3. About Late Gigs.")
-        print("4. Remove user listing.\n")
+        print("3. Remove user listing.")
+        print("4. About Late Gigs.\n")
         print("Choose the number from the options above and press enter")
 
         user_option = input("Enter your choice here: ")
