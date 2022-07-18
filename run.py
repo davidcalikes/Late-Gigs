@@ -918,7 +918,8 @@ def get_venue_details():
             print("User name:", user_item[0].title())
         else:
             clear_page()
-            print("No such gig found! Exiting to main menu")
+            print("\nNo matching user details found!")
+            print("Exiting to main menu")
             main()
 
 
@@ -968,6 +969,7 @@ def get_act_details():
         if user_name == act_id and pin == user_item[2]:
             print("\nValid pin")
             print(f"Removing {user_name.title()} from database for {day}")
+            clear_page()
             print("Sorry to see you go!")
             remove_entry(act_id, day, user)
             print("Returning to main menu")
@@ -979,7 +981,8 @@ def get_act_details():
             print("Checking next item...")
             print("User name:", user_item[0].title())
         else:
-            print("No matching user details found! Exiting to main menu")
+            print("\nNo matching user details found!")
+            print("Exiting to main menu")
             exit()
 
 
