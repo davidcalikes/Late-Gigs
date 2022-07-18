@@ -612,7 +612,7 @@ def check_standby_list(properties, user, user_email_address):
             print("Act name:", item[0].title())
         else:
             print("End of List... no matches")
-            double_booking_check(properties, user)
+            venue_double_booking_check(properties, user)
 
 
 def check_venue_list(properties, user, user_email_address):
@@ -676,7 +676,7 @@ def check_venue_list(properties, user, user_email_address):
             print("Venue name:", item[0].title())
         else:
             print("End of List... no matches")
-            double_booking_check(properties, user)
+            act_double_booking_check(properties, user)
 
 
 def make_gig(item_list_index, act_name, venue_name,
@@ -746,7 +746,38 @@ def get_match_email(properties, user, user_email_address, match_email):
             exit()
 
 
-def double_booking_check(properties, user):
+def venue_double_booking_check(properties, user):
+    """
+    Ensures user doesn't already have a gig booked for day required
+    """
+    gig_list = SHEET.worksheet("gig_list").get_all_values()
+
+    user_item = gig_list.pop(1)
+    user_name = user_item[1]
+    day = properties[2]
+    print("user name is:", properties[0])
+    print("gig list item:", user_name)
+    print("\nChecking gig list to prevent double bookings...")
+
+    while True:
+        if user_name == properties[0] and day == user_item[2]:
+            print("\nGig Found\n")
+            print(f"Gig already exists for {user_name.title()} on {day}")
+            print("Sorry, no double bookings allowed")
+            print("Returning to main menu")
+            main()
+        elif len(gig_list) >= 2:
+            print("Still looking!")
+            user_item = gig_list.pop(1)
+            user_name = user_item[1]
+            print("Checking next item...")
+            print("User name:", user_item[1].title())
+        else:
+            update_data_sheet(properties, user)
+            exit()
+
+
+def act_double_booking_check(properties, user):
     """
     Ensures user doesn't already have a gig booked for day required
     """
@@ -755,10 +786,12 @@ def double_booking_check(properties, user):
     user_item = gig_list.pop(1)
     user_name = user_item[0]
     day = properties[2]
+    print(user_name)
+    print("user name is:", properties[0])
     print("\nChecking gig list to prevent double bookings...")
 
     while True:
-        if user_name == properties[0] or properties[1] and day == user_item[2]:
+        if user_name == properties[0] and day == user_item[2]:
             print("\nGig Found\n")
             print(f"Gig already exists for {user_name.title()} on {day}")
             print("Sorry, no double bookings allowed")
@@ -770,6 +803,7 @@ def double_booking_check(properties, user):
             user_name = user_item[0]
             print("Checking next item...")
             print("User name:", user_item[0].title())
+            print(user_item)
         else:
             update_data_sheet(properties, user)
             exit()
