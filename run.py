@@ -909,6 +909,7 @@ def get_venue_details():
             print("Sorry to see you go!")
             remove_entry(venue_id, day, user)
             print("Returning to main menu")
+            clear_page()
             main()
         elif len(venue_details) >= 2:
             print("Still looking!")
@@ -1011,6 +1012,7 @@ def remove_entry(user_id, day, user):
                 print(f"Removing {venue_name.title()} from database for {day}")
                 SHEET.worksheet("venues").delete_rows(venue_list_index + 1)
                 print("Sorry to see you go!")
+                clear_page()
                 print("Returning to main menu")
                 main()
             elif len(venue_details) >= 2:
@@ -1028,6 +1030,7 @@ def remove_entry(user_id, day, user):
                 print(f"Removing {act_name.title()} from database for {day}")
                 SHEET.worksheet("standby").delete_rows(act_list_index + 1)
                 print("Sorry to see you go!")
+                clear_page()
                 print("Returning to main menu")
                 main()
             elif len(venue_details) >= 2:
@@ -1058,7 +1061,7 @@ def main():
         print("4. Remove user listing.\n")
         print("Choose the number from the options above and press enter")
 
-        user_option = input("Enter your choice here: \n")
+        user_option = input("Enter your choice here: ")
 
         if user_option == "1":
             clear_page()
