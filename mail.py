@@ -101,11 +101,11 @@ For support and more information contact us via lategigs@davidcalikes.com
     print("Success! Gig confirmed!")
     print(f"""
 The Details:
-{properties[0]} wil play a {properties[3]} set
- at {properties[1]} venue
+{properties[0].title()} wil play a {properties[3]} set
+at {properties[1]} venue
 this coming {properties[2]}
 for a fee of €{properties[4]}
-Gig user is: {user}
+Gig created by: {user}
 """)
     print("Thank you for Using Late Gigs!")
     print("Check your email for booking confirmation!")

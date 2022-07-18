@@ -529,7 +529,6 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
             clear_page()
             print("\n")
             print("Sorry! Incorrect Pin! Have another Go!")
-            print(type(pin_attempt))
             continue
 
 
@@ -837,6 +836,200 @@ def update_data_sheet(properties, user):
     exit()
 
 
+def remove_from_list():
+    """
+    Gets user type before calling secondary function
+    """
+    print("Ok! What type of user are you... Venue or Act?")
+    while True:
+        user_type = input("Enter user type here: ")
+        if user_type.lower() == "venue":
+            get_venue_details()
+        elif user_type.lower() == "act":
+            get_act_details()
+        else:
+            print("Invalid input! Type either 'Venue' or 'Act'")
+
+
+def get_venue_details():
+    """
+    Establish if venues credentials are correct
+    """
+    day_list = ["friday", "Friday", "FRIDAY", "saturday", "Saturday",
+                "SATURDAY", "sunday", "Sunday", "SUNDAY"]
+
+    print("Please type the name of your venue.")
+    while True:
+        venue_id = input("Type venue name here: ")
+        if len(venue_id) >= 2:
+            break
+        else:
+            print("\n")
+            print(f'{venue_id} is not a venue name!')
+            print("\nVenue names must contain more than")
+            print("two characters!")
+            print("\nPlease try again!\n")
+            continue
+    print("Which day were you originally looking for?")
+    day = input("Type day here:")
+    if day in day_list:
+        print("data valid")
+    else:
+        print("Invalid input! Try again!")
+
+    print("And finally, the unique pin number we sent you")
+    pin = input("Type pin here:")
+    if pin.isdigit() and len(pin) == 4:
+        print("Checking Pin!")
+    else:
+        print("Invalid pin try again! (4 digit number)")
+
+    venue_details = SHEET.worksheet("user_details").get_all_values()
+
+    user = "venue"
+    user_item = venue_details.pop(1)
+    user_name = user_item[0]
+    print("\nValidating user data... one moment!")
+
+    while True:
+        if user_name == venue_id and pin == user_item[2]:
+            print("\nValid pin")
+            print(f"Removing {user_name.title()} from the database for {day}")
+            print("Sorry to see you go!")
+            remove_entry(venue_id, day, user)
+            print("Returning to main menu")
+            main()
+        elif len(venue_details) >= 2:
+            print("Still looking!")
+            user_item = venue_details.pop(1)
+            user_name = user_item[0]
+            print("Checking next item...")
+            print("User name:", user_item[0].title())
+        else:
+            print("No such gig found! Exiting to main menu")
+            exit()
+
+
+def get_act_details():
+    """
+    Establish if act credentials are correct
+    """
+    day_list = ["friday", "Friday", "FRIDAY",
+                "saturday", "Saturday", "SATURDAY",
+                "sunday", "Sunday", "SUNDAY"]
+
+    print("Please type the name of your act.")
+    while True:
+        act_id = input("Type act name here: ")
+        if len(act_id) >= 2:
+            break
+        else:
+            print("\n")
+            print(f'{act_id} is not a act name!')
+            print("\nAct names must contain more than")
+            print("two characters!")
+            print("\nPlease try again!\n")
+            continue
+
+    print("Which day were you originally looking for?")
+    day = input("Type day here:")
+    if day in day_list:
+        print("data valid")
+    else:
+        print("Invalid input! Try again!")
+
+    print("And finally, the unique pin number we sent you")
+    pin = input("Type pin here:")
+    if pin.isdigit() and len(pin) == 4:
+        print("Pin valid!")
+    else:
+        print("Invalid pin try again!")
+
+    acts_details = SHEET.worksheet("user_details").get_all_values()
+
+    user = "act"
+    user_item = acts_details.pop(1)
+    user_name = user_item[0]
+    print("\nValidating user data... one moment!")
+
+    while True:
+        if user_name == act_id and pin == user_item[2]:
+            print("\nValid pin")
+            print(f"Removing {user_name.title()} from database for {day}")
+            print("Sorry to see you go!")
+            remove_entry(act_id, day, user)
+            print("Returning to main menu")
+            main()
+        elif len(acts_details) >= 2:
+            print("Still looking!")
+            user_item = acts_details.pop(1)
+            user_name = user_item[0]
+            print("Checking next item...")
+            print("User name:", user_item[0].title())
+        else:
+            print("No matching user details found! Exiting to main menu")
+            exit()
+
+
+def remove_entry(user_id, day, user):
+    """
+    Removes user entry from database
+    """
+    venue_details = SHEET.worksheet("venues").get_all_values()
+    act_details = SHEET.worksheet("standby").get_all_values()
+
+    venue_item = venue_details.pop(1)
+    orig_venue_list_len = len(venue_details)
+    venue_list_index = 1
+
+    act_item = act_details.pop(1)
+    orig_standby_list_len = len(act_details)
+    act_list_index = 1
+
+    venue_name = venue_item[0]
+    act_name = act_item[0]
+    print("\nChecking list to remove entry!")
+    while True:
+        if user == "venue":
+            if venue_name == user_id and day == venue_item[2]:
+                print("\nListing Found\n")
+                print(f"Removing {venue_name.title()} from database for {day}")
+                SHEET.worksheet("venues").delete_rows(venue_list_index + 1)
+                print("Sorry to see you go!")
+                print("Returning to main menu")
+                main()
+            elif len(venue_details) >= 2:
+                print("Still looking!")
+                venue_item = venue_details.pop(1)
+                venue_name = venue_item[0]
+                venue_list_index = orig_venue_list_len - len(venue_details) + 1
+                print(venue_list_index)
+                print("Checking next item...")
+                print("Venue name:", venue_item[0].title())
+        elif user == "act":
+            if act_name == user_id and day == act_item[2]:
+                print("\nListing Found\n")
+                print(act_list_index)
+                print(f"Removing {act_name.title()} from database for {day}")
+                SHEET.worksheet("standby").delete_rows(act_list_index + 1)
+                print("Sorry to see you go!")
+                print("Returning to main menu")
+                main()
+            elif len(venue_details) >= 2:
+                print("Still looking!")
+                print(user_id)
+                act_item = act_details.pop(1)
+                act_name = act_item[0]
+                act_list_index = orig_standby_list_len - len(act_details) + 1
+                print(act_list_index)
+                print("Checking next item...")
+                print("Act name:", act_item[0].title())
+        else:
+            print("No such listing! Returning to main menu!")
+            main()
+            exit()
+
+
 def main():
     """
     Display Welcome message and get user type via menu options
@@ -844,9 +1037,10 @@ def main():
     while True:
         print("\nWelcome to Late Gigs! (North East)")
         print("The Last-Minute Booking Service for Live Music!\n")
-        print("1. Find an act")
-        print("2. Find a venue")
-        print("3. About Late Gigs\n")
+        print("1. Find an act.")
+        print("2. Find a venue.")
+        print("3. About Late Gigs.")
+        print("4. Remove user listing.\n")
         print("Choose the number from the options above and press enter")
 
         user_option = input("Enter your choice here: \n")
@@ -880,10 +1074,12 @@ automatically create a gig for them if a match is found.
             print("Why not give it a try!")
             input("Press Enter get started...\n")
             clear_page()
-
+        elif user_option == "4":
+            clear_page()
+            remove_from_list()
         else:
             clear_page()
-            print("\nInvalid option! Please type either 1, 2, or 3\n")
+            print("\nInvalid option! Please type either 1, 2, 3 or 4\n")
             input("Press Enter to try again...\n")
 
 
