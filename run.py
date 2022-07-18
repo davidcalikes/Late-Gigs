@@ -522,7 +522,7 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
     while True:
         pin = user_pin
         print(f"enter the pin we sent to {user_email_address}")
-        pin_attempt = input("enter the pin here:")
+        pin_attempt = input("enter the pin here: ")
         pin_int = int(pin_attempt)
         if pin_int == pin:
             print("\nExcellent! Valid Pin! Now let's keep going!\n")
@@ -844,7 +844,7 @@ def update_data_sheet(properties, user):
     print("we find you a suitable match in the coming days!\n")
     print("We will notify you by email if a Late Gig")
     print("is created!")
-    exit()
+    main()
 
 
 def remove_from_list():
@@ -889,7 +889,7 @@ def get_venue_details():
         print("Invalid input! Try again!")
 
     print("And finally, the unique pin number we sent you")
-    pin = input("Type pin here:")
+    pin = input("Type pin here: ")
     if pin.isdigit() and len(pin) == 4:
         print("Checking Pin!")
     else:
@@ -953,7 +953,7 @@ def get_act_details():
         print("Invalid input! Try again!")
 
     print("And finally, the unique pin number we sent you")
-    pin = input("Type pin here:")
+    pin = input("Type pin here: ")
     if pin.isdigit() and len(pin) == 4:
         print("Pin valid!")
     else:
