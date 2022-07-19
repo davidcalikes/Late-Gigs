@@ -52,7 +52,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
 
-    *** NORTH EAST IMAGE ****
+    <img src="./readme_images/north_east.png">
     
     I conducted a number of interviews with venues and acts to determine the best way to automate a solution to the problem of late cancellations.
 
