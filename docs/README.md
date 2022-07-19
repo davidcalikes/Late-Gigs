@@ -56,7 +56,24 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     I conducted a number of interviews with venues and acts to determine the best way to automate a solution to the problem of late cancellations.
 
-    *** List of user interviews ***
+    Venues canvassed: 
+    
+    Malones of Kingscourt
+    Willows of Kingscourt
+    The Kelltic of Kells
+    Bellingham Castle in County Louth
+    Watters of Castleblaney
+    Punters Bar Dundalk
+
+    Performers interviewed:
+
+    Andrew Grafton
+    Andrew Kelly
+    Liam Sheridan
+    Brian Harrison
+    Mark Montague
+    Connor Hughes
+
 
 - __Targeting Key Demographics__
 
@@ -64,7 +81,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     The Interviews determined that:
     
-    1. Venues are the most affected by late cancellations and should be presented first.
+    1. Venues are the most affected by late cancellations and should be given priority.
     2. Acts finding a venue is the most obvious secondary requirement.
     3. Both acts and venues should be able to continue to search for replacements alongside gig automation.
     4. Users should be able to remove themselves from the waiting list. 

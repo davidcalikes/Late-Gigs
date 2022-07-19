@@ -1078,16 +1078,12 @@ def main():
             clear_page()
             print("""\nLate Gigs is a last-minute booking service operating
 throughout the North East of Ireland
-\nRecently, almost every live music venue and act across
-the region has been affected by a sudden gig cancellation due
-to the ongoing Covid pandemic.
-\nThis application has been designed to help pubs, clubs and
-other venues as well as artists, bands and other acts
-create gigs as quickly and efficiently as possible by firstly,
-searching through a database of available acts and venues to
-find a suitable match.
-\nIf no match is initially found, Late Gigs will store
-the users information on a waiting list that will
+\nRecently, almost every live music venue and act across the region has been
+affected by a sudden gig cancellation due to the ongoing Covid pandemic.
+\nThis application has been designed to help venues and acts create gigs as
+quickly and efficiently as possible by firstly, searching through a database
+of available acts and venues to find a suitable match.\nIf no match is found,
+Late Gigs will store the users information on a waiting list that will
 automatically create a gig for them if a match is found.
 """)
             print("Why not give it a try!")
