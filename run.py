@@ -658,7 +658,7 @@ def make_gig(item_list_index, act_name, venue_name,
     Adds match to gig database and removes match from venues/standby sheet
     """
     while True:
-        user_choice = input('Do you want to create this gig?:(y/n)\n')
+        user_choice = input('Do you want to create this gig?:(y/n)')
         properties = [act_name, venue_name, user_day, user_genre, user_fee]
         item_index = item_list_index
         print("DB index =", item_index)
