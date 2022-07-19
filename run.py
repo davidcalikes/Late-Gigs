@@ -65,11 +65,9 @@ def area_check(user):
 
 def get_venue_data():
     """
-    Get data from the user incrementally
-    that lists the properties of the venue object.
-    Validates data at every input to improve UX and
-    reduce risk of TypeErrors while working with
-    a list containing different data types.
+    Get data from the user incrementally that lists the properties of the
+    venue object. Validates data at every input to improve UX and reduce risk
+    of TypeErrors while working with a list containing different data types.
     """
     venue_data = []
     while True:
@@ -90,14 +88,11 @@ def get_venue_data():
     print("\n")
     print("Type one of the following options:")
     print("Rock, Blues, Pop, Jazz, Metal, R&b, Indie, Country, Irish trad \n")
-    genre_list = ["Rock", "rock", "ROCK", "Blues", "blues", "BLUES",
-                  "Pop", "pop", "POP", "Jazz", "jazz", "JAZZ", "Metal",
-                  "metal", "METAL", "R&b", "r&b", "R&B", "Indie", "indie",
-                  "Country", "country", "COUNTRY",
-                  "Irish Trad", "irish trad", "IRISH TRAD"]
+    genre_list = ["rock", "blues", "pop", "jazz", "metal", "r&b", "indie",
+                  "country", "irish trad"]
     while True:
         genre = input("Enter genre here: \n")
-        if genre in genre_list:
+        if genre.lower() in genre_list:
             venue_data.append(genre.lower())
             break
         else:
@@ -297,14 +292,11 @@ def get_act_data():
     print("\n")
     print("Type one of the following options:")
     print("Rock, Blues, Pop, Jazz, Metal, R&b, Indie, Country, Irish trad \n")
-    genre_list = ["Rock", "rock", "ROCK", "Blues", "blues", "BLUES",
-                  "Pop", "pop", "POP", "Jazz", "jazz", "JAZZ", "Metal",
-                  "metal", "METAL", "R&b", "r&b", "R&B", "Indie", "indie",
-                  "Country", "country", "COUNTRY",
-                  "Irish Trad", "irish trad", "IRISH TRAD"]
+    genre_list = ["rock", "blues", "pop", "jazz", "metal", "r&b", "indie",
+                  "country", "irish trad"]
     while True:
         genre = input("Enter genre here: \n")
-        if genre in genre_list:
+        if genre.lower() in genre_list:
             act_data.append(genre.lower())
             break
         else:
@@ -432,8 +424,7 @@ def get_act_data():
             else:
                 print("Invalid set length! Sets can be between 1 and 5 hours")
                 print("and can be written in half hour increments...")
-                print("Example: 1 hour = 1")
-                print("Example: 3 and a half hours = 3.5")
+                print("Example: 1 hour = 1. 3 and a half hours = 3.5")
                 continue
         except ValueError:
             print("Whoopsie! This value needs to be a number. Try again!")
@@ -927,7 +918,7 @@ def get_act_details():
             break
         else:
             print("\n")
-            print(f'{act_id} is not a act name!')
+            print(f'{act_id} is not an act name!')
             print("\nAct names must contain more than")
             print("two characters! Please try again!\n")
             continue
