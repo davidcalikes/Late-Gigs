@@ -39,8 +39,7 @@ def area_check(user):
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
                 clear_page()
-                print("\nOK, just making sure!\n")
-                print("\nNow let's find you an act!\n")
+                print("\nOK, just making sure... let's find you an act!\n")
                 get_venue_data()
             elif venue_location == "n":
                 clear_page()
@@ -54,8 +53,7 @@ def area_check(user):
             act_location = input("Is your act in the North East?:(y/n)\n")
             if act_location == "y":
                 clear_page()
-                print("\nOK, just making sure!")
-                print("\nNow let's find you a venue!\n")
+                print("\nOK, just making sure... let's find you a venue!\n")
                 get_act_data()
             else:
                 print("Sorry, That's not a valid option\n")
@@ -464,9 +462,9 @@ def regex_check(properties, name, user):
     while True:
         print("\nWe just need your email address to begin the search! \n")
         email = input("Type a valid email address here: \n")
-        check_email_structure = r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+'
+        check_email_structure = r'([A-Za-z0-9]+\
+            [.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+'
         if re.match(check_email_structure, email):
-            print("email is valid")
             send_user_pin(properties, name, user, email)
         else:
             print("Doesn't appear to be a valid email address. Try again!")
@@ -797,7 +795,7 @@ def remove_from_list():
     """
     Gets user type before calling secondary function
     """
-    print("Ok! What type of user are you... Venue or Act?")
+    print("\nOk! What type of user are you... Venue or Act?")
     while True:
         user_type = input("Enter user type here: ")
         if user_type.lower() == "venue":
@@ -805,7 +803,7 @@ def remove_from_list():
         elif user_type.lower() == "act":
             get_act_details()
         else:
-            print("Invalid input! Type either 'Venue' or 'Act'")
+            print("\nInvalid input! Type either 'Venue' or 'Act'")
 
 
 def get_venue_details():
@@ -824,7 +822,7 @@ def get_venue_details():
             print("\nVenue names must contain more than")
             print("two characters!")
             print("\nPlease try again!\n")
-    print("Which day were you originally looking for?")
+    print("\nWhich day were you originally looking for?")
     while True:
         day = input("Type day here: ")
         if day in day_list:
@@ -832,8 +830,8 @@ def get_venue_details():
         else:
             print("Invalid input! Try again!")
             continue
-        print("\nAnd finally, the unique pin number we sent you\n")
     while True:
+        print("\nAnd finally, the unique pin number we sent you\n")
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
@@ -872,9 +870,9 @@ def get_act_details():
     Establish if act credentials are correct
     """
     day_list = ["friday", "saturday", "sunday"]
-    print("Please type the name of your act.")
+    print("\nPlease type the name of your act.")
     while True:
-        act_id = input("Type venue name here: ")
+        act_id = input("Type act name here: ")
         if len(act_id) >= 2:
             break
         else:
@@ -883,7 +881,7 @@ def get_act_details():
             print("\nAct names must contain more than")
             print("two characters!")
             print("\nPlease try again!\n")
-    print("Which day were you originally looking for?")
+    print("\nWhich day were you originally looking for?")
     while True:
         day = input("Type day here: ")
         if day in day_list:
@@ -891,8 +889,8 @@ def get_act_details():
         else:
             print("Invalid input! Try again!")
             continue
-        print("And finally, the unique pin number we sent you")
     while True:
+        print("\nAnd finally, the unique pin number we sent you\n")
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
