@@ -35,7 +35,6 @@ def area_check(user):
     while True:
         print("Just a quick check before we begin.")
         print("Please confirm you're in the North East Area.\n")
-
         if user_type == "venue":
             venue_location = input("Is your venue in the North East?:(y/n)\n")
             if venue_location == "y":
@@ -73,7 +72,6 @@ def get_venue_data():
     a list containing different data types.
     """
     venue_data = []
-
     while True:
         name = input("Enter your venue name here: \n")
         if len(name) >= 2:
@@ -87,7 +85,6 @@ def get_venue_data():
             print("two characters!")
             print("\nPlease Try Again!\n")
             continue
-
     print("\n")
     print(f"Cool! What genre of music do you prefer at {name}?")
     print("\n")
@@ -111,18 +108,14 @@ def get_venue_data():
             print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
             print("Indie, Country or Irish trad \n")
             continue
-
     clear_page()
     print("\nNice! Hopefully your patrons will be enjoying some")
     print(f"live {genre.title()} at {name.title()} soon!")
-    print("\n")
-
-    print("Let's keep going!\n")
+    print("\nLet's keep going!\n")
     print("What day this weekend do you need an act?")
     print("Type: Friday, Saturday or Sunday \n")
-    day_list = ["Friday", "friday", "FRIDAY",
-                "Saturday", "saturday", "SATURDAY",
-                "Sunday", "sunday", "SUNDAY"]
+    day_list = ["Friday", "friday", "FRIDAY", "Saturday", "saturday",
+                "SATURDAY", "Sunday", "sunday", "SUNDAY"]
     while True:
         day = input("Enter required day: \n")
         if day in day_list:
@@ -141,7 +134,6 @@ def get_venue_data():
     print(f"Your venue: '{name}' is looking for an act")
     print(f"to play some {genre} for this coming {day}?")
     print("\n")
-
     while True:
         data_correct = input("Are you happy to continue?:(y/n)\n")
         if data_correct == "y":
@@ -162,7 +154,6 @@ def get_venue_data():
         else:
             print("Not a valid choice please type y/n")
             continue
-
     print("Tell us the maximum fee you are willing to pay your act.\n")
     print("Hint: Act fees vary depending on many factors, such as")
     print("length of set, number of band members ect.\n")
