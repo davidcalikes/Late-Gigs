@@ -839,7 +839,7 @@ def get_venue_details():
     print("\nWhich day were you originally looking for?")
     while True:
         day = input("Type day here: ")
-        if day in day_list:
+        if day.lower() in day_list:
             break
         else:
             print("Invalid input! Try again!")
@@ -901,7 +901,7 @@ def get_act_details():
     print("\nWhich day were you originally looking for?")
     while True:
         day = input("Type day here: ")
-        if day in day_list:
+        if day.lower() in day_list:
             break
         else:
             print("Invalid input! Try again!")
