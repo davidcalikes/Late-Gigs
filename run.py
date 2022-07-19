@@ -75,7 +75,7 @@ def get_venue_data():
     """
     venue_data = []
     while True:
-        name = input("Enter your venue name here: \n")
+        name = input("Enter your venue name here: ")
         if len(name) >= 2:
             venue_data.append(name.lower())
             break
@@ -154,7 +154,7 @@ def get_venue_data():
     print("your chances of finding a suitable act.\n")
     while True:
         try:
-            fee = int(input("Enter max fee in € here: \n"))
+            fee = int(input("Enter max fee in € here: "))
             if 100 <= fee <= 1000:
                 pass
             else:
@@ -503,10 +503,13 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
                 user_details_worksheet.append_row(details)
                 check_database(properties, user, user_email_address)
                 break
+            elif pin_int == int("0000"):
+                main()
             else:
                 clear_page()
                 print("\n")
                 print("Sorry! Incorrect Pin! Have another Go!")
+                print("Or type 0000 to return to the main menu.")
                 continue
         except ValueError:
             print("Sorry, Only a number will do here. Try again!")
@@ -846,8 +849,11 @@ def get_venue_details():
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
+        elif pin.isdigit() == 0000:
+            main()
         else:
             print("Invalid pin try again! (4 digit number)")
+            print("Or type 0000 to return to the main menu")
             continue
     venue_details = SHEET.worksheet("user_details").get_all_values()
     user = "venue"
@@ -905,8 +911,11 @@ def get_act_details():
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
+        elif pin.isdigit() == 0000:
+            main()
         else:
             print("Invalid pin try again! (4 digit number)")
+            print("Or type 0000 to return to the main menu")
             continue
     acts_details = SHEET.worksheet("user_details").get_all_values()
     user = "act"
