@@ -2,7 +2,9 @@
 
 [Live project:](https://late-gigs.herokuapp.com/)
 
-Late Gigs is an online, 'last-minute' booking service for live music in the North East of Ireland. 
+Late Gigs is an online, 'last-minute' booking service for live music in the North East of Ireland.
+
+<img src="./readme_images/header.png">
 
 Recently, almost every live music venue and act across
 the region has been affected by a sudden gig cancellation due to the ongoing Covid pandemic.
@@ -13,8 +15,6 @@ Users can also remove themselves from either of the Google-Sheet waiting lists i
 
 Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either of the waiting lists by email when a match is made and a gig is created. They are then automatically removed from the waiting lists and placed on a list of confirmed gigs.
 
-
-<img src="./readme_images/lg.png">
 
 ## Contents
 [Planning & Development](https://github.com/)
@@ -42,7 +42,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
  
      As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a night due to a Covid related gig cancellation. (examples below)  
      
-     *** GIG TEXT PICTURES HERE ****
+     <img src="./readme_images/gig_requests.png">
     
      So like all budding developers I thought I'd have a go at automating a solution and Late Gigs is the result.
      
@@ -70,6 +70,8 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     4. Users should be able to remove themselves from the waiting list. 
     5. It is in the interest of all users to avoid double bookings.
     6. Users should find the app easy to use.
+    
+<br>
 
 - __Target Audiences Summary__
     
@@ -85,6 +87,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     * Users who don't have time to manually search for gigs.
 
+<br>
 
 - __User Stories__
 
@@ -106,6 +109,8 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     * As a user, I want to be notified by email when a gig is created for my venue or act.
 
+<br>
+
 - __Site Objectives__
 
     * To make Late Gigs a recognisable solution to an existing problem.
@@ -124,7 +129,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     * To increase the popularity of the app
 
-    * To provide users with the ability to subscribe to a mailing list. 
+    * To provide users with the ability to subscribe to a mailing list.
+
+<br>
 
 - __Approach__
 
