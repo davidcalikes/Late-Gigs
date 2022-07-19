@@ -80,8 +80,7 @@ def get_venue_data():
             print("\n")
             print(f'{name} is not a valid name')
             print("\nVenue names must contain more than")
-            print("two characters!")
-            print("\nPlease Try Again!\n")
+            print("two characters! Please Try Again!\n")
             continue
     print("\n")
     print(f"Cool! What genre of music do you prefer at {name}?")
@@ -98,8 +97,7 @@ def get_venue_data():
         else:
             clear_page()
             print("\n")
-            print(f"{genre} is not a valid genre")
-            print("\nType one of the following options:")
+            print(f"{genre} is not a valid genre! Type:")
             print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
             print("Indie, Country or Irish trad \n")
             continue
@@ -109,23 +107,20 @@ def get_venue_data():
     print("\nLet's keep going!\n")
     print("What day this weekend do you need an act?")
     print("Type: Friday, Saturday or Sunday \n")
-    day_list = ["Friday", "friday", "FRIDAY", "Saturday", "saturday",
-                "SATURDAY", "Sunday", "sunday", "SUNDAY"]
+    day_list = ["friday", "saturday", "sunday"]
     while True:
         day = input("Enter required day: \n")
-        if day in day_list:
+        if day.lower() in day_list:
             venue_data.append(day.lower())
             break
         else:
             clear_page()
             print("\n")
-            print(f"{day} is not a valid gig day... Try again!")
-            print("\nType one of the following options:\n")
-            print("Friday, Saturday or Sunday")
+            print(f"{day} is not a valid gig day! Type:")
+            print("\nFriday, Saturday or Sunday\n")
             continue
     clear_page()
-    print("\nExcellent!")
-    print("Here's what we have so far...\n")
+    print("\nExcellent! Here's what we have so far...\n")
     print(f"Your venue: '{name}' is looking for an act")
     print(f"to play some {genre} for this coming {day}?")
     print("\n")
@@ -283,10 +278,8 @@ def get_act_data():
             print("\n")
             print(f'{name} is not a valid name')
             print("\nAct names must contain more than")
-            print("two characters!")
-            print("\nPlease Try Again!\n")
+            print("two characters! Please Try Again!\n")
             continue
-
     print("\n")
     print(f"Cool! What genre of music do(es) {name} mostly play?")
     print("\n")
@@ -317,19 +310,16 @@ def get_act_data():
     print("Let's keep going!\n")
     print("What day this weekend do you want to perform?")
     print("Type: Friday, Saturday or Sunday \n")
-    day_list = ["Friday", "friday", "FRIDAY",
-                "Saturday", "saturday", "SATURDAY",
-                "Sunday", "sunday", "SUNDAY"]
+    day_list = ["friday", "saturday", "sunday"]
     while True:
         day = input("Enter required day: \n")
-        if day in day_list:
+        if day.lower() in day_list:
             act_data.append(day.lower())
             break
         else:
             clear_page()
             print("\n")
-            print(f"{day} is not a valid gig day... Try again!")
-            print("\nType one of the following options:\n")
+            print(f"{day} is not a valid gig day! Type:")
             print("Friday, Saturday or Sunday")
             continue
     clear_page()
@@ -338,7 +328,6 @@ def get_act_data():
     print(f"Your act: '{name.title()}' is looking for a(n) {genre.title()}")
     print(f"venue for this coming {day.title()}?")
     print("\n")
-
     while True:
         data_correct = input("Are you happy to continue?:(y/n)\n")
         if data_correct == "y":
@@ -405,15 +394,13 @@ def get_act_data():
             continue
         else:
             break
-
     act_data.append(members)
     clear_page()
-
     print("\nExcellent!\n")
     print(f"What is the typical set length of a {name.title()} gig?")
     print("Sets can be between 1 and 5 hours")
     print("and can be written in half hour increments...")
-    print("Example: 1 hour = 1")
+    print("Example: 1 hour = 1 while 3 and a half hours = 3.5")
     print("Example: 3 and a half hours = 3.5")
     while True:
         try:
@@ -424,7 +411,7 @@ def get_act_data():
             else:
                 print("Invalid set length! Sets can be between 1 and 5 hours")
                 print("and can be written in half hour increments...")
-                print("Example: 1 hour = 1. 3 and a half hours = 3.5")
+                print("Example: 1 hour = 1 while 3 and a half hours = 3.5")
                 continue
         except ValueError:
             print("Whoopsie! This value needs to be a number. Try again!")
@@ -443,7 +430,6 @@ def get_act_data():
     print("\n")
     user = "act"
     properties = act_data
-
     while True:
         print("Would you like to search the database for a suitable venue?\n")
         data_ver = input("Confirm search?:(y/n)\n")
@@ -528,7 +514,6 @@ def check_database(properties, user, user_email_address):
     print("\nUser is...", user)
     print("\n")
     print("Looking for match in relevant database...\n")
-
     while True:
         if user == "venue":
             check_standby_list(properties, user, user_email_address)
@@ -545,7 +530,6 @@ def check_standby_list(properties, user, user_email_address):
     that match user requirements.
     """
     acts = SHEET.worksheet("standby").get_all_values()
-
     item = acts.pop(1)
     venue_name = properties[0]
     print("Looking for act for", venue_name.title())
@@ -553,24 +537,19 @@ def check_standby_list(properties, user, user_email_address):
     orig_list_len = len(acts)
     print(orig_list_len - 1, "acts on standby list")
     print("Checking first item...")
-
     act_genre = item[1]
     act_day = item[2]
     act_fee = int(item[3])
     act_members = int(item[4])
     act_set_len = float(item[5])
-
     act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
-
     venue_genre = check_list[1]
     venue_day = check_list[2]
     venue_fee = int(check_list[3])
     venue_members = int(check_list[4])
     venue_set_len = float(check_list[5])
-
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                   venue_set_len]
-
     while True:
         if act_conv == venue_conv:
             print("\nMatch Found!\n")
@@ -608,7 +587,6 @@ def check_venue_list(properties, user, user_email_address):
     that match user requirements.
     """
     venues = SHEET.worksheet("venues").get_all_values()
-
     item = venues.pop(1)
     act_name = properties[0]
     print("Looking for venue for", act_name)
@@ -616,25 +594,20 @@ def check_venue_list(properties, user, user_email_address):
     orig_list_len = len(venues)
     print(orig_list_len - 1, "venues on the waiting list!")
     print("Checking first item...")
-
     venue_genre = item[1]
     venue_day = item[2]
     venue_fee = int(item[3])
     venue_members = int(item[4])
     venue_set_len = float(item[5])
-
     venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                   venue_set_len]
-
     act_genre = check_list[1]
     act_day = check_list[2]
     act_fee = int(check_list[3])
     act_members = int(check_list[4])
     act_set_len = float(check_list[5])
-
     act_conv = [act_genre, act_day, act_fee, act_members,
                 act_set_len]
-
     while True:
         if venue_conv == act_conv:
             print("\nMatch Found\n")
@@ -711,10 +684,8 @@ def get_match_email(properties, user, user_email_address, match_email):
     """
     print("retrieving contact info for", match_email.title())
     user_data_sheet = SHEET.worksheet("user_details").get_all_values()
-
     user_item = user_data_sheet.pop(1)
     user_name = user_item[0]
-
     while True:
         if user_name == match_email:
             print("\nDetails Found\n")
@@ -743,14 +714,12 @@ def venue_double_booking_check(properties, user):
     Ensures user doesn't already have a gig booked for day required
     """
     gig_list = SHEET.worksheet("gig_list").get_all_values()
-
     user_item = gig_list.pop(1)
     user_name = user_item[1]
     day = properties[2]
     print("user name is:", properties[0])
     print("gig list item:", user_name)
     print("\nChecking gig list to prevent double bookings...")
-
     while True:
         if user_name == properties[0] and day == user_item[2]:
             print("\nGig Found\n")
@@ -774,14 +743,12 @@ def act_double_booking_check(properties, user):
     Ensures user doesn't already have a gig booked for day required
     """
     gig_list = SHEET.worksheet("gig_list").get_all_values()
-
     user_item = gig_list.pop(1)
     user_name = user_item[0]
     day = properties[2]
     print(user_name)
     print("user name is:", properties[0])
     print("\nChecking gig list to prevent double bookings...")
-
     while True:
         if user_name == properties[0] and day == user_item[2]:
             print("\nGig Found\n")
@@ -806,7 +773,6 @@ def update_data_sheet(properties, user):
     """
     venue_worksheet = SHEET.worksheet("venues")
     standby_worksheet = SHEET.worksheet("standby")
-
     if user == "venue":
         print("\nUpdating venue database...\n")
         venue_worksheet.append_row(properties)
@@ -818,7 +784,6 @@ def update_data_sheet(properties, user):
         print("Error! I guess we gotta go pick a whole bunch of")
         print("whoopsie daisies!")
         main()
-
     print(user.title(), "database updated succesfully!")
     print("Thank you for using Late Gigs!\n")
     print("A gig will be created automatically if")
@@ -847,10 +812,8 @@ def get_venue_details():
     """
     Establish if venues credentials are correct
     """
-    day_list = ["friday", "Friday", "FRIDAY", "saturday", "Saturday",
-                "SATURDAY", "sunday", "Sunday", "SUNDAY"]
-
-    print("Please type the name of your venue.")
+    day_list = ["friday", "saturday", "sunday"]
+    print("\nPlease type the name of your venue.")
     while True:
         venue_id = input("Type venue name here: ")
         if len(venue_id) >= 2:
@@ -861,28 +824,27 @@ def get_venue_details():
             print("\nVenue names must contain more than")
             print("two characters!")
             print("\nPlease try again!\n")
-            continue
     print("Which day were you originally looking for?")
-    day = input("Type day here: ")
-    if day in day_list:
-        print("data valid")
-    else:
-        print("Invalid input! Try again!")
-
-    print("And finally, the unique pin number we sent you")
-    pin = input("Type pin here: ")
-    if pin.isdigit() and len(pin) == 4:
-        print("Checking Pin!")
-    else:
-        print("Invalid pin try again! (4 digit number)")
-
+    while True:
+        day = input("Type day here: ")
+        if day in day_list:
+            break
+        else:
+            print("Invalid input! Try again!")
+            continue
+        print("\nAnd finally, the unique pin number we sent you\n")
+    while True:
+        pin = input("Type pin here: ")
+        if pin.isdigit() and len(pin) == 4:
+            break
+        else:
+            print("Invalid pin try again! (4 digit number)")
+            continue
     venue_details = SHEET.worksheet("user_details").get_all_values()
-
     user = "venue"
     user_item = venue_details.pop(1)
     user_name = user_item[0]
     print("\nValidating user data... one moment!")
-
     while True:
         if user_name == venue_id and pin == user_item[2]:
             print("\nValid pin")
@@ -901,7 +863,7 @@ def get_venue_details():
         else:
             clear_page()
             print("\nNo matching user details found!")
-            print("Exiting to main menu")
+            print("Returning to main menu")
             main()
 
 
@@ -909,39 +871,39 @@ def get_act_details():
     """
     Establish if act credentials are correct
     """
-    day_list = ["friday", "Friday", "FRIDAY", "saturday", "Saturday",
-                "SATURDAY", "sunday", "Sunday", "SUNDAY"]
+    day_list = ["friday", "saturday", "sunday"]
     print("Please type the name of your act.")
     while True:
-        act_id = input("Type act name here: ")
+        act_id = input("Type venue name here: ")
         if len(act_id) >= 2:
             break
         else:
             print("\n")
-            print(f'{act_id} is not an act name!')
+            print(f'{act_id} is not a venue name!')
             print("\nAct names must contain more than")
-            print("two characters! Please try again!\n")
-            continue
+            print("two characters!")
+            print("\nPlease try again!\n")
     print("Which day were you originally looking for?")
-
-    day = input("Type day here: ")
-    if day in day_list:
-        print("data valid")
-    else:
-        print("Invalid input! Try again!")
-    print("And finally, the unique pin number we sent you")
-    pin = input("Type pin here: ")
-    if pin.isdigit() and len(pin) == 4:
-        print("Pin valid!")
-    else:
-        print("Pin must be 4 digits!")
-
+    while True:
+        day = input("Type day here: ")
+        if day in day_list:
+            break
+        else:
+            print("Invalid input! Try again!")
+            continue
+        print("And finally, the unique pin number we sent you")
+    while True:
+        pin = input("Type pin here: ")
+        if pin.isdigit() and len(pin) == 4:
+            break
+        else:
+            print("Invalid pin try again! (4 digit number)")
+            continue
     acts_details = SHEET.worksheet("user_details").get_all_values()
     user = "act"
     user_item = acts_details.pop(1)
     user_name = user_item[0]
     print("\nValidating user data... one moment!")
-
     while True:
         if user_name == act_id and pin == user_item[2]:
             print("\nValid pin")
