@@ -849,11 +849,8 @@ def get_venue_details():
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
-        elif pin.isdigit() == 0000:
-            main()
         else:
             print("Invalid pin try again! (4 digit number)")
-            print("Or type 0000 to return to the main menu")
             continue
     venue_details = SHEET.worksheet("user_details").get_all_values()
     user = "venue"
@@ -911,11 +908,8 @@ def get_act_details():
         pin = input("Type pin here: ")
         if pin.isdigit() and len(pin) == 4:
             break
-        elif pin.isdigit() == 0000:
-            main()
         else:
             print("Invalid pin try again! (4 digit number)")
-            print("Or type 0000 to return to the main menu")
             continue
     acts_details = SHEET.worksheet("user_details").get_all_values()
     user = "act"
@@ -1029,7 +1023,7 @@ automatically create a gig for them if a match is found.
         else:
             clear_page()
             print("\nInvalid option! Please type either 1, 2, 3 or 4\n")
-            input("Press Enter to try again...\n")
+            input("Press Enter to try again...")
 
 
 main()
