@@ -816,7 +816,6 @@ def act_double_booking_check(properties, user):
             print(user_item)
         else:
             update_data_sheet(properties, user)
-            exit()
 
 
 def update_data_sheet(properties, user):
@@ -984,7 +983,7 @@ def get_act_details():
         else:
             print("\nNo matching user details found!")
             print("Exiting to main menu")
-            exit()
+            main()
 
 
 def remove_entry(user_id, day, user):
@@ -1045,7 +1044,6 @@ def remove_entry(user_id, day, user):
         else:
             print("No such listing! Returning to main menu!")
             main()
-            exit()
 
 
 def main():
