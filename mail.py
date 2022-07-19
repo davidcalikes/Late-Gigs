@@ -19,7 +19,6 @@ def notify_user_gig(properties, user, user_email_address, list_user_email):
     and a gig has been automatically created.
     """
     destination = user_email_address
-
     email_msg = f"""
 Congratulations!!
 
@@ -42,18 +41,15 @@ that are created automatically but not honoured.
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
 """
-
     mime_message = MIMEMultipart()
     mime_message['to'] = f'{destination}'
     mime_message['subject'] = "Late Gigs! Booking Confirmed!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
-
     service_gmail = build("gmail", "v1", credentials=credentials)
     # pylint: disable=E1101
     service_gmail.users().messages().send(userId='me', body={'raw':
                                           raw_string}).execute()
-
     notify_list_user_gig(properties, user, user_email_address, list_user_email)
 
 
@@ -64,7 +60,6 @@ def notify_list_user_gig(properties, user, user_email_address,
     and a gig has been automatically created.
     """
     destination = list_user_email
-
     email_msg = f"""
 Congratulations!!
 
@@ -87,13 +82,11 @@ but not honoured.
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
 """
-
     mime_message = MIMEMultipart()
     mime_message['to'] = f'{destination}'
     mime_message['subject'] = "Late Gigs! Booking Confirmed!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
-
     service_gmail = build("gmail", "v1", credentials=credentials)
     # pylint: disable=E1101
     service_gmail.users().messages().send(userId='me', body={'raw':
@@ -118,7 +111,6 @@ def email_verify(name, user, user_email_address, user_pin):
     Sends email to user with unique PIN number for Email Account Verification
     """
     destination = user_email_address
-
     email_msg = f"""
 Thank you for registering with Late Gigs.
 
@@ -131,13 +123,11 @@ Your unique pin number is {user_pin}
 Return to Late Gigs app to complete your search
 
 """
-
     mime_message = MIMEMultipart()
     mime_message['to'] = f'{destination}'
     mime_message['subject'] = "Welcome to Late Gigs!"
     mime_message.attach(MIMEText(email_msg, 'plain'))
     raw_string = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
-
     service_gmail = build("gmail", "v1", credentials=credentials)
     # pylint: disable=E1101
     service_gmail.users().messages().send(userId='me', body={'raw':

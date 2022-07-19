@@ -272,7 +272,7 @@ def get_act_data():
     act_data = []
 
     while True:
-        name = input("Enter the name of your act here: \n")
+        name = input("Enter the name of your act here: ")
         if len(name) >= 2:
             act_data.append(name.lower())
             break
@@ -493,8 +493,8 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
     while True:
         try:
             pin = user_pin
-            print(f"enter the pin we sent to {user_email_address}")
-            pin_attempt = input("enter the pin here: ")
+            print(f"Enter the pin we sent to {user_email_address}")
+            pin_attempt = input("Enter the pin here: ")
             pin_int = int(pin_attempt)
             if pin_int == pin:
                 print("\nExcellent! Valid Pin! Now let's keep going!\n")
@@ -590,7 +590,6 @@ def check_venue_list(properties, user, user_email_address):
     venues = SHEET.worksheet("venues").get_all_values()
     item = venues.pop(1)
     act_name = properties[0]
-    print("Looking for venue for", act_name)
     check_list = properties
     orig_list_len = len(venues)
     print("Checking", orig_list_len - 1, "venues for", act_name.title(), "...")
@@ -872,7 +871,6 @@ def get_act_details():
     user = "act"
     user_item = acts_details.pop(1)
     user_name = user_item[0]
-    print("\nValidating user data... one moment!")
     while True:
         if user_name == act_id and pin == user_item[2]:
             print("\nValid pin")
@@ -882,7 +880,6 @@ def get_act_details():
             remove_entry(act_id, day, user)
             main()
         elif len(acts_details) >= 2:
-            print("Still looking!")
             user_item = acts_details.pop(1)
             user_name = user_item[0]
         else:
