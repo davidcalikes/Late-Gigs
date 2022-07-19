@@ -55,6 +55,11 @@ def area_check(user):
                 clear_page()
                 print("\nOK, just making sure... let's find you a venue!\n")
                 get_act_data()
+            elif act_location == "n":
+                clear_page()
+                print("Sorry, Late gigs only operates in the NE Area\n")
+                input("Press Enter to exit to menu...\n")
+                clear_page()
             else:
                 print("Sorry, That's not a valid option\n")
                 input("Press Enter to exit to menu...\n")
