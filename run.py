@@ -251,7 +251,7 @@ def get_venue_data():
     properties = venue_data
 
     while True:
-        print("Would you like to search the database for a suitable venue?\n")
+        print("Would you like to search the database for a suitable act?\n")
         data_ver = input("Confirm search?:(y/n)\n")
         if data_ver == "y":
             clear_page()
@@ -383,7 +383,7 @@ def get_act_data():
     print("your chances of finding a suitable venue.\n")
     while True:
         try:
-            fee = int(input("Enter min fee in € here: \n"))
+            fee = int(input("Enter min fee in € here: "))
             if 100 <= fee <= 1000:
                 pass
             else:
@@ -927,10 +927,8 @@ def get_act_details():
     """
     Establish if act credentials are correct
     """
-    day_list = ["friday", "Friday", "FRIDAY",
-                "saturday", "Saturday", "SATURDAY",
-                "sunday", "Sunday", "SUNDAY"]
-
+    day_list = ["friday", "Friday", "FRIDAY", "saturday", "Saturday",
+                "SATURDAY", "sunday", "Sunday", "SUNDAY"]
     print("Please type the name of your act.")
     while True:
         act_id = input("Type act name here: ")
@@ -940,26 +938,23 @@ def get_act_details():
             print("\n")
             print(f'{act_id} is not a act name!')
             print("\nAct names must contain more than")
-            print("two characters!")
-            print("\nPlease try again!\n")
+            print("two characters! Please try again!\n")
             continue
-
     print("Which day were you originally looking for?")
+
     day = input("Type day here: ")
     if day in day_list:
         print("data valid")
     else:
         print("Invalid input! Try again!")
-
     print("And finally, the unique pin number we sent you")
     pin = input("Type pin here: ")
     if pin.isdigit() and len(pin) == 4:
         print("Pin valid!")
     else:
-        print("Invalid pin try again!")
+        print("Pin must be 4 digits!")
 
     acts_details = SHEET.worksheet("user_details").get_all_values()
-
     user = "act"
     user_item = acts_details.pop(1)
     user_name = user_item[0]
@@ -972,17 +967,13 @@ def get_act_details():
             clear_page()
             print("Sorry to see you go!")
             remove_entry(act_id, day, user)
-            print("Returning to main menu")
             main()
         elif len(acts_details) >= 2:
             print("Still looking!")
             user_item = acts_details.pop(1)
             user_name = user_item[0]
-            print("Checking next item...")
-            print("User name:", user_item[0].title())
         else:
-            print("\nNo matching user details found!")
-            print("Exiting to main menu")
+            print("\nNo matching details found! Returning to main menu.")
             main()
 
 
@@ -992,55 +983,43 @@ def remove_entry(user_id, day, user):
     """
     venue_details = SHEET.worksheet("venues").get_all_values()
     act_details = SHEET.worksheet("standby").get_all_values()
-
     venue_item = venue_details.pop(1)
-    orig_venue_list_len = len(venue_details)
-    venue_list_index = 1
-
     act_item = act_details.pop(1)
+    orig_venue_list_len = len(venue_details)
     orig_standby_list_len = len(act_details)
+    venue_list_index = 1
     act_list_index = 1
-
     venue_name = venue_item[0]
     act_name = act_item[0]
-    print("\nChecking list to remove entry!")
     while True:
         if user == "venue":
             if venue_name == user_id and day == venue_item[2]:
                 print("\nListing Found\n")
                 print(f"Removing {venue_name.title()} from database for {day}")
                 SHEET.worksheet("venues").delete_rows(venue_list_index + 1)
-                print("Sorry to see you go!")
                 clear_page()
-                print("Returning to main menu")
+                print("Listing removed! Returning to main menu")
                 main()
             elif len(venue_details) >= 2:
-                print("Still looking!")
+                print("Still checking please wait.!")
                 venue_item = venue_details.pop(1)
                 venue_name = venue_item[0]
                 venue_list_index = orig_venue_list_len - len(venue_details) + 1
-                print(venue_list_index)
-                print("Checking next item...")
-                print("Venue name:", venue_item[0].title())
         elif user == "act":
             if act_name == user_id and day == act_item[2]:
                 print("\nListing Found\n")
                 print(act_list_index)
                 print(f"Removing {act_name.title()} from database for {day}")
                 SHEET.worksheet("standby").delete_rows(act_list_index + 1)
-                print("Sorry to see you go!")
                 clear_page()
-                print("Returning to main menu")
+                print("Listing removed! Returning to main menu!")
                 main()
             elif len(venue_details) >= 2:
-                print("Still looking!")
+                print("Still checking please wait!")
                 print(user_id)
                 act_item = act_details.pop(1)
                 act_name = act_item[0]
                 act_list_index = orig_standby_list_len - len(act_details) + 1
-                print(act_list_index)
-                print("Checking next item...")
-                print("Act name:", act_item[0].title())
         else:
             print("No such listing! Returning to main menu!")
             main()
@@ -1053,14 +1032,10 @@ def main():
     while True:
         print("\nWelcome to Late Gigs! (North East)")
         print("The Last-Minute Booking Service for Live Music!\n")
-        print("1. Find an act.")
-        print("2. Find a venue.")
-        print("3. Remove user listing.")
+        print("1. Find an act.\n2. Find a venue.\n3. Remove user listing.")
         print("4. About Late Gigs.\n")
         print("Choose the number from the options above and press enter")
-
         user_option = input("Enter your choice here: ")
-
         if user_option == "1":
             clear_page()
             print("\nFind an Act... Ok Great! Let's get started!\n")
