@@ -15,3 +15,20 @@ Utilising Gmail API, Late Gigs notifies both venues and acts on either of the wa
 
 
 <img src="./readme_images/lg.png">
+
+## Contents
+[Planning & Development](https://github.com/)
+
+[Features](https://github.com/)
+
+[Testing](https://github.com/)
+
+[Deployment](https://github.com/)
+
+[Languages](https://github.com/)
+
+[Software](https://github.com/)
+
+[Media](https://github.com/)
+
+[Credits](https://github.com/)
