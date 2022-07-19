@@ -523,9 +523,6 @@ def check_database(properties, user, user_email_address):
     Check's the database for any object instances
     that match the users requirements.
     """
-    print("\nUser is...", user)
-    print("\n")
-    print("Looking for match in relevant database...\n")
     while True:
         if user == "venue":
             check_standby_list(properties, user, user_email_address)
@@ -544,11 +541,9 @@ def check_standby_list(properties, user, user_email_address):
     acts = SHEET.worksheet("standby").get_all_values()
     item = acts.pop(1)
     venue_name = properties[0]
-    print("Looking for act for", venue_name.title())
-    check_list = properties
     orig_list_len = len(acts)
-    print(orig_list_len - 1, "acts on standby list")
-    print("Checking first item...")
+    print("Checking", orig_list_len - 1, "acts for", venue_name.title(), "...")
+    check_list = properties
     act_genre = item[1]
     act_day = item[2]
     act_fee = int(item[3])
@@ -564,10 +559,7 @@ def check_standby_list(properties, user, user_email_address):
                   venue_set_len]
     while True:
         if act_conv == venue_conv:
-            print("\nMatch Found!\n")
-            print("An act has been found for your venue that")
-            print("meets all your requirements")
-            print("Act Name:", item[0].title())
+            print("Act", item[0].title(), "matches your venue's requirements!")
             act_name = item[0]
             item_list_index = orig_list_len - len(acts) + 1
             act_day = item[2]
@@ -578,18 +570,15 @@ def check_standby_list(properties, user, user_email_address):
                      act_day, act_genre, act_fee, user, user_email_address,
                      match_email)
         elif len(acts) >= 2:
-            print("Not a match!")
             item = acts.pop(1)
-            print("next item is...")
             act_genre = (item[1])
             act_day = item[2]
             act_fee = int(item[3])
             act_members = int(item[4])
             act_set_len = float(item[5])
             act_conv = [act_genre, act_day, act_fee, act_members, act_set_len]
-            print("Act name:", item[0].title())
         else:
-            print("End of List... no matches")
+            print("End of List... no matches!")
             venue_double_booking_check(properties, user)
 
 
@@ -604,8 +593,7 @@ def check_venue_list(properties, user, user_email_address):
     print("Looking for venue for", act_name)
     check_list = properties
     orig_list_len = len(venues)
-    print(orig_list_len - 1, "venues on the waiting list!")
-    print("Checking first item...")
+    print("Checking", orig_list_len - 1, "venues for", act_name.title(), "...")
     venue_genre = item[1]
     venue_day = item[2]
     venue_fee = int(item[3])
@@ -622,8 +610,7 @@ def check_venue_list(properties, user, user_email_address):
                 act_set_len]
     while True:
         if venue_conv == act_conv:
-            print("\nMatch Found\n")
-            print("Name:", item[0].title())
+            print("Act", item[0].title(), "matches your venue's requirements!")
             venue_name = item[0]
             item_list_index = orig_list_len - len(venues) + 1
             print("List Index =", item_list_index)
@@ -635,9 +622,7 @@ def check_venue_list(properties, user, user_email_address):
                      venue_day, venue_genre, venue_fee, user,
                      user_email_address, match_email)
         elif len(venues) >= 2:
-            print("Not a match!")
             item = venues.pop(1)
-            print("next up is...")
             venue_genre = (item[1])
             venue_day = item[2]
             venue_fee = int(item[3])
@@ -645,7 +630,6 @@ def check_venue_list(properties, user, user_email_address):
             venue_set_len = float(item[5])
             venue_conv = [venue_genre, venue_day, venue_fee, venue_members,
                           venue_set_len]
-            print("Venue name:", item[0].title())
         else:
             print("End of List... no matches")
             act_double_booking_check(properties, user)
@@ -694,29 +678,24 @@ def get_match_email(properties, user, user_email_address, match_email):
     Check's the database for the correct email address
     to notify user on relevent waiting list
     """
-    print("retrieving contact info for", match_email.title())
+    print("retrieving contact info for", match_email.title(), "...")
     user_data_sheet = SHEET.worksheet("user_details").get_all_values()
     user_item = user_data_sheet.pop(1)
     user_name = user_item[0]
     while True:
         if user_name == match_email:
-            print("\nDetails Found\n")
-            print("for", user_item[0].title())
+            print("\nDetails Found for", user_item[0].title(), "\n")
             list_user_email = user_item[1]
             notify_user_gig(properties, user, user_email_address,
                             list_user_email)
             main()
         elif len(user_data_sheet) >= 2:
-            print("Still looking!")
             user_item = user_data_sheet.pop(1)
             user_name = user_item[0]
-            print("Checking next item...")
-            print("User name:", user_item[0].title())
         else:
             clear_page()
             print("Error... match details not found!")
-            print("Please contact Late Gigs via email")
-            print("about this error:")
+            print("Please contact Late Gigs via email re this error")
             print("Email: lategigs@davidcalikes.com")
             main()
 
@@ -729,22 +708,16 @@ def venue_double_booking_check(properties, user):
     user_item = gig_list.pop(1)
     user_name = user_item[1]
     day = properties[2]
-    print("user name is:", properties[0])
-    print("gig list item:", user_name)
     print("\nChecking gig list to prevent double bookings...")
     while True:
         if user_name == properties[0] and day == user_item[2]:
-            print("\nGig Found\n")
             print(f"Gig already exists for {user_name.title()} on {day}")
             print("Sorry, no double bookings allowed")
             print("Returning to main menu")
             main()
         elif len(gig_list) >= 2:
-            print("Still looking!")
             user_item = gig_list.pop(1)
             user_name = user_item[1]
-            print("Checking next item...")
-            print("User name:", user_item[1].title())
         else:
             update_data_sheet(properties, user)
             exit()
@@ -758,23 +731,15 @@ def act_double_booking_check(properties, user):
     user_item = gig_list.pop(1)
     user_name = user_item[0]
     day = properties[2]
-    print(user_name)
-    print("user name is:", properties[0])
     print("\nChecking gig list to prevent double bookings...")
     while True:
         if user_name == properties[0] and day == user_item[2]:
-            print("\nGig Found\n")
             print(f"Gig already exists for {user_name.title()} on {day}")
-            print("Sorry, no double bookings allowed")
-            print("Returning to main menu")
+            print("Sorry, no double bookings allowed! Returning to main menu.")
             main()
         elif len(gig_list) >= 2:
-            print("Still looking!")
             user_item = gig_list.pop(1)
             user_name = user_item[0]
-            print("Checking next item...")
-            print("User name:", user_item[0].title())
-            print(user_item)
         else:
             update_data_sheet(properties, user)
 
@@ -833,8 +798,7 @@ def get_venue_details():
         else:
             print("\n")
             print(f'{venue_id} is not a venue name!')
-            print("\nVenue names must contain more than")
-            print("two characters!")
+            print("\nNames must contain more than two characters!")
             print("\nPlease try again!\n")
     print("\nWhich day were you originally looking for?")
     while True:
@@ -856,26 +820,19 @@ def get_venue_details():
     user = "venue"
     user_item = venue_details.pop(1)
     user_name = user_item[0]
-    print("\nValidating user data... one moment!")
     while True:
         if user_name == venue_id and pin == user_item[2]:
-            print("\nValid pin")
             print(f"Removing {user_name.title()} from the database for {day}")
-            print("Sorry to see you go!")
             remove_entry(venue_id, day, user)
-            print("Returning to main menu")
+            print("Sorry to see you go! Returning to main menu.")
             clear_page()
             main()
         elif len(venue_details) >= 2:
-            print("Still looking!")
             user_item = venue_details.pop(1)
             user_name = user_item[0]
-            print("Checking next item...")
-            print("User name:", user_item[0].title())
         else:
             clear_page()
-            print("\nNo matching user details found!")
-            print("Returning to main menu")
+            print("\nNo matching user details found! Returning to main menu")
             main()
 
 
@@ -909,7 +866,7 @@ def get_act_details():
         if pin.isdigit() and len(pin) == 4:
             break
         else:
-            print("Invalid pin try again! (4 digit number)")
+            print("\nInvalid pin try again! (4 digit number)")
             continue
     acts_details = SHEET.worksheet("user_details").get_all_values()
     user = "act"
@@ -950,20 +907,17 @@ def remove_entry(user_id, day, user):
     while True:
         if user == "venue":
             if venue_name == user_id and day == venue_item[2]:
-                print("\nListing Found\n")
                 print(f"Removing {venue_name.title()} from database for {day}")
                 SHEET.worksheet("venues").delete_rows(venue_list_index + 1)
                 clear_page()
                 print("Listing removed! Returning to main menu")
                 main()
             elif len(venue_details) >= 2:
-                print("Still checking please wait.!")
                 venue_item = venue_details.pop(1)
                 venue_name = venue_item[0]
                 venue_list_index = orig_venue_list_len - len(venue_details) + 1
         elif user == "act":
             if act_name == user_id and day == act_item[2]:
-                print("\nListing Found\n")
                 print(act_list_index)
                 print(f"Removing {act_name.title()} from database for {day}")
                 SHEET.worksheet("standby").delete_rows(act_list_index + 1)
@@ -971,7 +925,6 @@ def remove_entry(user_id, day, user):
                 print("Listing removed! Returning to main menu!")
                 main()
             elif len(venue_details) >= 2:
-                print("Still checking please wait!")
                 print(user_id)
                 act_item = act_details.pop(1)
                 act_name = act_item[0]
@@ -1018,7 +971,7 @@ Late Gigs will store the users information on a waiting list that will
 automatically create a gig for them if a match is found.
 """)
             print("Why not give it a try!")
-            input("Press Enter get started...\n")
+            input("Press Enter to get started...")
             clear_page()
         else:
             clear_page()
