@@ -60,6 +60,7 @@ def area_check(user):
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
                 clear_page()
+                main()
             else:
                 print("Sorry, That's not a valid option\n")
                 input("Press Enter to exit to menu...\n")
