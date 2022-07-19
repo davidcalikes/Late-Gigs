@@ -75,8 +75,7 @@ def get_venue_data():
             break
         else:
             clear_page()
-            print("\n")
-            print(f'{name} is not a valid name')
+            print("\nThat's not a valid name")
             print("\nVenue names must contain more than")
             print("two characters! Please Try Again!\n")
             continue
@@ -95,8 +94,8 @@ def get_venue_data():
         else:
             clear_page()
             print("\n")
-            print(f"{genre} is not a valid genre! Type:")
-            print("\nRock, Blues, Pop, Jazz, Metal, R&b,")
+            print(f"{genre} is not a valid genre! Try again!")
+            print("\nType: Rock, Blues, Pop, Jazz, Metal, R&b,")
             print("Indie, Country or Irish trad \n")
             continue
     clear_page()
@@ -107,7 +106,7 @@ def get_venue_data():
     print("Type: Friday, Saturday or Sunday \n")
     day_list = ["friday", "saturday", "sunday"]
     while True:
-        day = input("Enter required day: \n")
+        day = input("Enter required day: ")
         if day.lower() in day_list:
             venue_data.append(day.lower())
             break
@@ -130,7 +129,7 @@ def get_venue_data():
             break
         elif data_correct == "n":
             clear_page()
-            print("That's ok, type y to restart or n to exit\n")
+            print("\nThat's ok, type y to restart or n to exit\n")
             user_choice = input("Type y or n here: \n")
             if user_choice == "y":
                 get_venue_data()
@@ -173,7 +172,7 @@ def get_venue_data():
     print("\n")
     while True:
         try:
-            members = int(input("Type number of members here: \n"))
+            members = int(input("Type number of members here: "))
             if 1 <= members <= 15:
                 print("in range")
             elif members == 0:
@@ -241,12 +240,12 @@ def get_venue_data():
             print("\nAre you sure don't want to proceed?")
             print("All data will be lost!\n")
             confirm_no = input(
-                "Type 'y' to return to menu or 's' to search database:\n")
+                "Type 'y' to return to menu or 's' to search database:")
             if confirm_no == "y":
                 clear_page()
                 main()
             elif confirm_no == "s":
-                print("That's Ok! Here we go")
+                print("\nThat's Ok! Here we go")
                 regex_check(properties, name, user)
             else:
                 print("Sorry invalid input, type 'y' or 'n'")
@@ -310,7 +309,7 @@ def get_act_data():
     print("Type: Friday, Saturday or Sunday \n")
     day_list = ["friday", "saturday", "sunday"]
     while True:
-        day = input("Enter required day: \n")
+        day = input("Enter required day: ")
         if day.lower() in day_list:
             act_data.append(day.lower())
             break
@@ -334,7 +333,7 @@ def get_act_data():
             break
         elif data_correct == "n":
             clear_page()
-            print("That's ok, type y to restart or n to exit\n")
+            print("\nThat's ok, type y to restart or n to exit\n")
             user_choice = input("Type y or n here: \n")
             if user_choice == "y":
                 get_act_data()
@@ -375,7 +374,7 @@ def get_act_data():
     print("How many members make up your act?\n")
     while True:
         try:
-            members = int(input("Type number of members here: \n"))
+            members = int(input("Type number of members here: "))
             if 1 <= members <= 15:
                 print("in range")
             elif members == 0:
@@ -445,7 +444,7 @@ def get_act_data():
                 clear_page()
                 main()
             elif confirm_no == "s":
-                print("That's Ok! Here we go")
+                print("\nThat's Ok! Here we go")
                 regex_check(properties, name, user)
             else:
                 print("Sorry invalid input, type 'y' or 'n'")
@@ -486,22 +485,28 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
     Use pin to verify email account
     """
     while True:
-        pin = user_pin
-        print(f"enter the pin we sent to {user_email_address}")
-        pin_attempt = input("enter the pin here: ")
-        pin_int = int(pin_attempt)
-        if pin_int == pin:
-            print("\nExcellent! Valid Pin! Now let's keep going!\n")
-            details = [name.lower(), user_email_address, user_pin]
-            user_details_worksheet = SHEET.worksheet("user_details")
-            user_details_worksheet.append_row(details)
-            check_database(properties, user, user_email_address)
-            break
-        else:
-            clear_page()
-            print("\n")
-            print("Sorry! Incorrect Pin! Have another Go!")
+        try:
+            pin = user_pin
+            print(f"enter the pin we sent to {user_email_address}")
+            pin_attempt = input("enter the pin here: ")
+            pin_int = int(pin_attempt)
+            if pin_int == pin:
+                print("\nExcellent! Valid Pin! Now let's keep going!\n")
+                details = [name.lower(), user_email_address, user_pin]
+                user_details_worksheet = SHEET.worksheet("user_details")
+                user_details_worksheet.append_row(details)
+                check_database(properties, user, user_email_address)
+                break
+            else:
+                clear_page()
+                print("\n")
+                print("Sorry! Incorrect Pin! Have another Go!")
+                continue
+        except ValueError:
+            print("Sorry, Only a number will do here. Try again!")
             continue
+        else:
+            break
 
 
 def check_database(properties, user, user_email_address):
