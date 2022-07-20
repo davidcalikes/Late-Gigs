@@ -484,44 +484,47 @@ Below are some features the app currently has to offer and also some features wh
     
     <br>
     <img src="./readme_images/feat_return_after_match.png"><br>_Act Added To Standby List._
+    
     <br>
 
 - __The Remove From List Feature__
     
-    * The Create Gig Feature executes when the user responds yes to a found match. 
+    * The Remove From List Feature allows users to remove a waiting list item from the relevant list if they secure a late gig by another means.
+
+    * This feature will only remove the listing if the user has a valid pin code that matches the user name who created it.
 
     <br>
 
-    <img src="./readme_images/feat_match_found.png"><br>_Match Found._
+    <img src="./readme_images/feat_remove_from_list.png"><br>_Questions And Error Handling._
 
     <br>
 
-    * If the user types anything other than y or n the error handling loop returns a message prompting them to try again.
+    * The inputs of this feature all have working error handling as seen in the example above.
 
-    * If the user selects y the create gig function begins by updating the Gig List sheet and removing the waiting list user from the waiting list sheet. The details of the gig are displayed to the user on screen.
-
-
-    * Both the active user and the waiting list user are then notified of the gig by email, which contains contact information and the gig details. Users are also encouraged to contact one another via email to discuss and confirm the booking.
-
-    * A disclaimer is also included in each Email.
+    * If the information the user submits matches data on either waiting list the entry is removed from the list.
 
     <br>
 
-    <img src="./readme_images/feat_gig_made_email.png"><br>_Creating a Gig._
+    <img src="./readme_images/feat_listing_removed.png"><br>_Successful Removal._
+
     <br>
-    * The user is then returned to the main menu after the gig is created.
+
+    * If no matching data is found the user is given written feedback and is returned to the main menu.
+
+    <br>
+
+    <img src="./readme_images/feat_no_listing_found.png"><br>_No Such Listing_
+    <br>
+
+- __Features Yet To Be Implemented__
     
-    <br>
-    <img src="./readme_images/feat_return_after_match.png"><br>_Act Added To Standby List._
-    <br>
+    
 
 
     
     
     
-    <br>
-    <br>
-    <br>
+    
     future features IMRO reg number
 
 
