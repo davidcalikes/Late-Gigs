@@ -52,7 +52,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
      So like all budding developers I thought I'd have a go at automating a solution and Late Gigs is the result.
      
-     Focusing on functionality, and a user friendly approach, Late Gigs aims to provide its specified target audience with a simple to use, effective and  essential resource. 
+     Focusing on functionality, and a user friendly approach, Late Gigs aims to provide its specified target audience with a simple to use, effective and  essential resource.
+
+     <br> 
      
 - __Target Audience__
 
@@ -244,6 +246,8 @@ Below are some features the app currently has to offer and also some features wh
 
     * If the user responds yes then the Area Check function calls the function that executes the survey feature depending on the established user type.
 
+    <br>
+
     <img src="./readme_images/feat_area_check_er.png"><br>_Area Check Error Message._
 
     <br>
@@ -391,7 +395,7 @@ Below are some features the app currently has to offer and also some features wh
 
 - __Send Email Feature__
     
-    When I started this project, I thought about the practicalities of how I would inform users if a successful match is made.
+    When I started this project I set myself the challenge of incoporating email into the app as I thought it would best suit the practicalities of how I would inform users if a successful match is made.
 
     The Email Feature, powered by Google's Gmail API has two principle uses.
 
@@ -451,16 +455,67 @@ Below are some features the app currently has to offer and also some features wh
 
     * At this point the app returns the user back to the main menu.
 
+    <br>
 
-
-
-
-
-
-
-
+- __The Create Gig Feature__
     
-    * If no match is found The Check Lists Feature adds the user to the relevant waiting list and informs them they will be notified by email if a venue or act becomes availiable in the coming days.
+    * The Create Gig Function executes when the user responds yes to a found match. 
+
+    <br>
+
+    <img src="./readme_images/feat_match_found.png"><br>_Match Found._
+
+    <br>
+
+    * If the user types anything other than y or n the error handling loop returns a message prompting them to try again.
+
+    * If the user selects y the create gig function begins by updating the Gig List sheet and removing the waiting list user from the waiting list sheet. The details of the gig are displayed to the user on screen.
+
+
+    * Both the active user and the waiting list user are then notified of the gig by email, which contains contact information and the gig details. Users are also encouraged to contact one another via email to discuss and confirm the booking.
+
+    * A disclaimer is also included in each Email.
+
+    <br>
+
+    <img src="./readme_images/feat_gig_made_email.png"><br>_Creating a Gig._
+    <br>
+    * The user is then returned to the main menu after the gig is created.
+    
+    <br>
+    <img src="./readme_images/feat_return_after_match.png"><br>_Act Added To Standby List._
+    <br>
+
+- __The Remove From List Feature__
+    
+    * The Create Gig Feature executes when the user responds yes to a found match. 
+
+    <br>
+
+    <img src="./readme_images/feat_match_found.png"><br>_Match Found._
+
+    <br>
+
+    * If the user types anything other than y or n the error handling loop returns a message prompting them to try again.
+
+    * If the user selects y the create gig function begins by updating the Gig List sheet and removing the waiting list user from the waiting list sheet. The details of the gig are displayed to the user on screen.
+
+
+    * Both the active user and the waiting list user are then notified of the gig by email, which contains contact information and the gig details. Users are also encouraged to contact one another via email to discuss and confirm the booking.
+
+    * A disclaimer is also included in each Email.
+
+    <br>
+
+    <img src="./readme_images/feat_gig_made_email.png"><br>_Creating a Gig._
+    <br>
+    * The user is then returned to the main menu after the gig is created.
+    
+    <br>
+    <img src="./readme_images/feat_return_after_match.png"><br>_Act Added To Standby List._
+    <br>
+
+
     
     
     
