@@ -771,7 +771,7 @@ def update_data_sheet(properties, user):
 
 def remove_from_list():
     """
-    Gets user type before calling secondary function
+    Get user type before calling secondary function
     """
     print("\nOk! What type of user are you... Venue or Act?")
     while True:

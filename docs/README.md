@@ -9,7 +9,7 @@ Late Gigs is an online, 'last-minute' booking service for live music in the Nort
 Recently, almost every live music venue and act across
 the region has been affected by a sudden gig cancellation due to the ongoing Covid pandemic.
 
-This command line application has been designed to help venues and artists, create gigs as quickly and efficiently as possible by firstly, searching through a database of available acts and venues to find a suitable match. If no match is found, Late Gigs will store the users information on a Google Spreadsheet then automatically create a gig for the user if a match is found. 
+This command line application has been designed to help venues and artists create gigs as quickly and efficiently as possible by firstly, searching through a database of available acts and venues to find a suitable match. If no match is found, Late Gigs will store the users information on a Google Spreadsheet then automatically create a gig for the user if a match is found. 
 
 Users can also remove themselves from either of the Google-Sheet waiting lists if they secure an eleventh hour gig by another means.
 
@@ -42,7 +42,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
  
      As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a night due to a Covid related gig cancellation. (examples below)  
      
-     <img src="./readme_images/gig_requests.png">
+     <img src="./readme_images/plan_gig_requests.png">
     
      So like all budding developers I thought I'd have a go at automating a solution and Late Gigs is the result.
      
@@ -52,27 +52,28 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
 
-    <img src="./readme_images/north_east.png">
+    <img src="./readme_images/plan_north_east.png">
     
     I conducted a number of interviews with venues and acts to determine the best way to automate a solution to the problem of late cancellations.
 
     Venues canvassed: 
     
-    Malones of Kingscourt
-    Willows of Kingscourt
-    The Kelltic of Kells
-    Bellingham Castle in County Louth
-    Watters of Castleblaney
-    Punters Bar Dundalk
+    * Malones of Kingscourt -- Aisling Malone
+    * Willows of Kingscourt. -- Willie Owens
+    * The Kelltic of Kells -- Paul Duffy
+
+    <br>
 
     Performers interviewed:
 
-    Andrew Grafton
-    Andrew Kelly
-    Liam Sheridan
-    Brian Harrison
-    Mark Montague
-    Connor Hughes
+    * Andrew Grafton
+    * Andrew Kelly
+    * Liam Sheridan
+    * Brian Harrison
+    * Mark Montague
+    * Shane McCabe
+
+    <br>
 
 
 - __Targeting Key Demographics__
@@ -81,7 +82,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     The Interviews determined that:
     
-    1. Venues are the most affected by late cancellations and should be given priority.
+    1. Venues are affected by late cancellations the most and should be given priority.
     2. Acts finding a venue is the most obvious secondary requirement.
     3. Both acts and venues should be able to continue to search for replacements alongside gig automation.
     4. Users should be able to remove themselves from the waiting list. 
@@ -108,9 +109,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 - __User Stories__
 
-    * As a user, I want to find an act for my venue for this weekend.
+    * As a user, I want to find the most suitable act for my venue for this weekend.
  
-    * As a User, I want to find a venue for my act for this weekend.
+    * As a User, I want to find the most suitable venue for my act for this weekend.
     
     * As a user, I want to increase my chances of creating a gig for the weekend.
 
@@ -125,6 +126,12 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     * As a user, I want to join a waiting list if I don't immediately find a venue
 
     * As a user, I want to be notified by email when a gig is created for my venue or act.
+
+    * As a user, I want to be notified of my progress when inputing my data.
+
+    * As a user, I want to input my data incrementally, in case I make a mistake.
+
+    * As a user, I want to change any mistakes I do make without having to run the app again.
 
 <br>
 
@@ -166,5 +173,43 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     * The app will provide a section that explains how it works. 
 
+    <br>
 
-<img src="assets/readme_images/info_flow.png">
+
+<img src="./readme_images/plan_structure.png">_Basic structure of the app._
+
+
+ - __Flowchart__ 
+
+    The logic flow of the Late Gigs app is clearly explained in the following flowchart I created to use as a useful reference while developing the project. 
+
+<br>
+
+<img src="./readme_images/plan_logic_flow.png">_Flow of logic from each of the menu functions._
+
+ <br>
+    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing for the user (double booking check function). And also the removal of standby listings from the database once a gig is created.
+
+<br>
+
+# Features #
+
+Below are some features the app currently has to offer and also some features which may be added in future.
+
+## Existing Features ##
+
+- __The Main Menu__
+
+
+
+    * The Main Menu of the app appears when the app starts and offers the user the choice of four options. The options are displayed from top to bottom in order of their importance established during planning research. The app displays a welcome message to inform the user of its purpuse and simple to follow instructions on how to begin.
+
+    <br>
+
+    <img src="./readme_images/feat_main_menu.png">_The Main Menu Screen of Late Gigs._
+
+    <br>
+
+    * The Main Menu handles input errors from by asking to try again if they do not input one of the correct options.
+
+    <br>
