@@ -257,7 +257,7 @@ Below are some features the app currently has to offer and also some features wh
 
     * Another benefit of using a multiple input survey, is that it allows the app to collect different data types at the point of entry. Not only will this be useful later when manipulating number data, it will act as a foolproof method for guaranteing each entry has the correct data type at each point of the index of any given data list, preventing possible TypeErrors when the program searches each entry in the relevant gspread database.
 
-    * Informed by planning research, the five data points collected for each user survey are:
+    * Informed by planning research, the six data points collected from each user survey are:
 
     Name, Genre, Day, Fee, Members, Set Length
     
@@ -269,16 +269,64 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * The feature establishes the users location by asking for a y/n
-    response to the question "Is your venue/act in the North East?"
+    * Name
 
-    * If the user responds no they are returned to the main menu, if they respond yes they are provided with a short survey depending on the type of user.
+    The users name is collected first. The name input accepts any data type but refuses to accept names of less than two characters. 
 
-    * The Area check function handles errors by rejecting any inputs other than a y/n response and offering users the option to try again.
+    This is to prevent users from firstly, accidently pressing return and entering no name but also to prevent the possibility of IndexErrors when accessing the database later. 
 
     <br>
 
-    <img src="./readme_images/feat_area_check_er.png">_Area Check Error Message._
+    <img src="./readme_images/feat_name.png">_Name Screen._
+
+    <br>
+
+    <img src="./readme_images/feat_name_code.png">_Name Screen_Error Handling_
+
+    <br>
+
+    * Genre
+
+    The preferred genre is collected next. The genre input accepts any input from the provided list. The genre input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
+
+    This is to guarantee the user inputs a valid genre 
+
+    <br>
+
+    <img src="./readme_images/feat_genre.png">_Genre Screen._
+
+    <br>
+
+    * Day
+
+    The preferred day is collected next. The day input accepts any input from the provided list. The day input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
+
+    This is to guarantee the user inputs a valid day 
+
+    <br>
+
+    <img src="./readme_images/feat_day.png">_Day Screen._
+
+    <br>
+
+    * User Progress Prompt
+
+    To enhance user experience, I included a breakpoint here that provides visual written feedback to the user about the data points entered so far. This is to make it easier for the user to correct a mistake early in the process. The user is prompted to continue by answering a y/n question.
+
+
+    <br>
+
+    <img src="./readme_images/feat_survey_progress.png">_Progress Screen._
+
+    <br>
+
+
+
+
+ 
+
+
+
 
 
     
