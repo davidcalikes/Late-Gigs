@@ -263,9 +263,9 @@ Below are some features the app currently has to offer and also some features wh
     
     <br>
 
-    <img src="./readme_images/feat_survey_venue.png">_venues_in_sheet._
+    <img src="./readme_images/feat_survey_venue.png">_Venues in data sheet._
 
-    <img src="./readme_images/feat_survey_act.png">_acts_in_sheet._
+    <img src="./readme_images/feat_survey_act.png">_Acts in data sheet._
 
     <br>
 
@@ -281,15 +281,15 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_name_code.png">_Name Screen_Error Handling_
+    <img src="./readme_images/feat_name_code.png">_Name Screen Error Handling_
 
     <br>
 
     * Genre
 
-    The preferred genre is collected next. The genre input accepts any input from the provided list. The genre input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
+    The preferred genre is collected next, determining the preferred genre of music of the user. The genre input accepts any input from the provided list. The genre input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
 
-    This is to guarantee the user inputs a valid genre 
+    This is to guarantee the user inputs a valid genre. 
 
     <br>
 
@@ -299,9 +299,9 @@ Below are some features the app currently has to offer and also some features wh
 
     * Day
 
-    The preferred day is collected next. The day input accepts any input from the provided list. The day input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
+    The preferred day is collected next, determining which day the user wants Late Gigs to create a gig for. The day input accepts any input from the provided list. The day input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
 
-    This is to guarantee the user inputs a valid day 
+    This is to guarantee the user inputs a valid day. 
 
     <br>
 
@@ -313,12 +313,54 @@ Below are some features the app currently has to offer and also some features wh
 
     To enhance user experience, I included a breakpoint here that provides visual written feedback to the user about the data points entered so far. This is to make it easier for the user to correct a mistake early in the process. The user is prompted to continue by answering a y/n question.
 
+    The user progress prompt refuses to accept any other input and loops around until a selection is made.
+
 
     <br>
 
     <img src="./readme_images/feat_survey_progress.png">_Progress Screen._
 
     <br>
+
+    * Fee
+
+    The fee data point is collected next, determining the correct fee venues will pays acts for their services. The fee input accepts any input that is an integer within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
+
+    This is to ensure the user inputs an integer. 
+
+    <br>
+
+    <img src="./readme_images/feat_fee.png">_Fee Screen._
+
+    <br>
+
+    * Members
+
+    The members data point is collected next, determining how many members an act has or should have according to the users needs. The members input accepts any input that is an integer within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
+
+    This is to make sure the user inputs an integer. 
+
+    <br>
+
+    <img src="./readme_images/feat_members.png">_Members Screen._
+
+    <br>
+
+   * Set Length
+
+    The set length data point is collected next, determining the length of an acts set or the length of set a venue requires. The set length input accepts any input that is an floating point number within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
+
+    This is to make sure the user inputs an floating point number. 
+
+    <br>
+
+    <img src="./readme_images/feat_set_length.png">_Set_length Screen._
+
+    <br>
+
+    
+
+
 
 
 
