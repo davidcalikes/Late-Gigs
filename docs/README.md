@@ -42,7 +42,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
  
      As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a night due to a Covid related gig cancellation. (examples below)  
      
-     <img src="./readme_images/plan_gig_requests.png">
+     <img src="./readme_images/plan_gig_requests.png">_Screenshots from my phone of venues requesting last-minute gigs._
+     
+     <br>
     
      So like all budding developers I thought I'd have a go at automating a solution and Late Gigs is the result.
      
@@ -52,7 +54,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
 
-    <img src="./readme_images/plan_north_east.png">
+    <img src="./readme_images/plan_north_east.png">_Late Gigs Catchment Area -- The North East._
     
     I conducted a number of interviews with venues and acts to determine the best way to automate a solution to the problem of late cancellations.
 
@@ -214,12 +216,18 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-- __The Area Check __
+- __The Area Check__
 
 
 
     * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. 
     Executed through options one and two from the main menu, the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
+
+    <br>
+
+    <img src="./readme_images/feat_area_check.png">_The Area Check Screen of Late Gigs._
+
+    <br>
 
     * The feature establishes the users location by asking for a y/n
     response to the question "Is your venue/act in the North East?"
@@ -230,8 +238,50 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_area_check.png">_The Area Check Screen of Late Gigs._
+    * If the user responds yes then the Area Check function calls the function that executes the survey feature depending on the established user type.
+
+    <img src="./readme_images/feat_area_check_er.png">_Area Check Error Message._
 
     <br>
+
+
+    __User Data Survey__
+
+
+
+    * When first considering my build approach to Late Gigs I wanted to make sure that whenever a user had to enter information about a particular venue or act the user experience should be easy and enjoyable and any instructions given to the user in the terminal should be upbeat and conversational as well as informative and reassuring. 
+
+    * So rather than have users input each piece of data all at once using Comma Seperated Values (Venue, Rock, 350, ect...), I opted to use an informal survey instead. 
+
+    * While this method might take slightly longer to complete, I feel that it provides the user with a much more positive experience and also allows ample opportunity to correct input errors along the way.
+
+    * Another benefit of using a multiple input survey, is that it allows the app to collect different data types at the point of entry. Not only will this be useful later when manipulating number data, it will act as a foolproof method for guaranteing each entry has the correct data type at each point of the index of any given data list, preventing possible TypeErrors when the program searches each entry in the relevant gspread database.
+
+    * Informed by planning research, the five data points collected for each user survey are:
+
+    Name, Genre, Day, Fee, Members, Set Length
+    
+    <br>
+
+    <img src="./readme_images/feat_survey_venue.png">_venues_in_sheet._
+
+    <img src="./readme_images/feat_survey_act.png">_acts_in_sheet._
+
+    <br>
+
+    * The feature establishes the users location by asking for a y/n
+    response to the question "Is your venue/act in the North East?"
+
+    * If the user responds no they are returned to the main menu, if they respond yes they are provided with a short survey depending on the type of user.
+
+    * The Area check function handles errors by rejecting any inputs other than a y/n response and offering users the option to try again.
+
+    <br>
+
+    <img src="./readme_images/feat_area_check_er.png">_Area Check Error Message._
+
+
+    
+    
 
     
