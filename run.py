@@ -507,12 +507,11 @@ def validate_user_pin(properties, name, user, user_email_address, user_pin,):
                 main()
             else:
                 clear_page()
-                print("\n")
                 print("Sorry! Incorrect Pin! Have another Go!")
                 print("Or type 0000 to return to the main menu.")
                 continue
         except ValueError:
-            print("Sorry, Only a number will do here. Try again!")
+            print("\nSorry, Only a 4 digit number will do here. Try again!")
             print("Or type 0000 to return to the main menu.")
             continue
         else:

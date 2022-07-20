@@ -257,19 +257,17 @@ Below are some features the app currently has to offer and also some features wh
 
     * Another benefit of using a multiple input survey, is that it allows the app to collect different data types at the point of entry. Not only will this be useful later when manipulating number data, it will act as a foolproof method for guaranteing each entry has the correct data type at each point of the index of any given data list, preventing possible TypeErrors when the program searches each entry in the relevant gspread database.
 
-    * Informed by planning research, the six data points collected from each user survey are:
-
-    Name, Genre, Day, Fee, Members, Set Length
+    * Informed by planning research, the six data points collected from each user survey are: Name, Genre, Day, Fee, Members and Set Length.
     
     <br>
 
-    <img src="./readme_images/feat_survey_venue.png">_Venues in data sheet._
+    <img src="./readme_images/feat_survey_venue.png">_Venues data points in data sheet._
 
-    <img src="./readme_images/feat_survey_act.png">_Acts in data sheet._
+    <img src="./readme_images/feat_survey_act.png">_Acts data points in data sheet._
 
     <br>
 
-    * Name
+* Name
 
     The users name is collected first. The name input accepts any data type but refuses to accept names of less than two characters. 
 
@@ -281,11 +279,11 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_name_code.png">_Name Screen Error Handling_
+    
 
     <br>
 
-    * Genre
+* Genre
 
     The preferred genre is collected next, determining the preferred genre of music of the user. The genre input accepts any input from the provided list. The genre input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
 
@@ -297,7 +295,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * Day
+* Day
 
     The preferred day is collected next, determining which day the user wants Late Gigs to create a gig for. The day input accepts any input from the provided list. The day input will accept capitalised, upper and lower cased versions of these options but will return an error message prompting the user to try again after every incorrect attempt.  
 
@@ -309,7 +307,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * User Progress Prompt
+* User Progress Prompt
 
     To enhance user experience, I included a breakpoint here that provides visual written feedback to the user about the data points entered so far. This is to make it easier for the user to correct a mistake early in the process. The user is prompted to continue by answering a y/n question.
 
@@ -322,7 +320,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * Fee
+* Fee
 
     The fee data point is collected next, determining the correct fee venues will pays acts for their services. The fee input accepts any input that is an integer within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
 
@@ -334,7 +332,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * Members
+* Members
 
     The members data point is collected next, determining how many members an act has or should have according to the users needs. The members input accepts any input that is an integer within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
 
@@ -346,7 +344,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-   * Set Length
+* Set Length
 
     The set length data point is collected next, determining the length of an acts set or the length of set a venue requires. The set length input accepts any input that is an floating point number within a specified range, returning an error message and prompting the user to retry if an invalid input is entered.   
 
@@ -357,6 +355,47 @@ Below are some features the app currently has to offer and also some features wh
     <img src="./readme_images/feat_set_length.png">_Set_length Screen._
 
     <br>
+
+* Pre Search Progress Prompt
+
+    To enhance user experience, I included a second breakpoint here that provides visual written feedback to the user about the data points entered so far. This is to make it easier for the user to correct a mistake at this point in the process. The user is prompted to continue by answering a y/n question.
+
+    The Pre Search progress prompt refuses to accept any other input and loops around until a valid selection is made.
+
+    <br>
+
+    <img src="./readme_images/feat_pre_search_check.png">_Pre Search Check Screen._
+
+    <br>
+
+
+* The Email Validation Screen
+
+     
+
+    The Email validation screen ensures that the user provides a valid email address in order to continue using the app.
+
+    As detailed in the image below, this feature has several error handling functions including:
+    
+    * A regular expressions checker to validate the structure of email addresses submitted to the email input.
+
+    * Error handling for the type and length of data that will be acceptable to the PIN input.
+
+    * An optional code (0000) that allows the user to return to the main menu if they have typed a structurally valid email address, but do not have access to the actual account to retrieve the code. 
+
+    <br>
+
+    <img src="./readme_images/feat_email_validation_screen.png">_Email Validation Screen._
+
+    <br>
+
+
+- __Send Email Feature__
+    
+    When I started this project, I thought about the practicalities of how I would inform users if a successful match is made.
+
+
+
 
     
 
