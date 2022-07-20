@@ -518,17 +518,44 @@ Below are some features the app currently has to offer and also some features wh
 
 - __Features Yet To Be Implemented__
     
+    * To improve user experience, the first future feature I will impliment in the next iteration of Late Gigs is a better interface for the user to interact with.
+
+    * I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
     
+    * In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
+
+    * In addition to the IMRO rewards scheme I think the app has huge potential to expand beyond it's scope of booking only last-minute bookings specifically and can be rescaled to schedule gigs for users throughout the year.
+
+    <br>
 
 
-    
-    
-    
-    
-    future features IMRO reg number
+## Testing
+
+ <br>
+
+- __Testing During Development__
+
+    <br>
+
+    <img src="./readme_images/test_run_pep8.png"><br>_run.py_
+    <br>
 
 
 
+
+- __PEP 8 Validator testing__
+    
+    * I submitted my code to the PEP8 online linter and the code shows no errors.
+
+    <br>
+
+    <img src="./readme_images/test_run_pep8.png"><br>_run.py_
+    <br>
+
+    <br>
+
+    <img src="./readme_images/test_mail_pep8.png"><br>_mail.py_
+    <br>
 
     
 
