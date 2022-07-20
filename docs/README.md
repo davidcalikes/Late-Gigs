@@ -415,15 +415,45 @@ Below are some features the app currently has to offer and also some features wh
     
     * The Check Lists feature executes when the users email address is validated by a pin sent to the users email address.
 
-    <img src="./readme_images/feat_email_validation_screen.png"><br>_Check Lists Feature._
+    <br>
+
+    <img src="./readme_images/feat_check_lists.png"><br>_Checking Venues List._
 
     * This feature loops through each entry on the list and returns this first match it finds.
 
     * In the interest of fairness, The Check Lists Feature allows Late Gigs to operate on a first-come first-served basis by starting the loop from the beginning of each waiting list. 
 
-    * If no match is found the last function of this feature is to execute the 'Double Booking Check' feature.
+    * If no match is found a 'no matched' message is displayed to the user. The last function of this feature is to execute the 'Double Booking Check' feature.
 
     * If a match is made the last function of this feature is to execute the Make Gig feature 
+
+    <br>
+
+- __The Double Booking Check__
+    
+    * The Double Booking Check feature executes when there are no matches for an appropriate venue/act found during the running of the Check Lists Feature.
+
+    <br>
+
+    <img src="./readme_images/feat_double_booking_check.png"><br>_Scanning Gig List For Double Bookings._
+
+    <br>
+
+    * This feature makes sure the user does not have an existing scheduled gig for the same day already on the 'gig_list' Google sheet, reducing the risk of a double booking.
+
+    * If no gig list entry is found the venue or act is added to the appropriate waiting list to wait for a match over the coming days.
+
+    <img src="./readme_images/feat_no_double.png"><br>_No Double Bookings Found._
+
+    <img src="./readme_images/feat_enter_standby.png"><br>_Act Added To Standby List._
+    <br>
+    * If a gig already exists for the user on the particular day specified the act or venue is not added to the database and the user is informed via written feedback.
+
+    * At this point the app returns the user back to the main menu.
+
+
+
+
 
 
 
