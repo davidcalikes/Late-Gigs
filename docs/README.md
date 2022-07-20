@@ -82,7 +82,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     The Interviews determined that:
     
-    1. Venues are affected by late cancellations the most and should be given priority.
+    1. Venues are affected by late cancellations the most and should be given priority as it is easier to find replacement bar staff than finding replacement musicians.
     2. Acts finding a venue is the most obvious secondary requirement.
     3. Both acts and venues should be able to continue to search for replacements alongside gig automation.
     4. Users should be able to remove themselves from the waiting list. 
@@ -210,6 +210,28 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * The Main Menu handles input errors from by asking to try again if they do not input one of the correct options.
+    * The Main Menu handles input errors by asking users to try again if they do not input one of the correct options.
 
     <br>
+
+- __The Area Check __
+
+
+
+    * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. 
+    Executed through options one and two from the main menu, the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
+
+    * The feature establishes the users location by asking for a y/n
+    response to the question "Is your venue/act in the North East?"
+
+    * If the user responds no they are returned to the main menu, if they respond yes they are provided with a short survey depending on the type of user.
+
+    * The Area check function handles errors by rejecting any inputs other than a y/n response and offering users the option to try again.
+
+    <br>
+
+    <img src="./readme_images/feat_area_check.png">_The Area Check Screen of Late Gigs._
+
+    <br>
+
+    
