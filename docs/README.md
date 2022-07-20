@@ -58,7 +58,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
 
-    <img src="./readme_images/plan_north_east.png">_Late Gigs Catchment Area -- The North East._
+    <img src="./readme_images/plan_north_east.png"><br>_Late Gigs Catchment Area -- The North East._
     
     I conducted a number of interviews with venues and acts to determine the best way to automate a solution to the problem of late cancellations.
 
@@ -182,7 +182,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     <br>
 
 
-<img src="./readme_images/plan_structure.png">_Basic structure of the app._
+<img src="./readme_images/plan_structure.png"><br>_Basic structure of the app._
 
 
  - __Flowchart__ 
@@ -191,7 +191,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 <br>
 
-<img src="./readme_images/plan_logic_flow.png">_Flow of logic from each of the menu functions._
+<img src="./readme_images/plan_logic_flow.png"><br>_Flow of logic from each of the menu functions._
 
  <br>
     The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing(double booking check function). And also the removal of standby listings from the database once a gig is created.
@@ -212,7 +212,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_main_menu.png">_The Main Menu Screen of Late Gigs._
+    <img src="./readme_images/feat_main_menu.png"><br>_The Main Menu Screen of Late Gigs._
 
     <br>
 
@@ -229,7 +229,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_area_check.png">_The Area Check Screen of Late Gigs._
+    <img src="./readme_images/feat_area_check.png"><br>_The Area Check Screen of Late Gigs._
 
     <br>
 
@@ -244,7 +244,7 @@ Below are some features the app currently has to offer and also some features wh
 
     * If the user responds yes then the Area Check function calls the function that executes the survey feature depending on the established user type.
 
-    <img src="./readme_images/feat_area_check_er.png">_Area Check Error Message._
+    <img src="./readme_images/feat_area_check_er.png"><br>_Area Check Error Message._
 
     <br>
 
@@ -265,9 +265,9 @@ Below are some features the app currently has to offer and also some features wh
     
     <br>
 
-    <img src="./readme_images/feat_survey_venue.png">_Venues data points in data sheet._
+    <img src="./readme_images/feat_survey_venue.png"><br>_Venues data points in data sheet._
 
-    <img src="./readme_images/feat_survey_act.png">_Acts data points in data sheet._
+    <img src="./readme_images/feat_survey_act.png"><br>_Acts data points in data sheet._
 
     <br>
 
@@ -279,7 +279,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_name.png">_Name Screen._
+    <img src="./readme_images/feat_name.png"><br>_Name Screen._
 
     <br>
 
@@ -292,7 +292,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_genre.png">_Genre Screen._
+    <img src="./readme_images/feat_genre.png"><br>_Genre Screen._
 
     <br>
 
@@ -304,7 +304,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_day.png">_Day Screen._
+    <img src="./readme_images/feat_day.png"><br>_Day Screen._
 
     <br>
 
@@ -317,7 +317,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_survey_progress.png">_Progress Screen._
+    <img src="./readme_images/feat_survey_progress.png"><br>_Progress Screen._
 
     <br>
 
@@ -329,7 +329,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_fee.png">_Fee Screen._
+    <img src="./readme_images/feat_fee.png"><br>_Fee Screen._
 
     <br>
 
@@ -341,7 +341,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_members.png">_Members Screen._
+    <img src="./readme_images/feat_members.png"><br>_Members Screen._
 
     <br>
 
@@ -353,7 +353,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_set_length.png">_Set_length Screen._
+    <img src="./readme_images/feat_set_length.png"><br>_Set_length Screen._
 
     <br>
 
@@ -365,7 +365,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_pre_search_check.png">_Pre Search Check Screen._
+    <img src="./readme_images/feat_pre_search_check.png"><br>_Pre Search Check Screen._
 
     <br>
 
@@ -384,7 +384,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_email_validation_screen.png">_Email Validation Screen._
+    <img src="./readme_images/feat_email_validation_screen.png"><br>_Email Validation Screen._
 
     <br>
 
@@ -402,7 +402,7 @@ Below are some features the app currently has to offer and also some features wh
 
     The user is sent a unique pin number to help ensure no one can search the database without providing valid contact information first.
 
-    <img src="./readme_images/feat_send_email.png"><br>                                                       _Email Sent To User._
+    <img src="./readme_images/feat_send_email.png"><br>                  _Email Sent To User._
 
     The unique pin sent by email also prevents unauthorised users from removing gig listings maliciously.
 
@@ -415,7 +415,7 @@ Below are some features the app currently has to offer and also some features wh
     
     * The Check Lists feature executes when the users email address is validated by a pin sent to the users email address.
 
-    <img src="./readme_images/feat_email_validation_screen.png">_Check Lists Feature._
+    <img src="./readme_images/feat_email_validation_screen.png"><br>_Check Lists Feature._
 
     * This feature loops through each entry on the list and returns this first match it finds.
 
