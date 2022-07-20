@@ -6,6 +6,8 @@ Late Gigs is an online, 'last-minute' booking service for live music in the Nort
 
 <img src="./readme_images/header.png">
 
+<br>
+
 Recently, almost every live music venue and act across
 the region has been affected by a sudden gig cancellation due to the ongoing Covid pandemic.
 
@@ -15,11 +17,13 @@ Users can also remove themselves from either of the Google-Sheet waiting lists i
 
 Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either of the waiting lists by email when a match is made and a gig is created. They are then automatically removed from the waiting lists and placed on a list of confirmed gigs.
 
+<br>
+
 
 ## Contents
-[Planning & Development](https://github.com/)
+[Planning & Development](https://github.com/davidcalikes/Late-Gigs#planning--development)
 
-[Features](https://github.com/)
+[Features](https://github.com/davidcalikes/Late-Gigs#features)
 
 [Testing](https://github.com/)
 
@@ -42,7 +46,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
  
      As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a night due to a Covid related gig cancellation. (examples below)  
      
-     <img src="./readme_images/plan_gig_requests.png">_Screenshots from my phone of venues requesting last-minute gigs._
+     <img src="./readme_images/plan_gig_requests.png"><br>_Screenshots from my phone of venues requesting last-minute gigs._
      
      <br>
     
@@ -97,7 +101,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     * Users who book acts for venues and are looking to book an act for a particular day of the coming weekend.
 
-    * Users who are performers lloking to book an act for a particualar day of the coming weekend.
+    * Users who are performers loking to find a gig for a particualar day of the coming weekend.
 
     * Users who have had a gig cancelled due to Covid.
 
@@ -153,7 +157,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     
     * To automate booking gigs.
 
-    * To increase the popularity of the app
+    * To increase the popularity of the app.
 
     * To provide users with the ability to subscribe to a mailing list.
 
@@ -190,7 +194,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 <img src="./readme_images/plan_logic_flow.png">_Flow of logic from each of the menu functions._
 
  <br>
-    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing for the user (double booking check function). And also the removal of standby listings from the database once a gig is created.
+    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing(double booking check function). And also the removal of standby listings from the database once a gig is created.
 
 <br>
 
@@ -204,7 +208,7 @@ Below are some features the app currently has to offer and also some features wh
 
 
 
-    * The Main Menu of the app appears when the app starts and offers the user the choice of four options. The options are displayed from top to bottom in order of their importance established during planning research. The app displays a welcome message to inform the user of its purpuse and simple to follow instructions on how to begin.
+    * The Main Menu appears when the app starts and offers the user the choice of four options. The options are displayed from top to bottom in order of their importance established during planning research. The app displays a welcome message to inform the user of its purpuse and simple to follow instructions on how to begin.
 
     <br>
 
@@ -271,7 +275,7 @@ Below are some features the app currently has to offer and also some features wh
 
     The users name is collected first. The name input accepts any data type but refuses to accept names of less than two characters. 
 
-    This is to prevent users from firstly, accidently pressing return and entering no name but also to prevent the possibility of IndexErrors when accessing the database later. 
+    This is to prevent users from entering no name at all, reducing the possibility of IndexErrors when accessing the database later. 
 
     <br>
 
@@ -279,9 +283,6 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    
-
-    <br>
 
 * Genre
 
@@ -371,8 +372,6 @@ Below are some features the app currently has to offer and also some features wh
 
 * The Email Validation Screen
 
-     
-
     The Email validation screen ensures that the user provides a valid email address in order to continue using the app.
 
     As detailed in the image below, this feature has several error handling functions including:
@@ -393,6 +392,52 @@ Below are some features the app currently has to offer and also some features wh
 - __Send Email Feature__
     
     When I started this project, I thought about the practicalities of how I would inform users if a successful match is made.
+
+    The Email Feature, powered by Google's Gmail API has two principle uses.
+
+    1. To notify the user.
+    2. To prevent misuse of the site.
+    
+    The user is notified by email whenever a successful match is made and a gig is created on the Google sheets database.
+
+    The user is sent a unique pin number to help ensure no one can search the database without providing valid contact information first.
+
+    <img src="./readme_images/feat_send_email.png"><br>                                                       _Email Sent To User._
+
+    The unique pin sent by email also prevents unauthorised users from removing gig listings maliciously.
+
+    More details about the use of Email in Late Gigs can be found [here]
+
+    <br> 
+
+
+- __Check Lists Feature__
+    
+    * The Check Lists feature executes when the users email address is validated by a pin sent to the users email address.
+
+    <img src="./readme_images/feat_email_validation_screen.png">_Check Lists Feature._
+
+    * This feature loops through each entry on the list and returns this first match it finds.
+
+    * In the interest of fairness, The Check Lists Feature allows Late Gigs to operate on a first-come first-served basis by starting the loop from the beginning of each waiting list. 
+
+    * If no match is found the last function of this feature is to execute the 'Double Booking Check' feature.
+
+    * If a match is made the last function of this feature is to execute the Make Gig feature 
+
+
+
+
+
+    
+    * If no match is found The Check Lists Feature adds the user to the relevant waiting list and informs them they will be notified by email if a venue or act becomes availiable in the coming days.
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    future features IMRO reg number
 
 
 
