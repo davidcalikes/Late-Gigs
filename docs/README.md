@@ -537,7 +537,28 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/test_run_pep8.png"><br>_run.py_
+    * During development I monitored the flow and logic of my code using print statements.
+
+    <br>
+
+    <img src="./readme_images/test_print1.png"><br>_run.py_
+    <br>
+
+
+    * I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
+
+    <br>
+
+    <img src="./readme_images/test_print.png"><br>_run.py_
+    <br>
+    
+    
+    
+    * During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
+
+    <br>
+
+    <img src="./readme_images/test_pylint.png"><br>_run.py_
     <br>
 
 
