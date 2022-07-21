@@ -196,7 +196,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 <img src="./readme_images/plan_logic_flow.png"><br>_Flow of logic from each of the menu functions._
 
  <br>
-    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing(double booking check function). And also the removal of standby listings from the database once a gig is created.
+    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing(double booking check function). And also the removal of standby listings from the database once a gig is created. This flow chart does not include the about feature.
 
 <br>
 
@@ -514,10 +514,11 @@ Below are some features the app currently has to offer and also some features wh
     <br>
 
     <img src="./readme_images/feat_no_listing_found.png"><br>_No Such Listing_
+    
     <br>
 
 
-    - __The About Feature__
+- __The About Feature__
     
     * The About Feature explains the purpose and functionality of Late Gigs to the user.
 
