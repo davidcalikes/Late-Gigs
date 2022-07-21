@@ -449,6 +449,8 @@ Below are some features the app currently has to offer and also some features wh
 
     <img src="./readme_images/feat_no_double.png"><br>_No Double Bookings Found._
 
+    <br>
+
     <img src="./readme_images/feat_enter_standby.png"><br>_Act Added To Standby List._
     <br>
     * If a gig already exists for the user on the particular day specified the act or venue is not added to the database and the user is informed via written feedback.
@@ -471,6 +473,11 @@ Below are some features the app currently has to offer and also some features wh
 
     * If the user selects y the create gig function begins by updating the Gig List sheet and removing the waiting list user from the waiting list sheet. The details of the gig are displayed to the user on screen.
 
+    <br>
+
+    <img src="./readme_images/feat_gig_made_email.png"><br>Creating A Gig._
+
+    <br>
 
     * Both the active user and the waiting list user are then notified of the gig by email, which contains contact information and the gig details. Users are also encouraged to contact one another via email to discuss and confirm the booking.
 
@@ -478,11 +485,12 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_gig_made_email.png"><br>_Creating a Gig._
+    <img src="./readme_images/feat_gig_made_email.png"><br>_Notification Email._
     <br>
     * The user is then returned to the main menu after the gig is created.
     
     <br>
+
     <img src="./readme_images/feat_return_after_match.png"><br>_Act Added To Standby List._
     
     <br>
