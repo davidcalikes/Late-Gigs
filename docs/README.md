@@ -40,7 +40,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 ## Planning & Development
 
 
-- __Business Strategy__
+- __Business Case__
 
      Late Gigs was born out of my own personal frustration surrounding the manifold increase in booking cancellations throught the local (North East) live music scene. 
  
@@ -60,8 +60,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
      <br> 
 
-     As I began to develop the app I continued to recieve daily gig requests for short notice bookings. I feel this further stregthend an already robust business case.
+     As I began to develop the app I continued to recieve daily gig requests for short notice bookings. I feel this further strengthened an already robust business case.
      
+     <br>
 - __Target Audience__
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
@@ -549,8 +550,6 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-
-
 - __Features Yet To Be Implemented__
     
     * To improve user experience, the first future feature I will impliment in the next iteration of Late Gigs is a better interface for the user to interact with.
@@ -584,14 +583,16 @@ Below are some features the app currently has to offer and also some features wh
 
     * I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
 
+    <img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
     <br>
 
-    <img src="./readme_images/test_print.png"><br>_Print Statement In Later Development_
+    <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
+    
     <br>
     
+    *  Using Pylint
     
-    
-    * During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
+        During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
 
     <br>
 
