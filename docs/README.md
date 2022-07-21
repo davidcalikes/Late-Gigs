@@ -30,7 +30,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 <img src="./readme_images/sheet_names.png"><br>_Sheet Names_
        
     
-<img src="./readme_images/sheet_venues.png"><br>_ The Venues Waiting List_
+<img src="./readme_images/sheet_venues.png"><br>_The Venues Waiting List_
 
 
 <img src="./readme_images/sheet_standby.png"><br>_The Acts Standby List_
