@@ -58,14 +58,14 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
      <br>
 
+     As I began to develop the app I continued to receive daily gig requests for short notice bookings. I feel this further strengthened an already robust business case.
+     <br>
+
      <img src="./readme_images/plan_business_case.png"><br>_Late Gig Request During Development._
 
      <br> 
 
-     As I began to develop the app I continued to recieve daily gig requests for short notice bookings. I feel this further strengthened an already robust business case.
-
-     
-     <br>
+    
 - __Target Audience__
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
@@ -235,8 +235,6 @@ Below are some features the app currently has to offer and also some features wh
 
 - __The Area Check__
 
-
-
     * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. Executed through options one and two from the 'Main Menu', the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
 
     <br>
@@ -264,8 +262,6 @@ Below are some features the app currently has to offer and also some features wh
 
 
     __User Data Survey__
-
-
 
     * When first considering my build approach to Late Gigs I wanted to make sure that whenever a user had to enter information about a particular venue or act the user experience should be easy and enjoyable and any instructions given to the user in the terminal should be upbeat and conversational as well as informative and reassuring. 
 
@@ -571,45 +567,46 @@ Below are some features the app currently has to offer and also some features wh
 
  <br>
 
-- __Testing During Development__
-
-    <br>
-
-    * During development I monitored the flow and logic of my code using print statements.
-
-    <br>
-
-    <img src="./readme_images/test_print1.png"><br>_Use of Print Statement For Testing._
-    <br>
-
-
-    * I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
-
-    <img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
-    <br>
-
-    <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
-    
-    <br>
-    
-    *  Using Pylint
-    
-        During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
-
-    <br>
-
-    <img src="./readme_images/test_pylint.png"><br>_Using Pylint Gitpod Extension_
-    <br>
+[Testing During Development]()
 
 <br>
 
-- __Post Development Testing__
+* During development I monitored the flow and logic of my code using print statements.
 
-    * Peer Reviews
+<br>
 
-        Because of the automated email feature within the app I decided that some of my Code Institute peers might not like the idea of using their personal email accounts to test the it, so I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided instead to ask a select group of collegues to give me feedback on using the app.
+<img src="./readme_images/test_print1.png"><br>_Use of Print Statement For Testing._
 
-        <br>
+<br>
+
+
+* I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
+
+    <img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
+<br>
+
+    <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
+
+<br>
+
+*  Using Pylint
+
+    During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
+
+<br>
+
+<img src="./readme_images/test_pylint.png"><br>_Using Pylint Gitpod Extension_
+<br>
+
+<br>
+
+[Post Development Testing]()
+
+* Peer Reviews
+
+    Because of the automated email feature within the app I decided that some of my Code Institute peers might not like the idea of using their personal email accounts to test the it, so I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided instead to ask a select group of collegues to give me feedback on using the app.
+
+    <br>
 
     * Richard Wells.
 
@@ -935,7 +932,7 @@ Below are some features the app currently has to offer and also some features wh
 
     It provided me with the option to create the gig by answering yes or no
 
-    I chose yes
+    I choose yes
 
     The program successfully created a gig by adding the act and venue to the gig_list google sheet
 
@@ -1069,8 +1066,7 @@ Below are some features the app currently has to offer and also some features wh
     and was taken back to the main menu.
 
         </details>
-            
-            
+              
     <br>
 
     The results of sequence testing returned no further errors.
@@ -1109,15 +1105,48 @@ Bugs found during manual testing:
 
 <br>
 
-<img src="./readme_images/test_value_error.png"><br>_Value Error Found During Test Sequence.
+<img src="./readme_images/test_value_error.png"><br>_Value Error Found During Test Sequence._
     
 <br>
 
 1. I discovered a value error that would cause a negative user experience at the user pin input during the first run of the sequence. I fixed this by adding an error handling feature that prompts the user to try again and gives them feedback about the entering a valid pin.
 
-2. During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving and inputing a pin so I provided a condition to the function loop that would allow the user to exit to menu by typing 0000 [UX Error]
+2. During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving or inputing their pin so I added an extra condition to the function loop that would allow the user to exit to the 'Main Menu' by typing '0000' [UX Error]
 
-    Obviously there is an issue with this solution if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance) I will try to find a more elegant way of solving this problem, (max 3 attempts for example) during development of Late Gigs V2.0 
+    Obviously there is an issue with this solution if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance) I will try to find a more elegant way of solving this problem, (max 3 attempts for example) during development of Late Gigs V2.0
+
+ 
+<br>
+
+
+# Deployment
+
+### Cloning the GitHub Repository
+
+<br>
+
+* Visit the Late Gigs GitHub Repository by clicking the link [here](https://github.com/davidcalikes/Late-Gigs)
+    
+* Access the 'Code' menu from above the main directory window and choose a preffered cloning option by selecting either HTTPS or GitHub CLI. An SSH key is required should you prefer that option.  
+
+* Press the overlapping squares icon to copy the link to the repository.
+
+ <details>
+       <summary>Open Git Bash and change the current working directory to your prefered directory.</summary>
+
+ <img src="./readme_images/deploy_2.png"><br>_[Credit: Stack Overflow](https://stackoverflow.com/questions/8961334/how-to-change-folder-with-git-bash.)_
+ <details>
+
+* Use the "git clone" command and paste the URL of the Late Gigs repository.
+
+* Press Enter to creat the clone.
+
+
+ 
+
+
+
+
 
 
 
