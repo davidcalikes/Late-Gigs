@@ -11,9 +11,9 @@ Late Gigs is an online, 'last-minute' booking service for live music in the Nort
 Recently, almost every live music venue and act across
 the region has been affected by a sudden gig cancellation due to the ongoing Covid pandemic.
 
-This command line application has been designed to help venues and artists create gigs as quickly and efficiently as possible by firstly, searching through a database of available acts and venues to find a suitable match. If no match is found, Late Gigs will store the users information on a Google Spreadsheet then automatically create a gig for the user if a match is found. 
+The Late Gigs command line application has been designed to help venues and artists create gigs as quickly and efficiently as possible by firstly, searching through a database of available acts and venues to find a suitable match. If no match is found, Late Gigs will store the users information on a Google Spreadsheet then automatically create a gig for the user if a match is found in the following days. 
 
-Users can also remove themselves from either of the Google-Sheet waiting lists if they secure an eleventh hour gig by another means.
+Users can also remove themselves from either of the Google Sheet waiting lists if they secure an eleventh hour gig by another means.
 
 Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either of the waiting lists by email when a match is made and a gig is created. They are then automatically removed from the waiting lists and placed on a list of confirmed gigs.
 
@@ -70,18 +70,20 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 - __Business Case__
 
-     Late Gigs was born out of my own personal frustration surrounding the manifold increase in booking cancellations throught the local (North East) live music scene. 
+     Late Gigs was born out of my own personal frustration surrounding the manifold increase in booking cancellations throughout the local (North East) live music scene. 
  
-     As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a due to a Covid related cancellation. (examples below)  
+     As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a gig due to a Covid related cancellation. (examples below)  
      
      <img src="./readme_images/plan_gig_requests.png"><br>_Screenshots from my phone of venues requesting last-minute gigs._
      
      <br>
     
-     So like all aspiring developers I thought I'd have a go at automating a solution and Late Gigs is the outcome.
+    Like all aspiring developers, I thought it might be a good idea to have a go at automating a workable solution and Late Gigs is the result.
      
      Focusing on functionality, and a user friendly approach, Late Gigs aims to provide its specified target audience with a simple to use, effective and  essential resource.
 
+* Similar Examples
+     
      Whilst the business models may differ significantly, Late Gigs was nontheless inspired by other successful 'eleventh hour' online enterprises. (Examples Below)
 
      <br>
@@ -138,18 +140,23 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
     <br>
 
 
-- __Targeting Key Demographics__
+- __Research Conclusions__
 
     The app's content and how it is displayed is informed by the outcomes of the research mentioned above.
     
     The Interviews determined that:
     
-    1. Venues are affected by late cancellations the most and should be given priority as it is easier to find replacement bar staff than finding replacement musicians.
-    2. Acts finding a venue is the most obvious secondary requirement.
-    3. Both acts and venues should be able to continue to search for replacements alongside gig automation.
-    4. Users should be able to remove themselves from the waiting list. 
-    5. It is in the interest of all users to avoid double bookings.
-    6. Users should find the app easy to use.
+    * Venues are affected by late cancellations the most and should be given priority as it is easier to find replacement bar staff than finding replacement musicians.
+
+    * Acts finding a venue is the most obvious secondary requirement.
+
+    * Both acts and venues should be able to continue to search for replacements alongside gig automation.
+
+    * Users should be able to remove themselves from the waiting list. 
+
+    * It is in the interest of all users to avoid double bookings.
+
+    * Users should find the app easy to use.
     
 <br>
 
@@ -215,7 +222,6 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     * To increase the popularity of the app.
 
-    * To provide users with the ability to subscribe to a mailing list.
 
 <br>
 
@@ -225,9 +231,9 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
     * The app will be created following the principles of user experience design.
 
-    * The app will collect user data in a the conversational style of a fun survey. 
+    * The app will collect user data in a the conversational style of a light-hearted survey. 
 
-    * The app will provide users with the contact information of users with matching requirements when a gig is created. 
+    * The app will provide each user type with the contact information of the user with matching requirements when a gig is created. 
     
     * The app will provide users with access to the database via PIN code to remove themselves from the database.
 
@@ -244,14 +250,14 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
  - __Flowchart__ 
 
-    The logic flow of the Late Gigs app is clearly explained in the following flowchart I created to use as a useful reference while developing the project. 
+    The logic flow of the Late Gigs app is clearly explained in the following flowchart I created to use as a useful reference while developing the project. The Flowchart displays how the Late Gigs project as a whole embraces the principles of the CRUD functionality cycle. 
 
 <br>
 
 <img src="./readme_images/plan_logic_flow.png"><br>_Flow of logic from each of the menu functions._
 
  <br>
-    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of flow present in the current app that are missing from the original chart design. These include: passing user information through the "confirmed gigs" google sheet before creating a standby listing(double booking check function). And also the removal of standby listings from the database once a gig is created. This flow chart does not include the about feature.
+    The final logic flow of the Late Gigs app doesn't deviate from this chart but there are some aspects of logic flow present in the current app that are missing from the original chart's design. For example: passing the users information through the "confirmed gigs" Google sheet before creating a standby listing(double booking check function). And also the removal of a users standby listings from the database once a gig is created. This flow chart does not include the 'About' feature.
 
 <br>
 
@@ -1172,7 +1178,7 @@ Bugs found during manual testing:
 
 # Deployment
 
-### Cloning The Late Gigs GitHub Repository
+### Cloning The 'Late Gigs' GitHub Repository
 
 <br>
 
@@ -1202,7 +1208,7 @@ Bugs found during manual testing:
 
 <br>
 
-### Forking The Late Gigs GitHub Repository
+### Forking The 'Late Gigs' GitHub Repository
 
 <br>
 
@@ -1225,9 +1231,9 @@ Bugs found during manual testing:
 
 * Create a new app giving your app a unique name. 
 
-* Click on the settings tab scrolling down to the config vars section and set up the apps environment variable here. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
+* Click on the settings tab scrolling down to the 'Config Vars' section and set up the apps environment variables here. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
 
-* Next click 'Bulidpacks' and add the Python buildpack then the Node.js bulid pack strictly in that order.
+* Next click 'Buildpacks' and add the 'Python' buildpack then the 'Node.js' bulid pack strictly in that order.
 
 * Select the 'Deploy' tab next and select GitHub as the deployment method.
 
