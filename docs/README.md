@@ -578,7 +578,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/test_print1.png"><br>_run.py_
+    <img src="./readme_images/test_print1.png"><br>_Use of Print Statement For Testing._
     <br>
 
 
@@ -586,7 +586,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/test_print.png"><br>_run.py_
+    <img src="./readme_images/test_print.png"><br>_Print Statement In Later Development_
     <br>
     
     
@@ -595,13 +595,28 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/test_pylint.png"><br>_run.py_
+    <img src="./readme_images/test_pylint.png"><br>_Using Pylint Gitpod Extension_
+    <br>
+
+<br>
+
+- __Post Development Testing__
+
+    * Peer Reviews
+
+    Due to the nature of Late Gigs' automated email feature I decided that some peers might not like the idea of using their personal Email accounts to test the app. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into an testing account was too much of an inconveinience so I decided to ask a select group to give me feedback on using the app.
+
+    * Richard Wells.
+
+    Apart from myself, Richard was the first user of the deployed app and found a bug while inputing his email address.
+
+    I explain how I fixed this bug later in this section.
+
     <br>
 
 
 
-
-- __PEP 8 Validator testing__
+* PEP8 Onliine Validator
     
     * I submitted my code to the PEP8 online linter and the code shows no errors.
 
@@ -613,7 +628,46 @@ Below are some features the app currently has to offer and also some features wh
     <br>
 
     <img src="./readme_images/test_mail_pep8.png"><br>_mail.py_
+    
     <br>
+
+
+
+* Bug Fixes
+
+    * Email Input Bug
+
+        During an online meeting with my Code Institute Mentor Richard Wells I found a bug that rejected valid user email addresses.
+
+        The error was caused by the function used to validate the structure of an email address using regular expressions not validating users who included a period in the first part of the email address.
+
+        This was solved by updating the Regex variable that contained the list of valid expressions.
+
+    <br>
+
+    * Area Check Bug
+
+        I also found another error that occured when a user tried to reply no to the 'Area Check' question.
+
+    <br>
+
+    <img src="./readme_images/bug_area_check.png"><br>_Area Check Bug_
+    
+    <br>
+
+    This was caused by the lack of an elif condition in the function's while loop and was easily fixed.
+
+    <br>
+
+    <img src="./readme_images/bug_area_check_fix.png"><br>_Area Check Bug_
+
+    <br>
+
+    * Index Error Bug
+
+        I also found another bug that created an IndexError while the Double Booking Check feature searched through the Gig_list data sheet.
+
+        This was caused by me accidently removing a cell from the Gig List.
 
     
 
