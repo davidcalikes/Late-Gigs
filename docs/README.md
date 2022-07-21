@@ -21,6 +21,32 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 [Live project:](https://late-gigs.herokuapp.com/)
 
+<details>
+    <summary>Original Google Sheets Data For Testing (Subject to change).
+    <br></summary>
+    
+    
+
+<img src="./readme_images/sheet_names.png"><br>_Sheet Names_
+       
+    
+<img src="./readme_images/sheet_venues.png"><br>_Venues_waiting_list_
+
+
+<img src="./readme_images/sheet_standby.png"><br>_The Acts Standby List_
+
+
+<img src="./readme_images/sheet_confirmed_gigs.png"><br>_The Confirmed Gigs List_
+
+
+<img src="./readme_images/sheet_user_data.png"><br>_The User Details Database_
+    
+  </details> 
+
+  <br> 
+    
+
+
 
 ## Contents
 [Planning & Development](https://github.com/davidcalikes/Late-Gigs#planning--development)
@@ -1195,7 +1221,7 @@ Bugs found during manual testing:
 
  <br>
 
-* Access your Heroku account: https://id.heroku.com/login
+* Access your Heroku account: https://id.heroku.com/login (Create a new account if required)
 
 * Create a new app giving your app a unique name. 
 
