@@ -56,7 +56,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
      <br>
 
-     <img src="./readme_images/plan_business_case.jpg"><br>_Late Gig Request During Development._
+     <img src="./readme_images/plan_business_case.png"><br>_Late Gig Request During Development._
 
      <br> 
 
@@ -719,7 +719,7 @@ Below are some features the app currently has to offer and also some features wh
 
 - __Manual Testing__
 
-    
+
 
 
 
