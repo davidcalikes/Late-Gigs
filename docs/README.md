@@ -1,7 +1,5 @@
 <h1>Late Gigs</h1>
 
-[Live project:](https://late-gigs.herokuapp.com/)
-
 Late Gigs is an online, 'last-minute' booking service for live music in the North East of Ireland.
 
 <img src="./readme_images/header.png">
@@ -18,6 +16,8 @@ Users can also remove themselves from either of the Google-Sheet waiting lists i
 Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either of the waiting lists by email when a match is made and a gig is created. They are then automatically removed from the waiting lists and placed on a list of confirmed gigs.
 
 <br>
+
+[Live project:](https://late-gigs.herokuapp.com/)
 
 
 ## Contents
@@ -44,7 +44,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
      Late Gigs was born out of my own personal frustration surrounding the manifold increase in booking cancellations throught the local (North East) live music scene. 
  
-     As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a night due to a Covid related gig cancellation. (examples below)  
+     As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a due to a Covid related cancellation. (examples below)  
      
      <img src="./readme_images/plan_gig_requests.png"><br>_Screenshots from my phone of venues requesting last-minute gigs._
      
@@ -61,6 +61,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
      <br> 
 
      As I began to develop the app I continued to recieve daily gig requests for short notice bookings. I feel this further strengthened an already robust business case.
+
      
      <br>
 - __Target Audience__
@@ -605,13 +606,15 @@ Below are some features the app currently has to offer and also some features wh
 
     * Peer Reviews
 
-    Due to the nature of Late Gigs' automated email feature I decided that some of my Code Institute peers might not like the idea of using their personal Email accounts to test the app. So I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided to ask a select group of collegues to give me feedback on using the app.
+        Because of the automated email feature within the app I decided that some of my Code Institute peers might not like the idea of using their personal email accounts to test the it, so I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided instead to ask a select group of collegues to give me feedback on using the app.
+
+        <br>
 
     * Richard Wells.
 
-    Apart from myself, Richard was the first user of the deployed app and found a bug while inputing his email address.
+        Apart from myself, Richard was the first user of the deployed app and found a bug while inputing his email address.
 
-    I explain the natur of this error and how I fixed the bug later in this section.
+        I explain the natur of this error and how I fixed the bug later in this section.
 
     <br>
 
@@ -672,9 +675,7 @@ Below are some features the app currently has to offer and also some features wh
     
     <br>
 
-
-
-* Bug Fixes
+* Found Bugs and Fixes
 
     * Email Input Bug
 
@@ -709,6 +710,18 @@ Below are some features the app currently has to offer and also some features wh
         I also found another bug that created an IndexError while the Double Booking Check feature searched through the Gig_list data sheet.
 
         This was caused by me accidently removing a cell from the Gig List.
+
+* Other Known Bugs 
+
+    There are currently no other known bugs but I will leave this section within the README document for any bugs that appear as the app continues to develop.
+
+    <br>
+
+- __Manual Testing__
+
+    
+
+
 
     
 
