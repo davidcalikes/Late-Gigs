@@ -598,21 +598,23 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-- __Features Yet To Be Implemented__
+## Features Yet To Be Implemented
+
+<br>
     
-    * To improve user experience, the first future feature I will impliment in the next iteration of Late Gigs is a better interface for the user to interact with.
+* To improve user experience, the first future feature I will impliment in the next iteration of Late Gigs is a better interface for the user to interact with.
 
-    * I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
-    
-    * The current version of Late Gigs requires the owner of the site to manually reset the database at the beginning of every week. In the future, I will automate this feature so that the Google Sheets are cleared for a new week. I would also like to collect the data from previous weeks to establish patterns of user behaviour accross time. This could prove useful to Venues and acts and could be a way to begin monetising the site.
+* I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
 
-    * I would also like to include the option of monetising the site by offering users a way to gain a higher priority listing for a small fee.
-    
-    * In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
+* The current version of Late Gigs requires the owner of the site to manually reset the database at the beginning of every week. In the future, I will automate this feature so that the Google Sheets are cleared for a new week. I would also like to collect the data from previous weeks to establish patterns of user behaviour accross time. This could prove useful to Venues and acts and could be a way to begin monetising the site.
 
-    * The next logical step towards broadening the scope of future versions of the app would be to expand the catchment area of Late Gigs, offering the service to users from neighbouring counties.
+* I would also like to include the option of monetising the site by offering users a way to gain a higher priority listing for a small fee.
 
-    * In addition to the IMRO rewards scheme I think the app has huge potential to expand beyond it's scope of booking only last-minute bookings specifically and can be rescaled to schedule gigs for users throughout the year.
+* In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
+
+* The next logical step towards broadening the scope of future versions of the app would be to expand the catchment area of Late Gigs, offering the service to users from neighbouring counties.
+
+* In addition to the IMRO rewards scheme I think the app has huge potential to expand beyond it's scope of booking only last-minute bookings specifically and can be rescaled to schedule gigs for users throughout the year.
 
     <br>
 
@@ -1247,17 +1249,25 @@ Bugs found during manual testing:
 
   ###
 
-  
-
   * Set up APIs using the Google Cloud Platform
 
-      Access the [Google Cloud Platform](https://console.cloud.google.com/)
-      Create a new project and give it a unique name, then select the project to go to the project dashboard
-      Setup Google Drive credentials 
+      * Log in to Google Cloud :https://console.cloud.google.com
+      
+      * Set up a new project. 
+      
+      * Click the burger menu in the top left of the screen to access the sidebar menu.
 
-        Click on the hamburger menu in the top left of the screen to access the navigation menu
-        On the left hand menu select 'APIs and Services' and then 'Library'
+      * From the sidebar menu click 'APIs and Services' and then 'Library'
+
+      <br>
+
+    <img src="./readme_images/deploy_api1.png"><br>_Forking Option_
+        
+    <br>
+
         Search for Google Drive API
+
+
         Select Google Drive API and click on 'enable' to get to the API and Services Overview page 
         Click on the Create Credentials button near the top left of the screen
         Select 'Google Drive' API from the dropdown for 'Credential Type'
