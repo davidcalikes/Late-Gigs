@@ -516,6 +516,17 @@ Below are some features the app currently has to offer and also some features wh
     <img src="./readme_images/feat_no_listing_found.png"><br>_No Such Listing_
     <br>
 
+
+    - __The About Feature__
+    
+    * The About Feature explains the purpose and functionality of Late Gigs to the user.
+
+    * The About Feature is selected by choosing option 4 from the main menu.
+
+    * The user exits the About Feature by pressing any key.
+
+    <br>
+
 - __Features Yet To Be Implemented__
     
     * To improve user experience, the first future feature I will impliment in the next iteration of Late Gigs is a better interface for the user to interact with.
