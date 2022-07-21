@@ -1121,25 +1121,79 @@ Bugs found during manual testing:
 
 # Deployment
 
-### Cloning the GitHub Repository
+### Cloning The Late Gigs GitHub Repository
 
 <br>
 
-* Visit the Late Gigs GitHub Repository by clicking the link [here](https://github.com/davidcalikes/Late-Gigs)
+* Visit the repository: <br> https://github.com/davidcalikes/Late-Gigs
     
-* Access the 'Code' menu from above the main directory window and choose a preffered cloning option by selecting either HTTPS or GitHub CLI. An SSH key is required should you prefer that option.  
+* Access the 'Code' menu from above the main directory window and choose a preffered cloning option by selecting either HTTPS or GitHub CLI. An SSH key is required should you prefer that option.
+
+    <br>
+
+    <img src="./readme_images/deploy_1.png"><br>Code Menu
+    
+    <br>
 
 * Press the overlapping squares icon to copy the link to the repository.
 
- <details>
-       <summary>Open Git Bash and change the current working directory to your prefered directory.</summary>
+    <details>
+        <summary>Open Git Bash and change the current working directory to your prefered directory.</summary>
 
- <img src="./readme_images/deploy_2.png"><br>_[Credit: Stack Overflow](https://stackoverflow.com/questions/8961334/how-to-change-folder-with-git-bash.)_
- <details>
+    <img src="./readme_images/deploy_2.png"><br>_[Credit: Stack Overflow](https://stackoverflow.com/questions/8961334/how-to-change-folder-with-git-bash.)_
+    <details>
+
+    <br>
 
 * Use the "git clone" command and paste the URL of the Late Gigs repository.
 
-* Press Enter to creat the clone.
+* Press Enter to create the clone.
+
+<br>
+
+### Forking The Late Gigs GitHub Repository
+
+<br>
+
+* Visit the repository: <br> https://github.com/davidcalikes/Late-Gigs
+
+* Click on the 'Fork' option.
+
+    <br>
+
+    <img src="./readme_images/deploy_fork.png"><br>Forking Option
+        
+    <br>
+
+
+### Deploying Late Gigs To Heroku
+
+ <br>
+
+* Access your Heroku account: https://id.heroku.com/login
+
+* Create a new app giving your app a unique name. 
+
+* Click on the settings tab scrolling down to the config vars section and set up the apps environment variable here. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
+
+* Next click 'Bulidpacks' and add the Python buildpack then the Node.js bulid pack strictly in that order.
+
+* Select the 'Deploy' tab next and select GitHub as the deployment method.
+
+* Enter the name of the repository in the search field provided and click 'Connect' to create a link between Heroku and the GitHub repository.
+
+* Choose to either manually or automatically deploy the app. Applications deployed using the 'Automatic Deploy' option are automatically updated every time changes are pushed to github.
+
+
+### Deploying Late Gigs To Heroku
+
+
+
+
+
+
+
+
 
 
  
