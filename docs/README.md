@@ -806,7 +806,6 @@ Below are some features the app currently has to offer and also some features wh
 
     My choices were “TEST, Rock and Friday”
 
-
     When asked if I was happy with these choices I selected y
 
     I was asked to submit a fee
@@ -838,7 +837,6 @@ Below are some features the app currently has to offer and also some features wh
     It was not accepted and I was asked to try again.
 
     I entered 1.5
-
 
     I was then presented with the values I had entered.
 
@@ -1078,6 +1076,51 @@ Below are some features the app currently has to offer and also some features wh
     <br>
 
     The results of sequence testing returned no further errors.
+
+    I used the testing sequence to vigorously check for errors using the following venues and acts.
+
+Venue input data
+
+| Name             | Genre      | Day      | Fee | Members | Set Length |
+|------------------|------------|----------|-----|---------|------------|
+| The Broken Clock | Irish Trad | Sunday   | 300 | 3       | 2.5        |
+| The Scumm Bar    | Blues      | Saturday | 150 | 2       | 2          |
+| The Big Tree     | Pop        | Friday   | 200 | 4       | 2          |
+| The Bloody Lip   | Jazz       | Sunday   | 350 | 3       | 3          |
+
+Act input data
+
+| Name                     | Genre      | Day      | Fee | Members | Set Length |
+|--------------------------|------------|----------|-----|---------|------------|
+| The Bloodthirsty Pirates | Irish Trad | Sunday   | 300 | 3       | 2.5        |
+| The Loomineers           | Blues      | Saturday | 150 | 2       | 2          |
+| The Grog Girls           | Pop        | Friday   | 200 | 4       | 2          |
+| The Toothrot Trio        | Jazz       | Sunday   | 350 | 3       | 3          |
+
+Results
+
+| Venue            | Name                     | Input Errors | Other Errors | Emails Sent/Received | 1st User |
+|------------------|--------------------------|--------------|--------------|----------------------|----------|
+| The Broken Clock | The Bloodthirsty Pirates | 1            | 1            | yes                  | venue    |
+| The Scumm Bar    | The Loomineers           | 0            | 0            | yes                  | act      |
+| The Big Tree     | The Grog Girls           | 0            | 0            | yes                  | venue    |
+| The Bloody Lip   | The Toothrot Trio        | 0            | 0            | yes                  | act      |
+
+
+Bugs found during manual testing:
+
+<br>
+
+<img src="./readme_images/test_value_error.png"><br>_Value Error Found During Test Sequence.
+    
+<br>
+
+1. I discovered a value error that would cause a negative user experience at the user pin input during the first run of the sequence. I fixed this by adding an error handling feature that prompts the user to try again and gives them feedback about the entering a valid pin.
+
+2. During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving and inputing a pin so I provided a condition to the function loop that would allow the user to exit to menu by typing 0000 [UX Error]
+
+    Obviously there is an issue with this solution if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance) I will try to find a more elegant way of solving this problem, (max 3 attempts for example) during development of Late Gigs V2.0 
+
 
 
 
