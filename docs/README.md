@@ -604,17 +604,57 @@ Below are some features the app currently has to offer and also some features wh
 
     * Peer Reviews
 
-    Due to the nature of Late Gigs' automated email feature I decided that some peers might not like the idea of using their personal Email accounts to test the app. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into an testing account was too much of an inconveinience so I decided to ask a select group to give me feedback on using the app.
+    Due to the nature of Late Gigs' automated email feature I decided that some of my Code Institute peers might not like the idea of using their personal Email accounts to test the app. So I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided to ask a select group of collegues to give me feedback on using the app.
 
     * Richard Wells.
 
     Apart from myself, Richard was the first user of the deployed app and found a bug while inputing his email address.
 
-    I explain how I fixed this bug later in this section.
+    I explain the natur of this error and how I fixed the bug later in this section.
 
     <br>
 
+    * David Bowers.
 
+        I asked fellow Code Institute Student David to check over Late Gigs for me and let me know if he found any issues.
+
+        <br>
+
+    <img src="./readme_images/test_peer_request.png"><br>_Requesting Peer Review_
+    <br>
+
+    I was delighted when David agreed to help review my code. 
+
+    David found an issue with the y/n question inputs and kindly offered a solution.
+
+    <br>
+
+    <img src="./readme_images/test_feedback1.png"><br>_Feedback From Peer_
+    <br>
+
+    Somewhat disconcertingly, David did not find any other errors both as a user and within the code base.
+
+    During his review David used Late Gigs to create a waiting list listing in the Google Sheets database.
+
+    <img src="./readme_images/testing_peer_review.png"><br>_Peer Listing_
+    
+    
+    <br>
+
+    I used this information to create a matching act for David's venue running the program from option to on the 'Main Menu'.
+
+    A gig was created and both users were informed via email.
+
+    The gig was added to the gig list sheet and the venue was removed from the standby list.
+
+
+    * Kasia Bogucka 
+
+        I asked Kasia to provide some feedback specifically regarding her experience as a user of Late Gigs.
+
+        Kasia was extremely positive about the app in general but found a rogue testing print statement that would not have been of any benefit to the user.
+
+        <br> 
 
 * PEP8 Onliine Validator
     
