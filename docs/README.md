@@ -1161,7 +1161,7 @@ Bugs found during manual testing:
 
     <br>
 
-    <img src="./readme_images/deploy_fork.png"><br>Forking Option
+    <img src="./readme_images/deploy_fork.png"><br>_Forking Option_
         
     <br>
 
@@ -1184,8 +1184,110 @@ Bugs found during manual testing:
 
 * Choose to either manually or automatically deploy the app. Applications deployed using the 'Automatic Deploy' option are automatically updated every time changes are pushed to github.
 
+<br>
 
-### Deploying Late Gigs To Heroku
+### Enabling API's
+
+  ###
+
+  
+
+  * Set up APIs using the Google Cloud Platform
+
+      Access the [Google Cloud Platform](https://console.cloud.google.com/)
+      Create a new project and give it a unique name, then select the project to go to the project dashboard
+      Setup Google Drive credentials 
+
+        Click on the hamburger menu in the top left of the screen to access the navigation menu
+        On the left hand menu select 'APIs and Services' and then 'Library'
+        Search for Google Drive API
+        Select Google Drive API and click on 'enable' to get to the API and Services Overview page 
+        Click on the Create Credentials button near the top left of the screen
+        Select 'Google Drive' API from the dropdown for 'Credential Type'
+        Select the 'Application Data' radio button in the 'What data will you be accessing' area
+        Select the 'No, I'm not using them' for the 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?' area
+        Cick Next
+        On the Create Service Account page, step 1 is to enter a service account name in the first text box.  Any value can be entered here.
+        Click on 'Create and Continue'
+        On step 2, 'Grant this service account access to project',  select Basic -> Editor from the 'Select a Role' dropdown.
+        Click on Continue
+        On step 3, 'Grant users access to this service account', simply press Done, no input is necessary
+        On the next page, click on the service account name created (listed under the Service Accounts area) to go to the configuration page for the new service account.
+        Click on the KEYS tab at the top middle of the screen.
+        Click on the Add Key dropdown and select Create New Key.
+        Select the JSON radio button then click Create. The json file with the new API credentials will download your machine. 
+        Rename the downloaded file to creds.json.  This filename is already listed in the project .gitignore file and so no further action will be needed to prevent it being accidentally uploaded to github 
+        Copy the new creds.json file into the local clone
+        In the creds.json file, copy the value for "client email" and then on Google Drive, share the spreadsheet created above with this email address assigning a role of Editor similar to the image shown below :
+
+          
+
+* Enable Google Sheets API 
+        
+     * Go back to the dashboard for the project on Google Cloud Platform and access the navigation menu as before
+     * On the left hand menu select 'APIs and Services' and then 'Library'
+     * Search for Google Sheets API
+     * Select Google Sheets API and click on 'enable'
+
+        <br>
+
+* Enable GMail API 
+        
+     * Go back to the dashboard for the project on Google Cloud Platform and access the navigation menu as before
+     * On the left hand menu select 'APIs and Services' and then 'Library'
+     * Search for Gmail API
+     * Select Gmail API and click on 'enable'
+
+  * Install gspread and google-auth and gmail libraries using the command 'pip3 install gspread gmail google-auth'
+
+ <br>
+
+* Authorise Gmail Via Google Workspace
+
+    * Log in to to your Google Workspace account: If you do not have a workspace account you can sign up for a 14 day free trial [here.](https://workspace.google.com/business/signup/welcome?hl=en-IE&source=gafb-pricing-body-en-IE&ga_region=en_ie&ga_country=en_ie&ga_lang=en&sku=businessstarter&__utma=61317162.84784263.1657825154.1657905712.1658431340.4&__utmb=61317162.0.10.1658431369248&__utmc=61317162&__utmx=-&__utmz=61317162.1658431340.4.4.utmcsr=google|utmgclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2GlAabBD2YKmgJqQ9uuvXuAqqftiInlFjHypjqYQUb392_BHwa1KnwaAupzEALw_wcB|utmgclsrc=aw.ds|utmccn=emea-ie-all-en-dr-bkws-all-all-trial-p-t1-1011339|utmcmd=cpc|utmctr=KW_google%20workspace%20account-g|utmcct=text-ad-none-none-DEV_c-CRE_554514867052-ADGP_Hybrid%20|%20BKWS%20-%20PHR%20|%20Txt%20~%20Google%20Workspace%20~%20Create_Account-KWID_43700067037915940-kwd-980680864686-userloc_20476&__utmv=-&__utmk=249278784)
+
+    * Open up a Google [admin console](https://admin.google.com/) while signed in with your workspace account.
+
+    * Click on the tab labelled 'Security' on the left hand side of the screen.
+
+    * Click the 'API controls' tab from the 'Access and data controls' drop down 
+    menu.
+
+    <br>
+
+    <img src="./readme_images/deploy_admin.png"><br>_Google Admin_
+        
+    <br>
+
+    * At the bottom of the page click the 'Manage Domain Wide Delegation' tab.
+
+    * Click on the 'Add a filter' tab
+
+    * In the 'Client id' field copy and paste the Client Id from your creds.json file.
+
+    <br>
+
+    <img src="./readme_images/deploy_client_id.png"><br>_Client id_
+        
+    <br>
+
+
+
+
+
+
+
+* Create Google Sheets Database
+  
+  * Log in to your Google account (create one if necessary)
+
+  * Create a Google Spreadsheet called 'ms3-event-scheduler' on
+    
+  * Google Drive with 2 pages/sheets, one called 'events' and  one called 'bookings'.  
+    
+  * In row 1 of the events sheet, enter the headings : Event Code, Event Name, Date, Host, Capacity, Status Reason.
+    
+  * In row 1 of the bookings sheet, enter the headings Event,Code, Date, Name, Email, Seats
 
 
 
