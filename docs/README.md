@@ -50,11 +50,17 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
      
      <br>
     
-     So like all budding developers I thought I'd have a go at automating a solution and Late Gigs is the result.
+     So like all aspiring developers I thought I'd have a go at automating a solution and Late Gigs is the outcome.
      
      Focusing on functionality, and a user friendly approach, Late Gigs aims to provide its specified target audience with a simple to use, effective and  essential resource.
 
+     <br>
+
+     <img src="./readme_images/plan_business_case.jpg"><br>_Late Gig Request During Development._
+
      <br> 
+
+     As I began to develop the app I continued to recieve daily gig requests for short notice bookings. I feel this further stregthend an already robust business case.
      
 - __Target Audience__
 
@@ -226,8 +232,7 @@ Below are some features the app currently has to offer and also some features wh
 
 
 
-    * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. 
-    Executed through options one and two from the main menu, the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
+    * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. Executed through options one and two from the 'Main Menu', the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
 
     <br>
 
@@ -238,7 +243,7 @@ Below are some features the app currently has to offer and also some features wh
     * The feature establishes the users location by asking for a y/n
     response to the question "Is your venue/act in the North East?"
 
-    * If the user responds no they are returned to the main menu, if they respond yes they are provided with a short survey depending on the type of user.
+    * If the user responds no they are returned to the 'Main Menu' if they respond yes they are provided with a short survey depending on the type of user.
 
     * The Area check function handles errors by rejecting any inputs other than a y/n response and offering users the option to try again.
 
@@ -384,7 +389,7 @@ Below are some features the app currently has to offer and also some features wh
 
     * Error handling for the type and length of data that will be acceptable to the PIN input.
 
-    * An optional code (0000) that allows the user to return to the main menu if they have typed a structurally valid email address, but do not have access to the actual account to retrieve the code. 
+    * An optional code (0000) that allows the user to return to the 'Main Menu' if they have typed a structurally valid email address, but do not have access to the actual account to retrieve the code. 
 
     <br>
 
@@ -423,13 +428,13 @@ Below are some features the app currently has to offer and also some features wh
 
     <img src="./readme_images/feat_check_lists.png"><br>_Checking Venues List._
 
-    * This feature loops through each entry on the list and returns this first match it finds.
+    * This feature loops through each entry on the list and returns the first match it finds.
 
     * In the interest of fairness, The Check Lists Feature allows Late Gigs to operate on a first-come first-served basis by starting the loop from the beginning of each waiting list. 
 
     * If no match is found a 'no matched' message is displayed to the user. The last function of this feature is to execute the 'Double Booking Check' feature.
 
-    * If a match is made the last function of this feature is to execute the Make Gig feature 
+    * If a match is made the last function of this feature is to execute the 'Create Gig' feature 
 
     <br>
 
@@ -455,7 +460,7 @@ Below are some features the app currently has to offer and also some features wh
     <br>
     * If a gig already exists for the user on the particular day specified the act or venue is not added to the database and the user is informed via written feedback.
 
-    * At this point the app returns the user back to the main menu.
+    * At this point the app returns the user back to the 'Main Menu'.
 
     <br>
 
@@ -475,7 +480,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_gig_made_email.png"><br>Creating A Gig._
+    <img src="./readme_images/feat_gig_made_email.png"><br>_Creating A Gig._
 
     <br>
 
@@ -487,7 +492,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <img src="./readme_images/feat_gig_made_email.png"><br>_Notification Email._
     <br>
-    * The user is then returned to the main menu after the gig is created.
+    * The user is then returned to the 'Main Menu' after the gig is created.
     
     <br>
 
@@ -517,7 +522,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * If no matching data is found the user is given written feedback and is returned to the main menu.
+    * If no matching data is found the user is given written feedback and is returned to the 'Main Menu'.
 
     <br>
 
@@ -530,11 +535,21 @@ Below are some features the app currently has to offer and also some features wh
     
     * The About Feature explains the purpose and functionality of Late Gigs to the user.
 
-    * The About Feature is selected by choosing option 4 from the main menu.
+    * The About Feature is selected by choosing option 4 from the 'Main Menu'.
 
     * The user exits the About Feature by pressing any key.
 
     <br>
+
+- __The Clear Page Feature__
+    
+    * The Clear Page Feature removes messages, inputs and options no longer needed by the user.
+
+    * The Clear Page Feature enhances the user experience by making it easier for the user to focus on relevant information.
+
+    <br>
+
+
 
 - __Features Yet To Be Implemented__
     
@@ -543,6 +558,8 @@ Below are some features the app currently has to offer and also some features wh
     * I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
     
     * In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
+
+    * The next logical step towards broadening the scope of future versions of the app would be to expand the catchment area of Late Gigs, offering the service to users from neighbouring counties.
 
     * In addition to the IMRO rewards scheme I think the app has huge potential to expand beyond it's scope of booking only last-minute bookings specifically and can be rescaled to schedule gigs for users throughout the year.
 
