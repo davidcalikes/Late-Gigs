@@ -420,8 +420,6 @@ Below are some features the app currently has to offer and also some features wh
 
     The unique pin sent by email also prevents unauthorised users from removing gig listings maliciously.
 
-    More details about the use of Email in Late Gigs can be found [here]
-
     <br> 
 
 

@@ -37,11 +37,11 @@ def area_check(user):
         print("Please confirm you're in the North East Area.\n")
         if user_type == "venue":
             venue_location = input("Is your venue in the North East?:(y/n)\n")
-            if venue_location == "y":
+            if venue_location.lower() == "y":
                 clear_page()
                 print("\nOK, just making sure... let's find you an act!\n")
                 get_venue_data()
-            elif venue_location == "n":
+            elif venue_location.lower() == "n":
                 clear_page()
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
@@ -51,11 +51,11 @@ def area_check(user):
                 print("Invalid input! Type either y or n!")
         elif user_type == "act":
             act_location = input("Is your act in the North East?:(y/n)\n")
-            if act_location == "y":
+            if act_location.lower() == "y":
                 clear_page()
                 print("\nOK, just making sure... let's find you a venue!\n")
                 get_act_data()
-            elif act_location == "n":
+            elif act_location.lower() == "n":
                 clear_page()
                 print("Sorry, Late gigs only operates in the NE Area\n")
                 input("Press Enter to exit to menu...\n")
@@ -129,17 +129,17 @@ def get_venue_data():
     print("\n")
     while True:
         data_correct = input("Are you happy to continue?:(y/n)\n")
-        if data_correct == "y":
+        if data_correct.lower() == "y":
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
             break
-        elif data_correct == "n":
+        elif data_correct.lower() == "n":
             clear_page()
             print("\nThat's ok, type y to restart or n to exit\n")
             user_choice = input("Type y or n here: \n")
-            if user_choice == "y":
+            if user_choice.lower() == "y":
                 get_venue_data()
-            elif user_choice == "n":
+            elif user_choice.lower() == "n":
                 main()
             else:
                 print("Invalid option! y or n please!")
@@ -237,24 +237,24 @@ def get_venue_data():
     while True:
         print("Would you like to search the database for a suitable act?\n")
         data_ver = input("Confirm search?:(y/n)\n")
-        if data_ver == "y":
+        if data_ver == "y" or "Y":
             clear_page()
             print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
-        elif data_ver == "n":
+        elif data_ver.lower() == "n":
             clear_page()
             print("\nAre you sure don't want to proceed?")
             print("All data will be lost!\n")
             confirm_no = input(
                 "Type 'y' to return to menu or 's' to search database:")
-            if confirm_no == "y":
+            if confirm_no.lower() == "y":
                 clear_page()
                 main()
-            elif confirm_no == "s":
+            elif confirm_no.lower() == "s":
                 print("\nThat's Ok! Here we go")
                 regex_check(properties, name, user)
             else:
-                print("Sorry invalid input, type 'y' or 'n'")
+                print("Sorry invalid input, type 'y' or 's'")
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
@@ -333,17 +333,17 @@ def get_act_data():
     print("\n")
     while True:
         data_correct = input("Are you happy to continue?:(y/n)\n")
-        if data_correct == "y":
+        if data_correct.lower() == "y":
             clear_page()
             print("\nOK cool! Now let's keep going!\n")
             break
-        elif data_correct == "n":
+        elif data_correct.lower() == "n":
             clear_page()
             print("\nThat's ok, type y to restart or n to exit\n")
             user_choice = input("Type y or n here: \n")
-            if user_choice == "y":
+            if user_choice.lower() == "y":
                 get_act_data()
-            elif user_choice == "n":
+            elif user_choice.lower() == "n":
                 main()
             else:
                 print("Invalid option! y or n please!")
@@ -436,24 +436,24 @@ def get_act_data():
     while True:
         print("Would you like to search the database for a suitable venue?\n")
         data_ver = input("Confirm search?:(y/n)\n")
-        if data_ver == "y":
+        if data_ver.lower() == "y":
             clear_page()
             print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
-        elif data_ver == "n":
+        elif data_ver.lower() == "n":
             clear_page()
             print("\nAre you sure don't want to proceed?")
             print("All data will be lost!\n")
             confirm_no = input(
                 "Type 'y' to return to menu or 's' to search database:\n")
-            if confirm_no == "y":
+            if confirm_no.lower() == "y":
                 clear_page()
                 main()
-            elif confirm_no == "s":
+            elif confirm_no.lower() == "s":
                 print("\nThat's Ok! Here we go")
                 regex_check(properties, name, user)
             else:
-                print("Sorry invalid input, type 'y' or 'n'")
+                print("Sorry invalid input, type 'y' or 's'")
         else:
             clear_page()
             print("Sorry invalid input, please type either 'y' or 'n'")
@@ -645,7 +645,7 @@ def make_gig(item_list_index, act_name, venue_name,
         properties = [act_name, venue_name, user_day, user_genre, user_fee]
         item_index = item_list_index
         print("DB index =", item_index)
-        if user_choice == "y" and user == "venue":
+        if user_choice.lower() == "y" and user == "venue":
             clear_page()
             print("\nBooya! Lets do it... Updating Databases!\n")
             print("Updating gig listings...")
@@ -656,7 +656,7 @@ def make_gig(item_list_index, act_name, venue_name,
             get_match_email(properties, user, user_email_address, match_email)
             print(match_email)
             exit()
-        elif user_choice == "y" and user == "act":
+        elif user_choice.lower() == "y" and user == "act":
             clear_page()
             print("Updating gig listings...")
             SHEET.worksheet("gig_list").append_row(properties)
