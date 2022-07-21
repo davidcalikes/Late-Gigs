@@ -56,6 +56,22 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
      
      Focusing on functionality, and a user friendly approach, Late Gigs aims to provide its specified target audience with a simple to use, effective and  essential resource.
 
+     Whilst the business models may differ significantly, Late Gigs was nontheless inspired by other successful 'eleventh hour' online enterprises. (Examples Below)
+
+     <br>
+
+     <img src="./readme_images/plan_example1"><br>_Lastminute.com._
+
+     <br> 
+
+     <br>
+
+     <img src="./readme_images/plan_example2.png"><br>_Late Rooms.com._
+
+     <br> 
+
+
+
      <br>
 
      As I began to develop the app I continued to receive daily gig requests for short notice bookings. I feel this further strengthened an already robust business case.
@@ -64,6 +80,8 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
      <img src="./readme_images/plan_business_case.png"><br>_Late Gig Request During Development._
 
      <br> 
+
+     
 
     
 - __Target Audience__
@@ -554,6 +572,10 @@ Below are some features the app currently has to offer and also some features wh
 
     * I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
     
+    * The current version of Late Gigs requires the owner of the site to manually reset the database at the beginning of every week. In the future, I will automate this feature so that the Google Sheets are cleared for a new week. I would also like to collect the data from previous weeks to establish patterns of user behaviour accross time. This could prove useful to Venues and acts and could be a way to begin monetising the site.
+
+    * I would also like to include the option of monetising the site by offering users a way to gain a higher priority listing for a small fee.
+    
     * In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
 
     * The next logical step towards broadening the scope of future versions of the app would be to expand the catchment area of Late Gigs, offering the service to users from neighbouring counties.
@@ -561,7 +583,6 @@ Below are some features the app currently has to offer and also some features wh
     * In addition to the IMRO rewards scheme I think the app has huge potential to expand beyond it's scope of booking only last-minute bookings specifically and can be rescaled to schedule gigs for users throughout the year.
 
     <br>
-
 
 ## Testing
 
@@ -1101,6 +1122,10 @@ Results
 | The Bloody Lip   | The Toothrot Trio        | 0            | 0            | yes                  | act      |
 
 
+NB I used different values to test the removal of two of each of the Venues and two of the Acts listings.
+
+No errors were returned when testing the Remove Listing Feature.
+
 Bugs found during manual testing:
 
 <br>
@@ -1242,7 +1267,7 @@ Bugs found during manual testing:
 
  <br>
 
-* Authorise Gmail Via Google Workspace
+* Authorise Gmail Via Domain Wide Delegation
 
     * Log in to to your Google Workspace account: If you do not have a workspace account you can sign up for a 14 day free trial [here.](https://workspace.google.com/business/signup/welcome?hl=en-IE&source=gafb-pricing-body-en-IE&ga_region=en_ie&ga_country=en_ie&ga_lang=en&sku=businessstarter&__utma=61317162.84784263.1657825154.1657905712.1658431340.4&__utmb=61317162.0.10.1658431369248&__utmc=61317162&__utmx=-&__utmz=61317162.1658431340.4.4.utmcsr=google|utmgclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2GlAabBD2YKmgJqQ9uuvXuAqqftiInlFjHypjqYQUb392_BHwa1KnwaAupzEALw_wcB|utmgclsrc=aw.ds|utmccn=emea-ie-all-en-dr-bkws-all-all-trial-p-t1-1011339|utmcmd=cpc|utmctr=KW_google%20workspace%20account-g|utmcct=text-ad-none-none-DEV_c-CRE_554514867052-ADGP_Hybrid%20|%20BKWS%20-%20PHR%20|%20Txt%20~%20Google%20Workspace%20~%20Create_Account-KWID_43700067037915940-kwd-980680864686-userloc_20476&__utmv=-&__utmk=249278784)
 
@@ -1271,23 +1296,31 @@ Bugs found during manual testing:
         
     <br>
 
+     * In the 'Client id' field copy and paste the Client Id from your creds.json file.
 
+    * In the 'Scopes' field copy and paste the following: https://mail.google.com/
 
+    <br>
 
+* Create The Google Sheets Database
 
-
-
-* Create Google Sheets Database
-  
-  * Log in to your Google account (create one if necessary)
-
-  * Create a Google Spreadsheet called 'ms3-event-scheduler' on
+  * Create a Google Spreadsheet called 'late-gigs' on
+    Google Drive with 4 sheets:
+    * venues
+    * standby
+    * gig_list
+    * user_details
     
-  * Google Drive with 2 pages/sheets, one called 'events' and  one called 'bookings'.  
+    <br>
     
-  * In row 1 of the events sheet, enter the headings : Event Code, Event Name, Date, Host, Capacity, Status Reason.
+  * The sheets should look exactly like the examples below.
+
+
+
     
-  * In row 1 of the bookings sheet, enter the headings Event,Code, Date, Name, Email, Seats
+  * The data in these examples is not necessary for the app to function correctly but incomplete rows may result in IndexErrors and values outside the following will result in ValueErrors:
+
+    * 
 
 
 
