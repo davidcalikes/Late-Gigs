@@ -640,7 +640,7 @@ Below are some features the app currently has to offer and also some features wh
     <img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
 <br>
 
-    <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
+  <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
 
 <br>
 
