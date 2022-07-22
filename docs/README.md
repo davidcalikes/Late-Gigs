@@ -199,7 +199,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 <br>
 
-- __Site Objectives__
+- __App Objectives__
 
     * To make Late Gigs a recognisable solution to an existing problem.
     
@@ -454,7 +454,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    * To prevent misuse of the site.
+    * To prevent misuse of the app.
     
     The user is notified by email whenever a successful match is made and a gig is created on the Google sheets database.
 
@@ -604,9 +604,9 @@ Below are some features the app currently has to offer and also some features wh
 
 * I would also like to provide users with more flexibility regarding their data points, allowing for matches that are within a range of genres and have less or more than a set number of members etc. I purposely gave each data point a data type that will help facilitate this during the development of Late Gigs v2.0
 
-* The current version of Late Gigs requires the owner of the site to manually reset the database at the beginning of every week. In the future, I will automate this feature so that the Google Sheets are cleared for a new week. I would also like to collect the data from previous weeks to establish patterns of user behaviour accross time. This could prove useful to Venues and acts and could be a way to begin monetising the site.
+* The current version of Late Gigs requires the owner of the app to manually reset the database at the beginning of every week. In the future, I will automate this feature so that the Google Sheets are cleared for a new week. I would also like to collect the data from previous weeks to establish patterns of user behaviour accross time. This could prove useful to Venues and acts and could be a way to begin monetising the app.
 
-* I would also like to include the option of monetising the site by offering users a way to gain a higher priority listing for a small fee.
+* I would also like to include the option of monetising the app by offering users a way to gain a higher priority listing for a small fee.
 
 * In future versions of this app I would like to implement a priority scheme that would reward venues that provide Late Gigs with their IMRO registration number. I feel this would provide further security for the app and would eliminate the possibility of someone maliciously making bookings on behalf of venues.
 
@@ -1256,7 +1256,7 @@ Bugs found during manual testing:
         
     <br>
 
-    * Fill out the 'Credential Type Form"
+    * Fill out the 'Credential Type' Form
         
     * Create a 'Service Account' by entering an account name in the name field.
     
@@ -1268,7 +1268,7 @@ Bugs found during manual testing:
         
     <br>
     
-    * Click on the service account name in the Service Accounts section and to go to the configuration page for the new account.
+    * Click on the service account name in the 'Service Accounts' section and to go to the configuration page for the new account.
     
     * Click the 'KEYS' tab at the top of the screen the click
     the 'Add Key' dropdown and select 'Create New Key.'
@@ -1429,7 +1429,7 @@ Bugs found during manual testing:
 
 * Gitpod to create, load and push my code to Github.
 
-* Git, (Gitpod and Github) as my version control system for the site.
+* Git, (Gitpod and Github) as my version control system for the app.
     
 * Adobe Photoshop CS6 to edit my README images.
 
@@ -1451,7 +1451,7 @@ Bugs found during manual testing:
 
 * Google Sheets API: To store the user data.
 
-* Gmail API: To send emails to the app's users
+* Gmail API: To send emails to the app's users.
 
 * Google Auth: Required to authenticate Google Creds and underpin the Domain Wide Delegation feature I used to authorised Gmail API. 
 
@@ -1491,13 +1491,17 @@ Bugs found during manual testing:
     
     * I referred to this [YouTube](https://www.youtube.com/watch?v=w1jrCxWx7Tc) Video when learning how to delete rows from google sheets.
 
-    Email
+    Email:
 
-    * I learned how to build the email functions using code from this [YouTube](https://www.youtube.com/watch?v=SpmWlHRVn9c) video and also this [Youtube](https://www.youtube.com/watch?v=44ERDGa9Dr4) video from the smae channel.
+    * I learned how to build the email functions using code from this [YouTube](https://www.youtube.com/watch?v=SpmWlHRVn9c) video and also this [Youtube](https://www.youtube.com/watch?v=44ERDGa9Dr4) video from the same channel.
 
-    Markdown
+    Markdown:
 
     * I learned how to write the code for my README dropdown menu by examining the Markdown code from this README document. https://github.com/elainebroche-dev/ms3-event-scheduler/blob/main/README.md
+
+    * Media
+
+    The image used in the title of this document was sourced from https://www.pexels.com/
 
 <br>
 
