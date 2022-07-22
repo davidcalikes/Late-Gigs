@@ -637,16 +637,15 @@ Below are some features the app currently has to offer and also some features wh
 
 * I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
 
-    <img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
-<br>
+<img src="./readme_images/test_data_type_print1.png"><br>_Error In Later Development_
 
-  <img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
+<img src="./readme_images/test_data_type_print.png"><br>_Print Statments To Find Cause Of Error In Later Development_
 
 <br>
 
 *  Using Pylint
 
-    During development I maintained the quality of my code using the built-in pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
+    During development I maintained the quality of my code using the built-in Pylint validator extension in gitpod after completing a code block or whenever it showed an unusal amount of warnings.
 
 <br>
 
@@ -659,13 +658,13 @@ Below are some features the app currently has to offer and also some features wh
 
 * Peer Reviews
 
-    Because of the automated email feature within the app I decided that some of my Code Institute peers might not like the idea of using their personal email accounts to test the it, so I ruled out submitting Late Gigs to the Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconveinience so decided instead to ask a select group of collegues to give me feedback on using the app.
+    Because of the automated email feature within the app I decided that some of my Code Institute peers might not like the idea of using their personal email accounts to test it, so I ruled out submitting Late Gigs to the CI Peer Code Review channel on Slack. I did set up a test account (lategigs@gmail.com) for anyone who wants to use it, but I thought in the circumstances asking peers to log into a testing account was too much of an inconvenience so decided instead to ask a select group of collegues to give me feedback on using the app.
 
     <br>
 
     * Richard Wells.
 
-        Apart from myself, Richard was the first user of the deployed app and found a bug while inputing his email address.
+        Apart from myself, Richard was the first user of the deployed app and found a bug while submitting his email address.
 
         I explain the nature of this error and how I fixed the bug later in this section.
 
@@ -689,7 +688,7 @@ Below are some features the app currently has to offer and also some features wh
     <img src="./readme_images/test_feedback1.png"><br>_Feedback From Peer_
     <br>
 
-    Somewhat disconcertingly, David did not find any other errors both as a user and within the code base.
+    Somewhat disconcertingly, David did not find any other errors, as a user or within the code base.
 
     During his review David used Late Gigs to create a waiting list listing in the Google Sheets database.
 
@@ -704,12 +703,14 @@ Below are some features the app currently has to offer and also some features wh
 
     The gig was added to the gig list sheet and the venue was removed from the standby list.
 
+    <br>
+
 
     * Kasia Bogucka 
 
         I asked Kasia to provide some feedback specifically regarding her experience as a user of Late Gigs.
 
-        Kasia was extremely positive about the app in general but found a rogue testing print statement that would not have been of any benefit to the user.
+        Kasia was extremely positive about the app in general but found a rogue print statement I used during the testing process that would not have been of any benefit to the user. (Thanks Kasia!)
 
         <br> 
 
@@ -734,9 +735,9 @@ Below are some features the app currently has to offer and also some features wh
 
         During an online meeting with my Code Institute Mentor Richard Wells I found a bug that rejected valid user email addresses.
 
-        The error was caused by the function used to validate the structure of an email address using regular expressions not validating users who included a period in the first part of the email address.
+        The error was caused by the function used to validate the structure of an email address using regular expressions. The email addresss that Richard submitted included a period in the first part of the email address.
 
-        This was solved by updating the Regex variable that contained the list of valid expressions.
+        This issue was resolved by updating the Regex variable that contained the list of valid expressions.
 
     <br>
 
@@ -764,369 +765,364 @@ Below are some features the app currently has to offer and also some features wh
 
         This was caused by me accidently removing a cell from the Gig List.
 
+        <br>
+
 * Other Known Bugs 
 
     There are currently no other known bugs but I will leave this section within the README document for any bugs that appear as the app continues to develop.
 
     <br>
 
-- __Manual Testing__
+## Manual Testing
 
-    
-    * I created a test sequence to comprehensively check for errors and bugs in the Late Gigs app.
+I created a test sequence to comprehensively check for errors and bugs in the Late Gigs app.
 
+<br>
 
-    * The testing sequence is lengthy so I have contained it here.
+<details>
+    <summary>
+        The Manual Testing Sequence is extensive so I contained it here.
+    </summary>
 
-    <details>
-       <summary>The testing sequence is extremly lengthy so I have contained it here.</summary>
+<br>
 
+## Testing the program from the ‘Find an Act’ option of the Main Menu
 
-    <br>
+<br>
 
+I pressed 1 and enter to use the feature.
 
-    # Manual Testing Sequence
+I then pressed no in response to the question: “Is your venue in the North East area” and was returned to the main menu.
 
-    <br>
+I pressed 1 again.
 
-    ## Testing the program from the ‘Find an Act’ option of the Main Menu
+I then typed a number  and was given an error message and asked to type option again by the program.
 
-    <br>
+I typed y.
 
-    I pressed 1 and enter to use the feature.
+I was then asked to enter a venue name
 
-    I then pressed no in response to the question: “Is your venue in the North East area” and was returned to the main menu.
+I typed 0
 
-    I pressed 1 again.
+The program returned an error message saying invalid name and that venue names must have more than two characters. And gave me the option to try again.
 
-    I then typed a number  and was given an error message and asked to type option again by the program.
+I typed a valid name of more than two characters.
 
-    I typed y.
+I received a pleasing, conversational-style message asking me too choose from the list of genre’s
+displayed
 
-    I was then asked to enter a venue name
+I entered number 4.
 
-    I typed 0
+I received a message telling me that this was not a valid genre and to type again.
 
-    The program returned an error message saying invalid name and that venue names must have more than two characters. And gave me the option to try again.
+I entered ska
 
-    I typed a valid name of more than two characters.
+I the same error message again.
 
-    I received a pleasing, conversational-style message asking me too choose from the list of genre’s
-    displayed
+This time I entered the valid genre of jazz
 
-    I entered number 4.
+I received another pleasing message, this time containing the two pieces of data already collected and asking me to type the required day of the coming weekend I need an act for my venue.
 
-    I received a message telling me that this was not a valid genre and to type again.
+I typed 397
 
-    I entered ska
+I received an error message telling me that 397 is not a valid gig day and was promoted to retry.
 
-    I the same error message again.
+I typed Friday
 
-    This time I entered the valid genre of jazz
+I was provided with the information Late Gigs had collected so far and asked if I was happy to continue?
 
-    I received another pleasing message, this time containing the two pieces of data already collected and asking me to type the required day of the coming weekend I need an act for my venue.
+I typed number 376
 
-    I typed 397
+I was told this was not a valid choice and typed n
 
-    I received an error message telling me that 397 is not a valid gig day and was promoted to retry.
+I was given another choice of y to restart or n to exit.
 
-    I typed Friday
+I typed 300
 
-    I was provided with the information Late Gigs had collected so far and asked if I was happy to continue?
+I was told this was not a valid choice and asked if I was happy to continue
 
-    I typed number 376
+I was given another choice of y/n
 
-    I was told this was not a valid choice and typed n
+I typed n
 
-    I was given another choice of y to restart or n to exit.
+I confirmed I wanted to exit by pressing n again
 
-    I typed 300
+I was returned to the main menu.
 
-    I was told this was not a valid choice and asked if I was happy to continue
+I started the sequence and inputed the data again up until the choice to continue
 
-    I was given another choice of y/n
+My choices were “TEST, Rock and Friday”
 
-    I typed n
+When asked if I was happy with these choices I selected y
 
-    I confirmed I wanted to exit by pressing n again
+I was asked to submit a fee
 
-    I was returned to the main menu.
+I typed the word “fifty”
 
-    I started the sequence and inputed the data again up until the choice to continue
+I was then prompted to type a number
 
-    My choices were “TEST, Rock and Friday”
+I typed the number 12
 
-    When asked if I was happy with these choices I selected y
+I was told that this was outside the apps recommended range and to try again.
 
-    I was asked to submit a fee
+I typed the number 4000 and got the same message
 
-    I typed the word “fifty”
+I then tried 600 which was acceptable.
 
-    I was then prompted to type a number
+I was then prompted for a maximum number of performers required.
 
-    I typed the number 12
+I followed the same pattern as above to test the input. Typing a word then 0 then 50
 
-    I was told that this was outside the apps recommended range and to try again.
+I settled on 4 act members
 
-    I typed the number 4000 and got the same message
+I was then asked to Input a number between 1 and 5
 
-    I then tried 600 which was acceptable.
+I tested the range parameters and responded to the error messages above.
 
-    I was then prompted for a maximum number of performers required.
+In this case, where a floating point number seemed to be allowed I tried to use the number 2.2
 
-    I followed the same pattern as above to test the input. Typing a word then 0 then 50
+It was not accepted and I was asked to try again.
 
-    I settled on 4 act members
+I entered 1.5
 
-    I was then asked to Input a number between 1 and 5
+I was then presented with the values I had entered.
 
-    I tested the range parameters and responded to the error messages above.
+And was asked to if I would like to search the database for a new act.
 
-    In this case, where a floating point number seemed to be allowed I tried to use the number 2.2
+I made a note of my values and pressed n
 
-    It was not accepted and I was asked to try again.
+I was warned that my data would be lost if I chose to proceed and gave me the option to reconsider or quit to menu
 
-    I entered 1.5
+I quit to menu and it brought me back to the menu page.
 
-    I was then presented with the values I had entered.
+I re inserted my data and pressed y
 
-    And was asked to if I would like to search the database for a new act.
+I was asked to submit a valid email address
+I typed: monkey bananas
 
-    I made a note of my values and pressed n
+I received a message informing me that this was not a valid email address and try again
 
-    I was warned that my data would be lost if I chose to proceed and gave me the option to reconsider or quit to menu
+I typed: 98713409871
 
-    I quit to menu and it brought me back to the menu page.
+Error try again!
 
-    I re inserted my data and pressed y
+I typed email@mailcom
 
-    I was asked to submit a valid email address
-    I typed: monkey bananas
+Error try again!
 
-    I received a message informing me that this was not a valid email address and try again
+I typed email, email.com
 
-    I typed: 98713409871
+Error try again!
 
-    Error try again!
+I then typed a valid email address that the REGEX function would accept but 
+would be so ridiculous it probably wouldn’t have a destination: 
 
-    I typed email@mailcom
+celticandrangersarefriends@sfa.co.uk
 
-    Error try again!
+The email was accepted as valid
 
-    I typed email, email.com
+The program is now requesting a pin code that was sent to that email address.
 
-    Error try again!
+I don’t have the code and now have to restart the program
 
-    I then typed a valid email address that the REGEX function would accept but 
-    would be so ridiculous it probably wouldn’t have a destination: 
+But before I did I entered an email address into the pin field
 
-    celticandrangersarefriends@sfa.co.uk
+And received a ValueError at line 492. [First Bug]
 
-    The email was accepted as valid
+I restarted the program with the same values
 
-    The program is now requesting a pin code that was sent to that email address.
+TEST ROCK FRIDAY 600 4 1.5
 
-    I don’t have the code and now have to restart the program
+This time I sent the email to the testing gmail account I had set up lategigs@gmail.com
 
-    But before I did I entered an email address into the pin field
+And tried to recreate the Value error but it was successfully caught this time by an except I implemented to catch it!
 
-    And received a ValueError at line 492. [First Bug]
+I checked my  testing email account to find I had received a pin from lategigs.
 
-    I restarted the program with the same values
+I entered the pin
 
-    TEST ROCK FRIDAY 600 4 1.5
+The program checked the database for a matching act but could not find one so added me to the standby list database.
 
-    This time I sent the email to the testing gmail account I had set up lategigs@gmail.com
+I checked the database and the listing was created and all values were correct.
 
-    And tried to recreate the Value error but it was successfully caught this time by an except I implemented to catch it!
+<br>
 
-    I checked my  testing email account to find I had received a pin from lategigs.
+# Testing the program from ‘the Find an Act’ option.
 
-    I entered the pin
 
-    The program checked the database for a matching act but could not find one so added me to the standby list database.
+I repeated the steps above to add a non-matching act to the database.
 
-    I checked the database and the listing was created and all values were correct.
+I found the following errors:
 
-    <br>
+I pressed no in response to the question asking if I was in the north east and was not returned directly to the main menu. I fixed this by adding an elif condition to the area_check function.
+I can now confidently add new venues and acts to the waiting list without errors
 
-    # Testing the program from ‘the Find an Act’ option.
+During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving and inputing a pin so I provided a condition to the function loop that would allow the user to exit to menu by typing 0000 [UX Error]
 
+Obviously there is an issue with this if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance)
+I will try to find a more elegant solution, (max 3 attempts for example) during development of Late Gigs V2.0 
 
-    I repeated the steps above to add a non-matching act to the database.
+<br>
 
-    I found the following errors:
+# Testing by creating a gig from the ‘Find a Venue’ option
 
-    I pressed no in response to the question asking if I was in the north east and was not returned directly to the main menu. I fixed this by adding an elif condition to the area_check function.
-    I can now confidently add new venues and acts to the waiting list without errors
+Because I knew the properties of two entries on the waiting list I could now try and get the app to create a matching gig.
 
-    During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving and inputing a pin so I provided a condition to the function loop that would allow the user to exit to menu by typing 0000 [UX Error]
+I first tried the find and act option using the details of the first venue
 
-    Obviously there is an issue with this if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance)
-    I will try to find a more elegant solution, (max 3 attempts for example) during development of Late Gigs V2.0 
+After entering my email address and PIN the program executed successfully and returned a match
 
-    <br>
+It provided me with the option to create the gig by answering yes or no
 
-    # Testing by creating a gig from the ‘Find a Venue’ option
+I chose no
 
-    Because I knew the properties of two entries on the waiting list I could now try and get the app to create a matching gig.
+The program took me back to the main menu
 
-    I first tried the find and act option using the details of the first venue
+I re inserted all of the data.
 
-    After entering my email address and PIN the program executed successfully and returned a match
+After entering my email address and PIN the program executed successfully and returned a match
 
-    It provided me with the option to create the gig by answering yes or no
+It provided me with the option to create the gig by answering yes or no
 
-    I chose no
+I choose yes
 
-    The program took me back to the main menu
+The program successfully created a gig by adding the act and venue to the gig_list google sheet
 
-    I re inserted all of the data.
+And also removed the venue from the venues sheet.
 
-    After entering my email address and PIN the program executed successfully and returned a match
+Both the venue and the act were notified by email that a gig had been created.
 
-    It provided me with the option to create the gig by answering yes or no
+The emails contained the correct gig information and means of contacting each other to arrange start times etc.
 
-    I choose yes
+<br>
 
-    The program successfully created a gig by adding the act and venue to the gig_list google sheet
+# Testing by creating a gig from the ‘Find an Act’ option
 
-    And also removed the venue from the venues sheet.
+I used the same process above but started out from the find an act menu option.
 
-    Both the venue and the act were notified by email that a gig had been created.
+The program found a match and asked if I wanted to create the gig
 
-    The emails contained the correct gig information and means of contacting each other to arrange start times etc.
+I chose no and was returned to the main menu
 
-    <br>
+I re submitted the venue info and when I reached the same point this time I replied yes.
 
-    # Testing by creating a gig from the ‘Find an Act’ option
+The program executed successfully and a gig was created.
 
-    I used the same process above but started out from the find an act menu option.
+The process  also removed the act from the standby sheet.
 
-    The program found a match and asked if I wanted to create the gig
+Both the venue and the act were notified by email that a gig had been created.
 
-    I chose no and was returned to the main menu
+The emails contained the correct gig information and means of contacting each other to arrange start times etc.
 
-    I re submitted the venue info and when I reached the same point this time I replied yes.
+The emails contained the gig information and means of contacting each other to arrange start times etc.
 
-    The program executed successfully and a gig was created.
+<br>
 
-    The process  also removed the act from the standby sheet.
+# Testing by attempting to cause a double booking.
 
-    Both the venue and the act were notified by email that a gig had been created.
+Now that I had items in the database I wanted to try and test the feature that checks for double bookings.
 
-    The emails contained the correct gig information and means of contacting each other to arrange start times etc.
+I took the values of the last two successfully created gigs from the gig_list sheet and used them to
+test the  double_booking_check functions
 
-    The emails contained the gig information and means of contacting each other to arrange start times etc.
+I first started by to trying to create a waiting list entry from the ‘find an act’ option.
 
-    <br>
+The double_booking_check function caught the attempt at double booking and returned to the main menu without adding the venue to the waiting list.
 
-    # Testing by attempting to cause a double booking.
+I repeated the process from the ‘find a venue’ option.
 
-    Now that I had items in the database I wanted to try and test the feature that checks for double bookings.
+The double_booking_check function caught the attempt at double booking and returned to the main menu without adding the act to the waiting list.
 
-    I took the values of the last two successfully created gigs from the gig_list sheet and used them to
-    test the  double_booking_check functions
+<br>
 
-    I first started by to trying to create a waiting list entry from the ‘find an act’ option.
+# Testing from the ‘Remove from list’ option. User type: Venue
 
-    The double_booking_check function caught the attempt at double booking and returned to the main menu without adding the venue to the waiting list.
+Error checking:
 
-    I repeated the process from the ‘find a venue’ option.
+I started the process by selecting option 3 from the main menu.
 
-    The double_booking_check function caught the attempt at double booking and returned to the main menu without adding the act to the waiting list.
+The screen then asked me to type either Venue or Act
 
-    <br>
+I typed: Guybrush
 
-    # Testing from the ‘Remove from list’ option. User type: Venue
+The program displayed an invalid input message and asked me to try again.
 
-    Error checking:
+I then typed: 2468
 
-    I started the process by selecting option 3 from the main menu.
+The same error appeared.
 
-    The screen then asked me to type either Venue or Act
+I then typed Venue
 
-    I typed: Guybrush
+A screen appeared and asked me for the name of my venue.
 
-    The program displayed an invalid input message and asked me to try again.
+I typed the the name of a venue I knew not to be on the  venue waiting list.
 
-    I then typed: 2468
+The program continued and asked for the day the booking was for… I answered
 
-    The same error appeared.
+354
 
-    I then typed Venue
+The program replied with “Invalid input try again!”
 
-    A screen appeared and asked me for the name of my venue.
+I then typed 
 
-    I typed the the name of a venue I knew not to be on the  venue waiting list.
+Sunday
 
-    The program continued and asked for the day the booking was for… I answered
+The process the moved on to ask me for my unique pin number 
 
-    354
+I entered Grog
 
-    The program replied with “Invalid input try again!”
+The program responded by returning an error and stating that the pin should be a 4 digit number
 
-    I then typed 
+I Typed 1
 
-    Sunday
+The program responded by returning an error and stating that the pin should be a 4 digit number
 
-    The process the moved on to ask me for my unique pin number 
+I typed 23456
 
-    I entered Grog
+The program responded by returning an error and stating that the pin should be a 4 digit number
 
-    The program responded by returning an error and stating that the pin should be a 4 digit number
+I typed 1967 and the program accepted the pin
 
-    I Typed 1
+The program returned to the main menu displaying a message that no listing had been found that match the user details provided. 
 
-    The program responded by returning an error and stating that the pin should be a 4 digit number
+I then checked the venues worksheet and typed the details of a venue I knew to be properly registered and on the list.
 
-    I typed 23456
+The process found the listing and removed the correct item from the venues database and returned to the main menu.
 
-    The program responded by returning an error and stating that the pin should be a 4 digit number
+# Testing from the ‘Remove from list’ option. User type: Act
 
-    I typed 1967 and the program accepted the pin
+Error checking:
 
-    The program returned to the main menu displaying a message that no listing had been found that match the user details provided. 
+I repeated the exact process I used testing the option with the venue user type and returned zero errors.
 
-    I then checked the venues worksheet and typed the details of a venue I knew to be properly registered and on the list.
+The acts sheet was correctly amended and the user was returned to the main menu.
 
-    The process found the listing and removed the correct item from the venues database and returned to the main menu.
+Testing the About Late gigs option.
 
-    <br>
+I selected option 4 and was provided with details about how the app functions. 
 
-    # Testing from the ‘Remove from list’ option. User type: Act
+There was user instructions saying press enter to get started
 
-    Error checking:
+I typed a 435
 
-    I repeated the exact process I used testing the option with the venue user type and returned zero errors.
+and was taken back to the main menu.
 
-    The acts sheet was correctly amended and the user was returned to the main menu.
+I then typed: Stan
 
-    Testing the About Late gigs option.
+and was taken back to the main menu.
 
-    I selected option 4 and was provided with details about how the app functions. 
+I pressed return
 
-    There was user instructions saying press enter to get started
+and was taken back to the main menu.
+</details>
 
-    I typed a 435
+<br>
 
-    and was taken back to the main menu.
-
-    I then typed: Stan
-
-    and was taken back to the main menu.
-
-    I pressed return
-
-    and was taken back to the main menu.
-
-        </details>
               
-    <br>
 
-    The results of sequence testing returned no further errors.
+The results of sequence testing returned no further errors.
 
-    I used the testing sequence to vigorously check for errors using the following venues and acts.
+I used the testing sequence to vigorously check for errors using the following venues and acts.
 
 Venue input data
 
@@ -1159,6 +1155,8 @@ Results
 NB I used different values to test the removal of two of each of the Venues and two of the Acts listings.
 
 No errors were returned when testing the Remove Listing Feature.
+
+<br>
 
 Bugs found during manual testing:
 
