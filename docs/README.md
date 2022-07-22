@@ -1475,7 +1475,7 @@ Bugs found during manual testing:
 
 - __Content__
 
-    Genreal referances:
+    General referances:
 
     * I referred to this article from [Stack Overflow](https://stackoverflow.com/questions/45437216/how-do-i-generate-a-random-4-digit-number-and-store-it-as-a-variable-in-python) when creating the random PIN numbers: 
 
@@ -1505,7 +1505,7 @@ Bugs found during manual testing:
 
     * Michelle Calikes
 
-        For the last couple of projects I have been so heavily focused on thanking the people surrounding me offering me technical advice I usaully leave thanking my beautiful wife Michelle until somewhere near the end of these credits. On this occasion that would be absolutley imposssible. Michelle looked after all of the important things in our home while I became lost in the Late Gigs project. Thank you Michelle, there are mo words to repay the sacrifices you have made that allowed me to give 100% to this project. 
+        For the last couple of projects I have been so heavily focused on thanking people who offer me technical advice, I usually leave thanking my incredible wife Michelle until somewhere near the end of these credits. On this occasion that would be absolutely imposssible. Michelle looked after all of the important things in our home while I became lost in the Late Gigs project. Thank you Michelle, there are mo words to repay the sacrifices you have made that allowed me to give 100% to this project. 
 
     * Richard Wells 
 
