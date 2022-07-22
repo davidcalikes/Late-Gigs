@@ -1219,27 +1219,6 @@ Bugs found during manual testing:
         
     <br>
 
-
-### Deploying Late Gigs To Heroku
-
- <br>
-
-* Access your Heroku account: https://id.heroku.com/login (Create a new account if required)
-
-* Create a new app giving your app a unique name. 
-
-* Click on the settings tab scrolling down to the 'Config Vars' section and set up the apps environment variables. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
-
-* Next click 'Buildpacks' and add the 'Python' buildpack then the 'Node.js' bulid pack, strictly in that order.
-
-* Select the 'Deploy' tab next and select GitHub as the deployment method.
-
-* Enter the name of the repository in the search field provided and click 'Connect' to create a link between Heroku and the GitHub repository.
-
-* Choose to either manually or automatically deploy the app. Applications deployed using the 'Automatic Deploy' option are automatically updated every time changes are pushed to github.
-
-<br>
-
 ### Enabling API's
 
   ###
@@ -1296,7 +1275,7 @@ Bugs found during manual testing:
     
     * Click the 'JSON' button then 'Create'. Your new credentials file will now download into your default downloads folder,
 
-    * The Late Gigs Credentials file is called creds.json. Rename tour file and ensure it is still listed in the .gitignore file.
+    * The Late Gigs Credentials file is called creds.json. Rename your .json file to creds.json and ensure it is still listed in the .gitignore file.
 
     * Copy the creds file into the cloned repo.
     
@@ -1306,22 +1285,27 @@ Bugs found during manual testing:
 
     <br>
 
-          
-
 * Enable Google Sheets API 
         
      * Go back to the dashboard for the project on Google Cloud Platform and access the navigation menu as before
+     
      * On the left hand menu select 'APIs and Services' and then 'Library'
+     
      * Search for Google Sheets API
+     
      * Select Google Sheets API and click on 'enable'
 
         <br>
 
 * Enable GMail API 
         
-     * Go back to the dashboard for the project on Google Cloud Platform and access the navigation menu as before
+     * Go back to the dashboard for the project on Google Cloud Platform and access the 
+     navigation menu as before
+    
      * On the left hand menu select 'APIs and Services' and then 'Library'
+    
      * Search for Gmail API
+     
      * Select Gmail API and click on 'enable'
 
   * Install gspread and google-auth and gmail libraries using the command 'pip3 install gspread gmail google-auth'
@@ -1408,6 +1392,28 @@ Bugs found during manual testing:
   * Set lengths can be between 1 and 5 hours incremting in half hour intervals. (Written as 1, 1.5, 2. 2.5 etc.)
 
   <br>
+
+  ### Deploying Late Gigs To Heroku
+
+ <br>
+
+* Access your Heroku account: https://id.heroku.com/login (Create a new account if required)
+
+* Create a new app giving your app a unique name. 
+
+* Click on the settings tab scrolling down to the 'Config Vars' section and set up the apps environment variables. Click on the option to reveal the config vars and type CREDS into the 'KEY' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
+
+* Add another config var this time enter 'PORT' in the 'KEY' field and '8000' in the 'VALUE' field.
+
+* Next click 'Buildpacks' and add the 'Python' buildpack then the 'Node.js' bulid pack, strictly in that order.
+
+* Select the 'Deploy' tab next and select GitHub as the deployment method.
+
+* Enter the name of the repository in the search field provided and click 'Connect' to create a link between Heroku and the GitHub repository.
+
+* Choose to either manually or automatically deploy the app. Applications deployed using the 'Automatic Deploy' option are automatically updated every time changes are pushed to github.
+
+<br>
 
 # Languages
 
@@ -1501,7 +1507,7 @@ Bugs found during manual testing:
 
     * Michelle Calikes
 
-        For the last couple of projects I have been so heavily focused on thanking the people surrounding me offering technical advice I usaully leave thanking my beautiful wife Michelle until somewhere near the end of these credits. On this occasion that would be absolutley imposssible. Michelle looked after all of the important things in our home while I became lost in the Late Gigs project. Thank you Michelle, there are mo words to repay the sacrifices you have made that allowed me to give 100% to this project. 
+        For the last couple of projects I have been so heavily focused on thanking the people surrounding me offering me technical advice I usaully leave thanking my beautiful wife Michelle until somewhere near the end of these credits. On this occasion that would be absolutley imposssible. Michelle looked after all of the important things in our home while I became lost in the Late Gigs project. Thank you Michelle, there are mo words to repay the sacrifices you have made that allowed me to give 100% to this project. 
 
     * Richard Wells 
 
@@ -1513,7 +1519,7 @@ Bugs found during manual testing:
 
     * The Research participants.
 
-    Liam, Ash, Willie, Brian, the Andy's, Paul and Shane thanks for the feedback I thoroughly appreciate it!
+    Liam, Ash, Willie, Brian, the Andy's, Paul, Mark and Shane thanks for the feedback I thoroughly appreciate it!
 
 
 

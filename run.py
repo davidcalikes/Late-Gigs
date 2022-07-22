@@ -237,7 +237,7 @@ def get_venue_data():
     while True:
         print("Would you like to search the database for a suitable act?\n")
         data_ver = input("Confirm search?:(y/n)\n")
-        if data_ver == "y" or "Y":
+        if data_ver.lower == "y":
             clear_page()
             print("\nGreat Stuff! Now let's find you an act!\n")
             regex_check(properties, name, user)
@@ -655,7 +655,7 @@ def make_gig(item_list_index, act_name, venue_name,
             print("Success!")
             get_match_email(properties, user, user_email_address, match_email)
             print(match_email)
-            exit()
+            main()
         elif user_choice.lower() == "y" and user == "act":
             clear_page()
             print("Updating gig listings...")
@@ -664,7 +664,7 @@ def make_gig(item_list_index, act_name, venue_name,
             SHEET.worksheet("venues").delete_rows(item_index + 1)
             print("Success!")
             get_match_email(properties, user, user_email_address, match_email)
-            exit()
+            main()
         else:
             clear_page()
             print('Sorry, Try Again another time')
