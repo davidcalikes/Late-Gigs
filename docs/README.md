@@ -53,15 +53,13 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 [Features](https://github.com/davidcalikes/Late-Gigs#features)
 
-[Testing](https://github.com/)
+[Testing](https://github.com/davidcalikes/Late-Gigs#testing)
 
-[Deployment](https://github.com/)
+[Deployment](https://github.com/davidcalikes/Late-Gigs#deployment)
 
-[Languages](https://github.com/)
+[Languages](https://github.com/davidcalikes/Late-Gigs#languages)
 
-[Software](https://github.com/)
-
-[Media](https://github.com/)
+[Software](https://github.com/davidcalikes/Late-Gigs#software
 
 [Credits](https://github.com/)
 
@@ -282,7 +280,7 @@ Below are some features the app currently has to offer and also some features wh
 
 - __The Area Check__
 
-    * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceding to either of the user surveys. Executed through options one and two from the 'Main Menu', the area check feature could save users the time and inconvenience of filling out their details if they do not operate within the apps service area. 
+    * The Area Check feature ensures the user is aware of Late Gigs catchment area before proceeding to either of the user surveys. Executed through options one and two from the 'Main Menu', the area check feature could save users the time and inconvenience of filling out details if they do not operate within the apps service area. 
 
     <br>
 
@@ -410,7 +408,7 @@ Below are some features the app currently has to offer and also some features wh
 
     <br>
 
-    <img src="./readme_images/feat_set_length.png"><br>_Set_length Screen._
+    <img src="./readme_images/feat_set_length.png"><br>_Set length Screen._
 
     <br>
 
@@ -452,8 +450,11 @@ Below are some features the app currently has to offer and also some features wh
 
     The Email Feature, powered by Google's Gmail API has two principle uses.
 
-    1. To notify the user.
-    2. To prevent misuse of the site.
+    * To notify the user.
+
+    <br>
+
+    * To prevent misuse of the site.
     
     The user is notified by email whenever a successful match is made and a gig is created on the Google sheets database.
 
@@ -1461,6 +1462,59 @@ Bugs found during manual testing:
 * OS module: To support the Clear_page feature/function.
 
 * Random module: To support the Create PIN function.
+
+<br>
+
+# Credits
+
+- __Content__
+
+    Genreal referances:
+
+    * https://stackoverflow.com/questions/45437216/how-do-i-generate-a-random-4-digit-number-and-store-it-as-a-variable-in-python
+
+    * https://stackoverflow.com/questions/35488774/how-to-validate-an-input-with-a-4-digit-number
+
+    * https://www.geeksforgeeks.org/multi-line-printing-in-python/
+
+    * https://stackoverflow.com/questions/5557937/how-do-i-use-try-except-or-if-else-to-validate-user-input
+
+    * https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+
+    Sheets:
+    
+    * https://www.youtube.com/watch?v=w1jrCxWx7Tc
+
+    Email
+
+    * https://www.youtube.com/watch?v=SpmWlHRVn9c
+
+    * https://www.youtube.com/watch?v=44ERDGa9Dr4
+
+    Markdown
+
+    * https://github.com/elainebroche-dev/ms3-event-scheduler/blob/main/README.md
+
+<br>
+
+- __Thanks__
+
+    * Michelle Calikes
+
+        For the last couple of projects I have been so heavily focused on thanking the people surrounding me offering technical advice I usaully leave thanking my beautiful wife Michelle until somewhere near the end of these credits. On this occasion that would be absolutley imposssible. Michelle looked after all of the important things in our home while I became lost in the Late Gigs project. Thank you Michelle, there are mo words to repay the sacrifices you have made that allowed me to give 100% to this project. 
+
+    * Richard Wells 
+
+        Again, Mr Wells continues to surpass himself as an inspirational mentor and collegue. Richard went above and beyond for me during this project and I won't forget his support.
+
+    * David Bowers
+    
+       Thanks to David for reviewing my app. Thera are few people I would trust to give me authentic feedback but David is definitely one of them. 
+
+    * The Research participants.
+
+    Liam, Ash, Willie, Brian, the Andy's, Paul and Shane thanks for the feedback I thoroughly appreciate it!
+
 
 
 
