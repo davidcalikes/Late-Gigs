@@ -1442,28 +1442,29 @@ Bugs found during manual testing:
 
 ### API's
 
-* Gspread to communicate with the database from a Python development environment/app.
+* Gspread to communicate with the database from a Python based development environment/app.
 
 * Google Drive
 
-* Google Sheets ApI
+* Google Sheets API: To store the user data.
 
-* Gmail API
+* Gmail API: To send emails to the app's users
 
-* Google Auth
+* Google Auth: Required to authenticate Google Creds and underpin the Domain Wide Delegation feature I used to authorised Gmail API. 
 
-* Heroku
+* Heroku: To deploy the app.
 
 <br>
 
-### Single Purpose Libraries/Modules
+### Modules(Single Purpose Libraries)
+
 <br>
 
-* RE module for validating email inputs.
+* RE module: To Validate email inputs.
 
-* OS module to support the Clear_page feature/function
+* OS module: To support the Clear_page feature/function.
 
-* Random module to support the PIN function
+* Random module: To support the Create PIN function.
 
 
 
