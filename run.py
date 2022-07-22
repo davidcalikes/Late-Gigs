@@ -968,7 +968,9 @@ Late Gigs will store the users information on a waiting list that will
 automatically create a gig for them if a match is found.
 """)
             print("Why not give it a try!")
+            print("Just select an option from the Main Menu")
             input("Press Enter to get started...")
+
             clear_page()
         else:
             clear_page()

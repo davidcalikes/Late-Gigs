@@ -1310,6 +1310,8 @@ Bugs found during manual testing:
 
   * Install gspread and google-auth and gmail libraries using the command 'pip3 install gspread gmail google-auth'
 
+  * Install the Google api client library using the command 'pip install google-api-python-client'
+
  <br>
 
 * Authorise Gmail Via Domain Wide Delegation
@@ -1459,7 +1461,7 @@ Bugs found during manual testing:
 
 <br>
 
-### Modules(Single Purpose Libraries)
+### Libraries
 
 
 * RE module: To Validate email inputs.
@@ -1467,6 +1469,8 @@ Bugs found during manual testing:
 * OS module: To support the Clear_page feature/function.
 
 * Random module: To support the Create PIN function.
+
+* Google API Client Library
 
 <br>
 
