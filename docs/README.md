@@ -1272,25 +1272,42 @@ Bugs found during manual testing:
 
     <br>
 
-    <img src="./readme_images/deploy_api_creds.png"><br>_Forking Option_
+    <img src="./readme_images/deploy_api_creds.png"><br>_Create Credentials_
         
     <br>
+
+    <img src="./readme_images/deploy_cred_type.png"><br>_Create Credentials Menu_
         
-    * Select 'Google Drive' API from the dropdown for 'Credential Type' Select the 'Application Data' radio button in the 'What data will you be accessing' area Select the 'No, I'm not using them' for the 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?' areaCick Next
+    <br>
+
+    * Fill out the 'Credential Type Form"
         
-    *On the Create Service Account page, step 1 is to enter a service account name in the first text box.  Any value can be entered here.
+    * Create a 'Service Account' by entering an account name in the name field.
     
-    Click on 'Create and Continue'
-    On step 2, 'Grant this service account access to project',  select Basic -> Editor from the 'Select a Role' dropdown.
-    Click on Continue
-    On step 3, 'Grant users access to this service account', simply press Done, no input is necessary
-    On the next page, click on the service account name created (listed under the Service Accounts area) to go to the configuration page for the new service account.
-    Click on the KEYS tab at the top middle of the screen.
-    Click on the Add Key dropdown and select Create New Key.
-    Select the JSON radio button then click Create. The json file with the new API credentials will download your machine. 
-    Rename the downloaded file to creds.json.  This filename is already listed in the project .gitignore file and so no further action will be needed to prevent it being accidentally uploaded to github 
-    Copy the new creds.json file into the local clone
-    In the creds.json file, copy the value for "client email" and then on Google Drive, share the spreadsheet created above with this email address assigning a role of Editor similar to the image shown below :
+    * Click, 'Create and Continue'
+    
+    * Next, click 'Grant this service account access to project',  and select 'Basic' and then 'Editor' from the 'Select a Role' dropdown menu.
+
+    *   <img src="./readme_images/deploy_grant.png"><br>_Just Click Done Here._
+        
+    <br>
+    
+    * Click on the service account name in the Service Accounts section and to go to the configuration page for the new account.
+    
+    * Click the 'KEYS' tab at the top of the screen the click
+    the 'Add Key' dropdown and select 'Create New Key.'
+    
+    * Click the 'JSON' button then 'Create'. Your new credentials file will now download into your default downloads folder,
+
+    * The Late Gigs Credentials file is called creds.json. Rename tour file and ensure it is still listed in the .gitignore file.
+
+    * Copy the creds file into the cloned repo.
+    
+    * Finally authorise access to the Google Spreadsheet linked to this project by pasting the "client email" part of the creds.json file into the "Add people and groups" field of the 'Share' option of the Google Drive's, Google Sheet page. 
+
+    *   <img src="./readme_images/deploy_share.png"><br>_The 'Share' Options Modal of A Google Sheet._
+
+    <br>
 
           
 
@@ -1351,7 +1368,7 @@ Bugs found during manual testing:
 
 * Create The Google Sheets Database
 
-  * Create a Google Spreadsheet called 'late-gigs' on
+  * Create a Google Spreadsheet called 'late_gigs' on
     Google Drive with 4 sheets:
     * venues
     * standby
@@ -1362,12 +1379,25 @@ Bugs found during manual testing:
     
   * The sheets should look exactly like the examples below.
 
+  <br>
 
+<img src="./readme_images/sheet_names.png"><br>_Sheet Names_
+       
+    
+<img src="./readme_images/sheet_venues.png"><br>_The Venues Waiting List_
+
+
+<img src="./readme_images/sheet_standby.png"><br>_The Acts Standby List_
+
+
+<img src="./readme_images/sheet_confirmed_gigs.png"><br>_The Confirmed Gigs List_
+
+
+<img src="./readme_images/sheet_user_data.png"><br>_The User Details Database_
+
+  * The data in these examples is not necessary for the app to function correctly, but incomplete rows may result in IndexErrors and values outside the following will result in ValueErrors:
 
     
-  * The data in these examples is not necessary for the app to function correctly but incomplete rows may result in IndexErrors and values outside the following will result in ValueErrors:
-
-    * 
 
 
 
