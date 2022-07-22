@@ -1477,29 +1477,27 @@ Bugs found during manual testing:
 
     Genreal referances:
 
-    * https://stackoverflow.com/questions/45437216/how-do-i-generate-a-random-4-digit-number-and-store-it-as-a-variable-in-python
+    * I referred to this article from [Stack Overflow](https://stackoverflow.com/questions/45437216/how-do-i-generate-a-random-4-digit-number-and-store-it-as-a-variable-in-python) when creating the random PIN numbers: 
 
-    * https://stackoverflow.com/questions/35488774/how-to-validate-an-input-with-a-4-digit-number
+    * I referred to this article from [Stack Overflow](https://stackoverflow.com/questions/35488774/how-to-validate-an-input-with-a-4-digit-number) when validating PIN input numbers.
 
-    * https://www.geeksforgeeks.org/multi-line-printing-in-python/
+    * I found this [article](https://www.geeksforgeeks.org/multi-line-printing-in-python/) via google about multi line printing.
 
-    * https://stackoverflow.com/questions/5557937/how-do-i-use-try-except-or-if-else-to-validate-user-input
+    * I referred to this article from [Stack Overflow](https://stackoverflow.com/questions/5557937/how-do-i-use-try-except-or-if-else-to-validate-user-input) about combining try/except and if/else statements.
 
-    * https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+    * I referred to this article from [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) when building the clear page function.
 
     Sheets:
     
-    * https://www.youtube.com/watch?v=w1jrCxWx7Tc
+    * I referred to this [YouTube](https://www.youtube.com/watch?v=w1jrCxWx7Tc) Video when learning how to delete rows from google sheets.
 
     Email
 
-    * https://www.youtube.com/watch?v=SpmWlHRVn9c
-
-    * https://www.youtube.com/watch?v=44ERDGa9Dr4
+    * I learned how to build the email functions using code from this [YouTube](https://www.youtube.com/watch?v=SpmWlHRVn9c) video and also this [Youtube](https://www.youtube.com/watch?v=44ERDGa9Dr4) video from the smae channel.
 
     Markdown
 
-    * https://github.com/elainebroche-dev/ms3-event-scheduler/blob/main/README.md
+    * I learned how to write the code for my README dropdown menu by examining the Markdown code from this README document. https://github.com/elainebroche-dev/ms3-event-scheduler/blob/main/README.md
 
 <br>
 
