@@ -38,6 +38,8 @@ We strongly recommend you now contact your match via email:
 Late Gigs accepts no responsibility for gigs
 that are created automatically but not honoured.
 
+*** NOT A REAL GIG! FOR APP TESTING PURPOSES ONLY ***
+
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
 """
@@ -78,6 +80,8 @@ We strongly recommend you now contact your match via email:
 
 Late Gigs accepts no responsibility for gigs that are created automatically
 but not honoured.
+
+*** NOT A REAL GIG! FOR APP TESTING PURPOSES ONLY ***
 
 Thank you for using Late Gigs!
 For support and more information contact us via lategigs@davidcalikes.com
