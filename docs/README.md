@@ -70,7 +70,7 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
 - __Business Case__
 
-     Late Gigs was born out of my own personal frustration surrounding the manifold increase in booking cancellations throughout the local (North East) live music scene. 
+     Late Gigs was borne out of my own personal frustration surrounding the manifold increase in booking cancellations throughout the local (North East) live music scene. 
  
      As a semi-retired musician, who gigs infrequently, covering cancellations ect, I recently noticed a huge upsurge in the number of venues contacting me to cover a gig due to a Covid related cancellation. (examples below)  
      
@@ -109,9 +109,6 @@ Utilising Google's Gmail API, Late Gigs notifies both venues and acts on either 
 
      <br> 
 
-     
-
-    
 - __Target Audience__
 
     Late Gigs aims to provide a wide range of venues and acts across the North East of Ireland with an efficient means of covering late gig cancellations. 
@@ -633,7 +630,6 @@ Below are some features the app currently has to offer and also some features wh
 <img src="./readme_images/test_print1.png"><br>_Use of Print Statement For Testing._
 
 <br>
-
 
 * I also used print statements to help locate errors in my code as the code base grew and the flow became more complex.
 
