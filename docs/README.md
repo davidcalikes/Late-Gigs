@@ -1410,6 +1410,64 @@ Bugs found during manual testing:
 
   * Set lengths can be between 1 and 5 hours incremting in half hour intervals. (Written as 1, 1.5, 2. 2.5 etc.)
 
+  <br>
+
+# Languages
+
+* The coding language used to create this app was Python (v3.8.1.1)
+
+    <br>
+
+* The Node.js backend runtime environment was incorporated via the Code Intitute's Python Student Template. 
+
+<br>
+
+# Software
+
+* Gitpod to create, load and push my code to Github.
+
+* Git, (Gitpod and Github) as my version control system for the site.
+    
+* Adobe Photoshop CS6 to edit my README images.
+
+* Tables Generator to create my markdown testing tables.
+
+<img src="./readme_images/software_tables.png"><br>_Tables Generator_
+
+* Lucidchart for the development of the app's Logic Flowchart.
+
+* Google sheets to act as a database for the project
+
+<br>
+
+### API's
+
+* Gspread to communicate with the database from a Python development environment/app.
+
+* Google Drive
+
+* Google Sheets ApI
+
+* Gmail API
+
+* Google Auth
+
+* Heroku
+
+<br>
+
+### Single Purpose Libraries/Modules
+<br>
+
+* RE module for validating email inputs.
+
+* OS module to support the Clear_page feature/function
+
+* Random module to support the PIN function
+
+
+
+
     
 
 
