@@ -1168,7 +1168,7 @@ Bugs found during manual testing:
 
 1. I discovered a value error that would cause a negative user experience at the user pin input during the first run of the sequence. I fixed this by adding an error handling feature that prompts the user to try again and gives them feedback about the entering a valid pin.
 
-2. During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving or inputing their pin so I added an extra condition to the function loop that would allow the user to exit to the 'Main Menu' by typing '0000' [UX Error]
+2. During this stage of  testing I realised that users had no way of returning to the main menu if there was an issue with receiving or submitting a valid PIN so I added an extra condition to the function loop that would allow the user to exit to the 'Main Menu' by typing '0000' [UX Error]
 
     Obviously there is an issue with this solution if the random number generator produces a pin that is 0000 but I figured at least in the short term that is highly unlikely. (1 in 10,000 chance) I will try to find a more elegant way of solving this problem, (max 3 attempts for example) during development of Late Gigs V2.0
 
@@ -1231,9 +1231,9 @@ Bugs found during manual testing:
 
 * Create a new app giving your app a unique name. 
 
-* Click on the settings tab scrolling down to the 'Config Vars' section and set up the apps environment variables here. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
+* Click on the settings tab scrolling down to the 'Config Vars' section and set up the apps environment variables. Click on the option to reveal the config vars and type CREDS into the 'key' input. You will then have to paste the contents of the creds.json file into the input labelled 'VALUE'
 
-* Next click 'Buildpacks' and add the 'Python' buildpack then the 'Node.js' bulid pack strictly in that order.
+* Next click 'Buildpacks' and add the 'Python' buildpack then the 'Node.js' bulid pack, strictly in that order.
 
 * Select the 'Deploy' tab next and select GitHub as the deployment method.
 
@@ -1259,31 +1259,38 @@ Bugs found during manual testing:
 
       <br>
 
-    <img src="./readme_images/deploy_api1.png"><br>_Forking Option_
+    <img src="./readme_images/deploy_api1.png"><br>_Google Cloud Platform_
         
     <br>
 
-        Search for Google Drive API
+    * Search for Google Drive API.
 
 
-        Select Google Drive API and click on 'enable' to get to the API and Services Overview page 
-        Click on the Create Credentials button near the top left of the screen
-        Select 'Google Drive' API from the dropdown for 'Credential Type'
-        Select the 'Application Data' radio button in the 'What data will you be accessing' area
-        Select the 'No, I'm not using them' for the 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?' area
-        Cick Next
-        On the Create Service Account page, step 1 is to enter a service account name in the first text box.  Any value can be entered here.
-        Click on 'Create and Continue'
-        On step 2, 'Grant this service account access to project',  select Basic -> Editor from the 'Select a Role' dropdown.
-        Click on Continue
-        On step 3, 'Grant users access to this service account', simply press Done, no input is necessary
-        On the next page, click on the service account name created (listed under the Service Accounts area) to go to the configuration page for the new service account.
-        Click on the KEYS tab at the top middle of the screen.
-        Click on the Add Key dropdown and select Create New Key.
-        Select the JSON radio button then click Create. The json file with the new API credentials will download your machine. 
-        Rename the downloaded file to creds.json.  This filename is already listed in the project .gitignore file and so no further action will be needed to prevent it being accidentally uploaded to github 
-        Copy the new creds.json file into the local clone
-        In the creds.json file, copy the value for "client email" and then on Google Drive, share the spreadsheet created above with this email address assigning a role of Editor similar to the image shown below :
+    * Select Google Drive API and click on 'enable' to get to the API and Services Overview page. 
+        
+    * Click on the Create Credentials button near the top left of the screen.
+
+    <br>
+
+    <img src="./readme_images/deploy_api_creds.png"><br>_Forking Option_
+        
+    <br>
+        
+    * Select 'Google Drive' API from the dropdown for 'Credential Type' Select the 'Application Data' radio button in the 'What data will you be accessing' area Select the 'No, I'm not using them' for the 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?' areaCick Next
+        
+    *On the Create Service Account page, step 1 is to enter a service account name in the first text box.  Any value can be entered here.
+    
+    Click on 'Create and Continue'
+    On step 2, 'Grant this service account access to project',  select Basic -> Editor from the 'Select a Role' dropdown.
+    Click on Continue
+    On step 3, 'Grant users access to this service account', simply press Done, no input is necessary
+    On the next page, click on the service account name created (listed under the Service Accounts area) to go to the configuration page for the new service account.
+    Click on the KEYS tab at the top middle of the screen.
+    Click on the Add Key dropdown and select Create New Key.
+    Select the JSON radio button then click Create. The json file with the new API credentials will download your machine. 
+    Rename the downloaded file to creds.json.  This filename is already listed in the project .gitignore file and so no further action will be needed to prevent it being accidentally uploaded to github 
+    Copy the new creds.json file into the local clone
+    In the creds.json file, copy the value for "client email" and then on Google Drive, share the spreadsheet created above with this email address assigning a role of Editor similar to the image shown below :
 
           
 
