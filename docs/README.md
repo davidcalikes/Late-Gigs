@@ -1377,7 +1377,8 @@ Bugs found during manual testing:
     
     <br>
     
-  * The sheets should look exactly like the examples below.
+    
+* The sheets should look exactly like the examples below.
 
   <br>
 
@@ -1396,6 +1397,18 @@ Bugs found during manual testing:
 <img src="./readme_images/sheet_user_data.png"><br>_The User Details Database_
 
   * The data in these examples is not necessary for the app to function correctly, but incomplete rows may result in IndexErrors and values outside the following will result in ValueErrors:
+
+  * Each user name must have more than two characters.
+
+  * Each Genre must be on the list of approved genre's.
+
+  * Valid gifg days are 'Friday' 'Saturday' and 'Sunday'.
+
+  * Each Fee Value must be between 150 and 1000.
+
+  * Acts must have at least one but no more than fifteen members.
+
+  * Set lengths can be between 1 and 5 hours incremting in half hour intervals. (Written as 1, 1.5, 2. 2.5 etc.)
 
     
 
